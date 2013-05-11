@@ -1,0 +1,3 @@
+[submodule "wp-taobao-url"]
+	path = wp-taobao-url
+	url = git@github.com:gregwym/wp-taobao-url.git
