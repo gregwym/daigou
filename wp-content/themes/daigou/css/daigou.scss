@@ -23,14 +23,13 @@
 	border-color: rgba(0, 0, 0, .35);
 	box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
 	border-radius: 3px;
-	padding: 5px;
 	font-weight: bold;
-	height: 30px;
-	line-height: 30px;
-	padding: 0 5px;
+	font-size: 12px;
+	padding: 0 8px;
 	text-align: center;
-	vertical-align: middle;
 	cursor: pointer;
+	white-space: nowrap;
+	height: 28px;
 }
 
 .daigou-button:active {
@@ -38,12 +37,42 @@
 	color: #fff;
 }
 
+.daigou-product-url-input {
+	width: 800px;
+	margin: 0 auto;
+
+	.url-input-container {
+		text-align: center;
+		padding: 10px;
+
+		button {
+			@extend .daigou-button;
+			font-size: 20px;
+			height: 45px;
+		}
+
+		button:active {
+			@extend .daigou-button:active;
+		}
+
+		input {
+			@extend .daigou-inputbox;
+
+			width: 500px;
+			height: 28px;
+			font-size: 18px;
+		}
+	}
+}
+
 .daigou-product-detail-box {
 	font-size: 12px;
 	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
 	border: 1px solid #d3d6db;
 	white-space: nowrap;
-	border-radius: 2px;
+	border-radius: 3px;
+	width: 750px;
+	margin: 0 auto;
 
 	button {
 		@extend .daigou-button;

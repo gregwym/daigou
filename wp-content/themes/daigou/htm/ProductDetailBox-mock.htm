@@ -2,12 +2,26 @@
 <html>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../css/daigou.css">
+	<script>
+		var DaigouConfiguration = {
+			ajaxUrl: 'http://www.google.com'
+		};
+	</script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="../js/URI.js"></script>
 	<script src="../js/Dom.js"></script>
 	<script src="../js/ProductDetailBox.js"></script>
+	<script src="../js/ProductUrlInput.js"></script>
 	<script>
 		var ProductDetailBox = this['daigou.ProductDetailBox'];
+		var ProductUrlInput = this['daigou.ProductUrlInput'];
 		$(document).ready(function() {
+
+			var urlInput = new ProductUrlInput();
+			$('#content').append(urlInput.createDom());
+			urlInput.onDomCreated();
+
+			return;
 			var box = new ProductDetailBox({
 				name: 'ShengMin Zhang',
 				unitPrice: 499999.00,
@@ -20,6 +34,6 @@
 		});
 	</script>
 	<body>
-		<div id="content" style="width: 800px;"></div>	
+		<div id="content"></div>	
 	</body>
 </html>
