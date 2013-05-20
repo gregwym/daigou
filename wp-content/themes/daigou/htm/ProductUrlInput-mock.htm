@@ -3,7 +3,7 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="../css/daigou.css">
 	<script>
-		var DaigouConfiguration = {
+		this['daigou.Configuration'] = {
 			ajaxUrl: 'http://www.google.com'
 		};
 	</script>
@@ -20,17 +20,6 @@
 			var urlInput = new ProductUrlInput();
 			$('#content').append(urlInput.createDom());
 			urlInput.onDomCreated();
-
-			return;
-			var box = new ProductDetailBox({
-				name: 'ShengMin Zhang',
-				unitPrice: 499999.00,
-				picUrl: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/c31.46.388.388/s160x160/559947_10151170463151123_1418077920_n.jpg',
-				exchangeRate: 6,
-				domesticShippingCost: 22
-			});
-			$('#content').append(box.createDom());
-			box.onDomCreated();
 		});
 	</script>
 	<body>

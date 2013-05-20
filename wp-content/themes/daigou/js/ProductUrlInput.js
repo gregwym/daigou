@@ -25,37 +25,41 @@
 		var urlInput = $(id + ' .url-input-container input');
 		var me = this;
 
-		urlInput.focus(function(event) {
+		urlInput.mouseover(function() {
 			urlInput.select();
-		});
-
-		urlInput.bind('mouseup', function(event) {
-			urlInput.select();
-			event.preventDefault();
 		});
 
 		button.click(function() {
 			var url = new Uri(urlInput.val());
 			var query = url.search(true);
-			var id = query.id || query.mallstItemId;
+			var productId = query.id || query.mallstItemId;
 
-			if (id) {
+			if (productId) {
 				$.ajax(Configuration.ajaxUrl, {
+					'type': 'POST',
 					'data': {
 						'action': 'GetProductById',
-						'id': id
+						'id': productId
 					},
 					'dataType': 'json',
 					'success': function(data) {
-						var box = new ProductDetailBox({
-							name: 'ShengMin Zhang',
-							unitPrice: 499999.00,
-							picUrl: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/c31.46.388.388/s160x160/559947_10151170463151123_1418077920_n.jpg',
-							exchangeRate: 6,
-							domesticShippingCost: 22
-						});
-						$(id + ' .product-detail-box-container').html(box.createDom());
-						box.onDomCreated();
+						var product = data.taobao.item;
+						if (product) {
+							// Found the product
+							var box = new ProductDetailBox({
+								name: product.title,
+								unitPrice: parseFloat(product.price),
+								picUrl: product.pic_url,
+								exchangeRate: data.exchangeRate,
+								domesticShippingCost: data.domesticShippingCost
+							});
+							$(id + ' .product-detail-box-container').html(box.createDom());
+							box.onDomCreated();
+						} else {
+							// TODO: implement error handling
+							alert('Could not find the product');
+						}
+						
 					}
 				});
 			} else {
@@ -64,4 +68,4 @@
 		});
 	};
 
-})(jQuery, URI, DaigouConfiguration, this['daigou.Dom'], this['daigou.ProductDetailBox']);
+})(jQuery, URI, this['daigou.Configuration'], this['daigou.Dom'], this['daigou.ProductDetailBox']);
