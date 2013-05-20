@@ -1,0 +1,144 @@
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+	float: left;
+}
+
+.daigou-inputbox {
+	border: 1px solid #bdc7d8;
+	padding: 4px;
+}
+
+.daigou-inputbox:disabled {
+	background-color: #f6f7f8;
+}
+
+.daigou-button {
+	background-color: rgba(255, 255, 255, .8);
+	border: 1px solid #a5a5a5;
+	border-color: rgba(0, 0, 0, .35);
+	box-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+	border-radius: 3px;
+	padding: 5px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 5px;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.daigou-button:active {
+	background-color: #5b74a8;
+	color: #fff;
+}
+
+.daigou-product-detail-box {
+	font-size: 12px;
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	border: 1px solid #d3d6db;
+	white-space: nowrap;
+	border-radius: 2px;
+
+	button {
+		@extend .daigou-button;
+	}
+
+	button:active {
+		@extend .daigou-button:active;
+	}
+
+	table, td, th {
+		padding: 0;
+		margin: 0;
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	.header {
+		border-bottom: 1px solid #e9eaed;
+		color: #37404e;
+		font-size: 16px;
+		font-weight: bold;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.footer {
+		text-align: right;
+		border-top: 1px solid #e9eaed;
+	}
+
+	.header,
+	.footer {
+		background-color: #f6f7f8;
+		padding: 8px;
+	}
+
+	.picture-box {
+		@extend .column;
+
+		img {
+			border: 1px solid #e9eaed;
+			border-radius: 2px;
+			display: block;
+			width: 200px;
+		}
+	}
+
+	.form {
+		@extend .column;
+
+		.row:after {
+			@extend .group:after;
+		}
+		.row {
+			padding: 5px;
+
+			.name {
+				width: 180px;
+				text-align: right;
+				font-weight: bold;
+				color: #666;
+				float: left;
+				padding-right: 5px;
+			}
+
+			.value {
+				vertical-align: middle;
+			}
+
+			input,
+			textarea {
+				@extend .daigou-inputbox;
+				width: 300px;
+			}
+
+			input:disabled {
+				@extend .daigou-inputbox:disabled;
+			}
+
+			textarea {
+				height: 100px;
+			}
+
+			.name,
+			.value {
+				$height: 30px;
+
+				height: $height;
+				line-height: $height;
+			}
+		}
+	}
+
+	.form,
+	.picture-box {
+		padding: 10px;
+	}
+}

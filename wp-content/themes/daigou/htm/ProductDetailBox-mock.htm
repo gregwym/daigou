@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/daigou.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="../js/Dom.js"></script>
+	<script src="../js/ProductDetailBox.js"></script>
+	<script>
+		var ProductDetailBox = this['daigou.ProductDetailBox'];
+		$(document).ready(function() {
+			var box = new ProductDetailBox({
+				name: 'ShengMin Zhang',
+				unitPrice: 499999.00,
+				picUrl: 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-ash3/c31.46.388.388/s160x160/559947_10151170463151123_1418077920_n.jpg',
+				exchangeRate: 6,
+				domesticShippingCost: 22
+			});
+			$('#content').append(box.createDom());
+			box.onDomCreated();
+		});
+	</script>
+	<body>
+		<div id="content" style="width: 800px;"></div>	
+	</body>
+</html>

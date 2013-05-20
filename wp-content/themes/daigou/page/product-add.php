@@ -4,7 +4,10 @@
  *
  * This page allows users to paste in a Tao Bao product URL, and add that product to shopping cart.
  */
- get_header();
+
+	require_once(__DIR__ . '/../ui/ProductUrlInput.php');
+
+ 	get_header();
 ?>
        
   <div id="content" class="page col-full">
@@ -13,5 +16,6 @@
     	daigou\productUrlInput(); 
    	?>
   </div><!-- /#content -->
-		
+<?php $hello = '100'; ?>
+<?php echo $hello; ?>		
 <?php get_footer(); ?>

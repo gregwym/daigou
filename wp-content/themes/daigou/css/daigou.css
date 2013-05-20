@@ -1,0 +1,89 @@
+.group:after, .daigou-product-detail-box .form .row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.column, .daigou-product-detail-box .picture-box, .daigou-product-detail-box .form {
+  float: left; }
+
+.daigou-inputbox, .daigou-product-detail-box .form .row input,
+.daigou-product-detail-box .form .row textarea {
+  border: 1px solid #bdc7d8;
+  padding: 4px; }
+
+.daigou-inputbox:disabled, .daigou-product-detail-box .form .row input:disabled,
+.daigou-product-detail-box .form .row textarea:disabled {
+  background-color: #f6f7f8; }
+
+.daigou-button, .daigou-product-detail-box button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #a5a5a5;
+  border-color: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  padding: 5px;
+  font-weight: bold;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 5px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer; }
+
+.daigou-button:active, .daigou-product-detail-box button:active {
+  background-color: #5b74a8;
+  color: #fff; }
+
+.daigou-product-detail-box {
+  font-size: 12px;
+  font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+  border: 1px solid #d3d6db;
+  white-space: nowrap;
+  border-radius: 2px; }
+  .daigou-product-detail-box table, .daigou-product-detail-box td, .daigou-product-detail-box th {
+    padding: 0;
+    margin: 0;
+    border-collapse: collapse;
+    border-spacing: 0; }
+  .daigou-product-detail-box .header {
+    border-bottom: 1px solid #e9eaed;
+    color: #37404e;
+    font-size: 16px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  .daigou-product-detail-box .footer {
+    text-align: right;
+    border-top: 1px solid #e9eaed; }
+  .daigou-product-detail-box .header,
+  .daigou-product-detail-box .footer {
+    background-color: #f6f7f8;
+    padding: 8px; }
+  .daigou-product-detail-box .picture-box img {
+    border: 1px solid #e9eaed;
+    border-radius: 2px;
+    display: block;
+    width: 200px; }
+  .daigou-product-detail-box .form .row {
+    padding: 5px; }
+    .daigou-product-detail-box .form .row .name {
+      width: 180px;
+      text-align: right;
+      font-weight: bold;
+      color: #666;
+      float: left;
+      padding-right: 5px; }
+    .daigou-product-detail-box .form .row .value {
+      vertical-align: middle; }
+    .daigou-product-detail-box .form .row input,
+    .daigou-product-detail-box .form .row textarea {
+      width: 300px; }
+    .daigou-product-detail-box .form .row textarea {
+      height: 100px; }
+    .daigou-product-detail-box .form .row .name,
+    .daigou-product-detail-box .form .row .value {
+      height: 30px;
+      line-height: 30px; }
+  .daigou-product-detail-box .form,
+  .daigou-product-detail-box .picture-box {
+    padding: 10px; }
