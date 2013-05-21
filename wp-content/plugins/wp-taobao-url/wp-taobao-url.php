@@ -15,7 +15,11 @@ Author URI: http://sample.com/
 // Add the taobao URL textfield before main
 function add_taobao_url_textfield() {
 	if ( is_home() ) {
-		echo '<form action="#"><input type="text" name="taobao-url" placeholder="Please paste the Taobao URL here..."></form>';
+?>
+		<form action="#">
+			<input type="text" name="taobao-url" placeholder="Please paste the Taobao URL here...">
+		</form>
+<?php
 	}
 } // End add_taobao_url_textfield
 
