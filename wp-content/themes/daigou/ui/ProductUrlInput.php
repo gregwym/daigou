@@ -1,12 +1,14 @@
 <?php
 namespace daigou;
 
+require_once(__DIR__ . '/../lib/Configuration.php');
+
 class ProductUrlInput {
 	public static function onEnqueueScripts() {
-		$dir = get_stylesheet_directory_uri();
+		$js = Configuration::getJavaScriptDirectory();
 
-		wp_register_script('daigou.ProductDetailBox', $dir . '/js/ProductDetailBox.js', array('jquery', 'daigou.Dom'));
-		wp_register_script('daigou.ProductUrlInput', $dir . '/js/ProductUrlInput.js', array('jquery', 'daigou.Dom', 'daigou.Configuration', 'URI', 'daigou.ProductDetailBox'));
+		wp_register_script('daigou.ProductDetailBox', $js . '/ProductDetailBox.js', array('jquery', 'daigou.Dom'));
+		wp_register_script('daigou.ProductUrlInput', $js . '/ProductUrlInput.js', array('jquery', 'daigou.Dom', 'daigou.Configuration', 'URI', 'daigou.ProductDetailBox'));
 	}
 }
 

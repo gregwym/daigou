@@ -6,12 +6,13 @@
  */
 
 	require_once(__DIR__ . '/../ui/ProductUrlInput.php');
+	require_once(__DIR__ . '/../lib/Configuration.php');
 
 	class AddProductPage {
 		public static function onEnqueueScripts() {
-			$dir = get_stylesheet_directory_uri();
+			$js = \daigou\Configuration::getJavaScriptDirectory();
 
-			wp_enqueue_script('daigou.add-product-page', $dir . '/js/add-product-page.js', array('jquery', 'daigou.ProductUrlInput'));
+			wp_enqueue_script('daigou.add-product-page', $js . '/add-product-page.js', array('jquery', 'daigou.ProductUrlInput'));
 		}
 	}
 

@@ -4,4 +4,4 @@
 		$('#content').append(urlInput.createDom());
 		urlInput.onDomCreated();
 	});
-})(jQuery, this['daigou.ProductUrlInput']);
+})(jQuery, window['daigou.ProductUrlInput']);

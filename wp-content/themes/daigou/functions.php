@@ -1,13 +1,17 @@
 <?php
 namespace daigou;
+// File Security Check
+if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
+    die ( 'You do not have sufficient permissions to access this page!' );
+}
 
 require_once(__DIR__ . '/lib/TaoBaoClient.php');
+require_once(__DIR__ . '/lib/Configuration.php');
 
 class Functions {
 	public static function onEnqueueScripts() {
-		$dir = get_stylesheet_directory_uri();
-		$jsDir = $dir . '/js';
-		$cssDir = $dir . '/css';
+		$jsDir = Configuration::getJavaScriptDirectory();
+		$cssDir = Configuration::getCssDirectory();
 
 		wp_enqueue_style('daigou', $cssDir . '/daigou.css');
 

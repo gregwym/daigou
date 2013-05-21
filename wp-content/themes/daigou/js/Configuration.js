@@ -1,3 +1,3 @@
 (function(DaigouConfiguration) {
-	this['daigou.Configuration'] = DaigouConfiguration;
-})(DaigouConfiguration);
+  this['daigou.Configuration'] = DaigouConfiguration;
+})(window['DaigouConfiguration']);
