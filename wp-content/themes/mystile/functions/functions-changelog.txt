@@ -1,5 +1,8 @@
 *** WooThemes Framework Changelog **
 
+2013.03.05 - version 5.5.5
+ * admin-functions.php - Improved function to process all used Google fonts and output single link tag for all of them
+
 2013.02.06 - version 5.5.4
  * admin-shortcodes.php - Added global variable for storing used Google fonts and removed preg_match for custom typography in each post
  * admin-functions.php - Added function to process all used Google fonts and output single link tag for all of them

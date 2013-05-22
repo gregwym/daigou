@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 /* WooThemes Framework Version & Theme Version */
 /*-----------------------------------------------------------------------------------*/
 function woo_version_init () {
-    $woo_framework_version = '5.5.4';
+    $woo_framework_version = '5.5.5';
     if ( get_option( 'woo_framework_version' ) != $woo_framework_version ) {
     	update_option( 'woo_framework_version', $woo_framework_version );
     }
