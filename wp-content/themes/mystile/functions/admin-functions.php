@@ -3188,18 +3188,22 @@ if ( ! function_exists( 'wooframework_load_google_fonts' ) ) {
 function wooframework_load_google_fonts() {
 	global $woo_used_google_fonts;
 
-	$c = 0;
-	$fonts = '';
-	foreach( $woo_used_google_fonts as $font ) {
-		if( $c > 0 ) {
-			$fonts .= '|';
-		} else {
-			++$c;
+	if( $woo_used_google_fonts && is_array( $woo_used_google_fonts ) ) {
+		$fonts = '';
+		$c = 0;
+		foreach( $woo_used_google_fonts as $font ) {
+			if( $c > 0 ) {
+				$fonts .= '|';
+			} else {
+				++$c;
+			}
+			$fonts .= $font;
 		}
-		$fonts .= $font;
-	}
 
-	woo_shortcode_typography_loadgooglefonts( $fonts , 'woo-used-google-fonts' );
+		if( '' != $fonts ) {
+			woo_shortcode_typography_loadgooglefonts( $fonts , 'woo-used-google-fonts' );
+		}
+	}
 } // End wooframework_load_google_fonts()
 }
 add_action( 'wp_footer' , 'wooframework_load_google_fonts' );
