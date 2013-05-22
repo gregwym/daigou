@@ -15,7 +15,7 @@
  */
 if (!defined("TOP_SDK_WORK_DIR"))
 {
-	define("TOP_SDK_WORK_DIR", "/tmp/");
+	define("TOP_SDK_WORK_DIR", __DIR__ . "/tmp/");
 }
 /**
  * 是否处于开发模式

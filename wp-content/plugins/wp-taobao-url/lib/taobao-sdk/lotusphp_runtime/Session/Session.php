@@ -23,7 +23,7 @@ class LtSession
 	{
 		if(!$sessionSavePath = $this->configHandle->get("session.save_path"))
 		{
-			$sessionSavePath = '/tmp/Lotus/session/';
+			$sessionSavePath = __DIR__ . '/tmp/Lotus/session/';
 		}
 		if (!is_object($this->storeHandle))
 		{
@@ -42,11 +42,11 @@ class LtSession
 			$this->storeHandle->conf = $this->configHandle->get("session.conf");
 			$this->storeHandle->init();
 			session_set_save_handler(
-				array(&$this->storeHandle, 'open'), 
+				array(&$this->storeHandle, 'open'),
 				array(&$this->storeHandle, 'close'),
-				array(&$this->storeHandle, 'read'), 
-				array(&$this->storeHandle, 'write'), 
-				array(&$this->storeHandle, 'destroy'), 
+				array(&$this->storeHandle, 'read'),
+				array(&$this->storeHandle, 'write'),
+				array(&$this->storeHandle, 'destroy'),
 				array(&$this->storeHandle, 'gc')
 				);
 		}
