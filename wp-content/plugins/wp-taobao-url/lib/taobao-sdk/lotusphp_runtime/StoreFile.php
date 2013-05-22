@@ -123,3 +123,4 @@ class LtStoreFile implements LtStore
 		$token . '.php';
 	}
 }
+LtStoreFile::$defaultStoreDir = __DIR__ . "/tmp/LtStoreFile/";
