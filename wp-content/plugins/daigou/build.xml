@@ -20,6 +20,7 @@
   </target>
 
   <target name="compile-css">
+    <mkdir dir="${basedir}/css"/>
     <exec executable="sass" osfamily="Unix">
       <arg value="-t compact" />
       <arg value="sass/daigou.scss:css/daigou.css" />
