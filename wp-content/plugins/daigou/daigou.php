@@ -55,11 +55,24 @@ class Taobao_URL {
 		$id = intval($_POST['id']);
 		// TODO: fetch the exchange rate
 		$result = TaoBaoClient::getProductById($id);
-		echo json_encode(array(
+
+		$post = array(
+		              'post_author' => wp_get_curent_user()->ID,
+		              'post_type' => 'product',
+		              'post_title' => $result->{'item'}->{'title'},
+		              'post_status' => 'publish',
+	    );
+
+	    $post_id = wp_insert_post($post);
+	    update_post_meta( $post_id, '_price', $result->{'item'}->{'price'} );
+
+	    echo json_encode(array(
 			'taobao' => $result,
 			'exchangeRate' => 6.0,
-			'domesticShippingCost' => 22
+			'domesticShippingCost' => 22,
+			'post_id' => $post_id,
 		));
+
 		die();
 	}
 
