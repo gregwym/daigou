@@ -57,14 +57,14 @@ class Taobao_URL {
 		$result = TaoBaoClient::getProductById($id);
 
 		$post = array(
-		              'post_author' => wp_get_curent_user()->ID,
 		              'post_type' => 'product',
 		              'post_title' => $result->{'item'}->{'title'},
+		              'post_content' => '';
 		              'post_status' => 'publish',
 	    );
 
-	    $post_id = wp_insert_post($post);
-	    update_post_meta( $post_id, '_price', $result->{'item'}->{'price'} );
+	    $post_id = \wp_insert_post($post);
+	    \update_post_meta( $post_id, '_price', $result->{'item'}->{'price'} );
 
 	    echo json_encode(array(
 			'taobao' => $result,
