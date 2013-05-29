@@ -14,12 +14,12 @@ namespace daigou;
 
 // File Security Check
 if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
-    die ( 'You do not have sufficient permissions to access this page!' );
+	die ( 'You do not have sufficient permissions to access this page!' );
 }
 
 // Enable display_errors for debug
 if (!ini_get('display_errors')) {
-    ini_set('display_errors', '1');
+	ini_set('display_errors', '1');
 }
 
 class Taobao_URL {
@@ -83,20 +83,20 @@ class Taobao_URL {
 			'post_status'  => 'publish',
 			// 'post_author'  => $user_ID,
 		);
-	    $product_id = \wp_insert_post($product);
+		$product_id = \wp_insert_post($product);
 
-	    // Update product slug as product_id => cleaner URL
-	    $product['ID'] = $product_id;
-	    $product['post_name'] = $product_id;
-	    \wp_update_post($product);
+		// Update product slug as product_id => cleaner URL
+		$product['ID'] = $product_id;
+		$product['post_name'] = $product_id;
+		\wp_update_post($product);
 
-	    // Update product meta
-	    \update_post_meta( $product_id, '_regular_price', $result->{'item'}->{'price'} );
-	    \update_post_meta( $product_id, '_price', $result->{'item'}->{'price'} );
-	    \update_post_meta( $product_id, '_visibility', 'visible' );
+		// Update product meta
+		\update_post_meta( $product_id, '_regular_price', $result->{'item'}->{'price'} );
+		\update_post_meta( $product_id, '_price', $result->{'item'}->{'price'} );
+		\update_post_meta( $product_id, '_visibility', 'visible' );
 
-	    // Add product picture as attachment, and assign as product thumbnail
-	    $prod_pic = array(
+		// Add product picture as attachment, and assign as product thumbnail
+		$prod_pic = array(
 			'post_type'      => 'attachment',
 			'post_title'     => 'Picture for Product #' . $product_id,
 			'post_mime_type' => 'image/jpeg',
@@ -105,10 +105,10 @@ class Taobao_URL {
 			'post_parent'    => $product_id,
 			'guid'           => $result->{'item'}->{'pic_url'},
 		);
-	    $prod_pic_id = \wp_insert_post($prod_pic);
-	    \update_post_meta( $product_id, '_thumbnail_id', $prod_pic_id );
+		$prod_pic_id = \wp_insert_post($prod_pic);
+		\update_post_meta( $product_id, '_thumbnail_id', $prod_pic_id );
 
-	    echo json_encode(array(
+		echo json_encode(array(
 			'taobao'               => $result,
 			'exchangeRate'         => 6.0,
 			'domesticShippingCost' => 22,
