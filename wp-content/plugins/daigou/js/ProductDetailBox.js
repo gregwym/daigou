@@ -93,7 +93,7 @@
     var rmb = quantity * data.unitPrice + data.domesticShippingCost;
     return {
       'rmb': rmb,
-      'cad': rmb * data.exchangeRate
+      'cad': rmb / data.exchangeRate
     };
   };
 
