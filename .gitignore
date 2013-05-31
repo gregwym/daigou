@@ -17,4 +17,7 @@ sitemap.xml.gz
 tmp/
 
 # Generated automatically
-website/
+target/
+
+# Node.js
+node_modules/

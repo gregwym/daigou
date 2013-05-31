@@ -1,0 +1,34 @@
+{
+  "name": "daigouge.com",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gregwym/daigou"
+  },
+  "keywords": [
+    "daigou",
+    "daigouge"
+  ],
+  "contributors": [
+    {
+      "name": "ShengMin Zhang",
+      "email": "me@shengmin.me",
+      "url": "http://www.shengmin.me/"
+    },
+    {
+      "name": "Greg Wang",
+      "email": "gregwym@gmail.com",
+      "url": "http://blog.gregwym.info/"
+    }
+  ],
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/gregwym/daigou/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-compass": "~0.2.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-update-submodules": "~0.2.0"
+  }
+}

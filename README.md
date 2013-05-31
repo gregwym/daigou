@@ -7,6 +7,21 @@ Before deploying, remember to update the `wp-taobao-url` plugin to the latest ve
 	cd wp-taobao-url
 	git pull
 
-## Website Setup
-- Change the theme to `daigou`
-- Add a `page` with the `template` `add product page`, this is the page for fetching TaoBao product information
+## Requirements
+- Install [Node.js](http://nodejs.org/)
+- Install [Grunt](http://gruntjs.com/)
+- Install [Compass](http://compass-style.org/)
+
+## Setup (You only need to run this once)
+	npm install
+	grunt setup
+
+## Build
+- `grunt build:dev` to build for development, JavaScript and CSS files will be unminified
+- `grunt build:prod` to build for production, JavaScript and CSS files will be minified
+
+## Run
+	grunt build:dev
+	cd target
+	php -S localhost:8000
+ 
