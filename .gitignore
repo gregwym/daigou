@@ -1,20 +1,12 @@
 .htaccess
-
-wp-content/wp-config.php
-wp-content/uploads/
-wp-content/blogs.dir/
-wp-content/upgrade/
-wp-content/backup-db/
-wp-content/advanced-cache.php
-wp-content/wp-cache-config.php
 sitemap.xml
 *.log
-wp-content/cache/
-wp-content/backups/
+tmp/
 sitemap.xml.gz
 .DS_Store
+
+# Sass
 .sass-cache
-tmp/
 
 # Generated automatically
 target/
