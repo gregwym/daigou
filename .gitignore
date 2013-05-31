@@ -1,5 +1,6 @@
 .htaccess
-wp-config.php
+
+wp-content/wp-config.php
 wp-content/uploads/
 wp-content/blogs.dir/
 wp-content/upgrade/
@@ -14,3 +15,6 @@ sitemap.xml.gz
 .DS_Store
 .sass-cache
 tmp/
+
+# Generated automatically
+website/
