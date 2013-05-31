@@ -3,7 +3,7 @@ class Lotus
 {
 	/**
 	 * Lotus Option array
-	 * 
+	 *
 	 * @var array array(
 	 * 	"proj_dir"     =>
 	 * 	"app_name"     =>
@@ -50,6 +50,7 @@ class Lotus
 		require_once $this->lotusRuntimeDir . "StoreMemory.php";
 		require_once $this->lotusRuntimeDir . "StoreFile.php";
 
+		/*
 		if ($this->defaultStoreDir)
 		{
 			if ($defaultStoreDir = realpath($this->defaultStoreDir))
@@ -61,6 +62,7 @@ class Lotus
 				trigger_error("invalid [default store dir]: " . $this->defaultStoreDir);
 			}
 		}
+		*/
 		if (!$this->devMode)
 		{
 			/**
@@ -82,7 +84,7 @@ class Lotus
 		 * init Config
 		 */
 		$this->prepareConfig();
-		
+
 		/**
 		 * Run dispatcher when under MVC mode
 		 */
