@@ -57,6 +57,16 @@ class Taobao_URL {
 		// TODO: fetch the exchange rate
 		$result = TaoBaoClient::getProductById($id);
 
+		// TODO: Define return value from TaoBaoClient, and handle errors.
+		/*
+		if (gettype($result) !== 'array') {
+			echo json_encode(array(
+				'error' => 'Fail to fetch product information.',
+			));
+			die();
+		}
+		*/
+
 		/* Default post config for reference
 		$defaults = array(
 			'post_status'           => 'draft',
@@ -75,15 +85,27 @@ class Taobao_URL {
 		);
 		*/
 
+		// For WooTheme compatibility.
+		// Define variables that are used w/o pre-checking.
+		$_POST['post_type'] = 'product';
+
 		// Add new product
 		$product = array(
 			'post_type'    => 'product',
 			'post_title'   => $result->{'item'}->{'title'},
+			// TODO: add product description
 			'post_content' => $result->{'item'}->{'detail_url'},
 			'post_status'  => 'publish',
 			// 'post_author'  => $user_ID,
 		);
 		$product_id = \wp_insert_post($product);
+
+		if (gettype($product_id) !== 'integer' || $product_id === 0) {
+			echo json_encode(array(
+				'error' => 'Fail to create new product.',
+			));
+			die();
+		}
 
 		// Update product slug as product_id => cleaner URL
 		$product['ID'] = $product_id;
@@ -91,11 +113,12 @@ class Taobao_URL {
 		\wp_update_post($product);
 
 		// Update product meta
+		// TODO: Calculate price with exchange rate.
 		\update_post_meta( $product_id, '_regular_price', $result->{'item'}->{'price'} );
 		\update_post_meta( $product_id, '_price', $result->{'item'}->{'price'} );
 		\update_post_meta( $product_id, '_visibility', 'visible' );
 
-		// Add product picture as attachment, and assign as product thumbnail
+		// Add product picture as attachment, and assign as product thumbnail.
 		$prod_pic = array(
 			'post_type'      => 'attachment',
 			'post_title'     => 'Picture for Product #' . $product_id,
@@ -106,13 +129,18 @@ class Taobao_URL {
 			'guid'           => $result->{'item'}->{'pic_url'},
 		);
 		$prod_pic_id = \wp_insert_post($prod_pic);
-		\update_post_meta( $product_id, '_thumbnail_id', $prod_pic_id );
+
+		// Continue upon error for product picture insertion.
+		if (gettype($product_id) === 'integer' && $product_id > 0) {
+			\update_post_meta( $product_id, '_thumbnail_id', $prod_pic_id );
+		}
 
 		echo json_encode(array(
 			'taobao'               => $result,
 			'exchangeRate'         => 6.0,
 			'domesticShippingCost' => 22,
-			'post_id'              => $post_id,
+			'product_id'           => $product_id,
+			'product_url'          => \get_permalink( $product_id ),
 		));
 
 		die();
@@ -130,7 +158,7 @@ class Taobao_URL {
 			$post_image_title = $post_image->post_title;
 			if (strlen($post_image_url) > 0) {
 				$image = sprintf('<img width="300" src="%s" class="attachment-shop_single wp-post-image" alt="%s">', $post_image_url, $post_image_title);
-				$result = sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image zoom" title="%s"  rel="prettyPhoto' . $gallery . '">%s</a>', $post_image_url, $post_image_title, $image );
+				$result = sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image zoom" title="%s"  rel="prettyPhoto">%s</a>', $post_image_url, $post_image_title, $image );
 			}
 		}
 
