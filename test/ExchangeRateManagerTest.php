@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__ . '/../ExchangeRateManager.php');
+require_once(__DIR__ . '/../src/lib/ExchangeRateManager.php');
 
 use daigou\ExchangeRateManager as ExchangeRateManager;
 

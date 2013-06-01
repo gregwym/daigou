@@ -1,18 +1,28 @@
 'use strict';
 
 var runTask = require('./grunt/runTask');
-
-var DIR_TARGET = 'target/';
+var Path = require('path');
 
 module.exports = function(grunt) {
+  var TARGET = grunt.option('target') || 'dev';
+  var DIR_TARGET = 'target/';
+  var DIR_THEMES = 'wp-content/themes/';
+  var DIR_PLUGINS = 'wp-content/plugins/';
+  var DIR_BUILD = DIR_TARGET + TARGET + '/';
+  var FILE_WP_CONFIG = 'src/wp-config.' + TARGET + '.php';
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     clean: [DIR_TARGET],
 
-    build: {
-      dev: {},
-      stage: {},
-      prod: {}
+    compass: {
+      all: {
+        options: {
+          sassDir: 'src/' + DIR_PLUGINS + 'daigou-plugin/sass/',
+          cssDir: DIR_BUILD + DIR_PLUGINS + 'daigou-plugin/css/',
+          outputStyle: TARGET === 'dev' ? 'expand' : 'compressed'
+        }
+      }
     }
   });
 
@@ -23,70 +33,102 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerMultiTask('build', function() {
-    var DIR_BUILD = DIR_TARGET + this.target + '/';
-    var DIR_BUILD_THEMES = DIR_BUILD + 'wp-content/themes/';
-    var DIR_BUILD_PLUGINS = DIR_BUILD + 'wp-content/plugins/';
-    var DIR_CONFIG = 'config/';
-    var FILE_WP_CONFIG = DIR_CONFIG + 'wp-config.' + this.target + '.php';
+  grunt.registerTask('auto-build', function() {
+    runTask('watch', {
+      files: ['src/' + DIR_PLUGINS + 'daigou-plugin/**'],
+      tasks: ['build-modified-files'],
+      options: {
+        nospawn: true
+      }
+    });
+  });
+
+  var modifiedFiles = [];
+  grunt.registerTask('build-modified-files', function() {
+    modifiedFiles.forEach(function(filePath) {
+      var ext = Path.extname(filePath);
+    
+      switch (ext) {
+        case '.scss':
+          grunt.task.run('compass');
+          break;
+        case '.php':
+        case '.js':
+          var parts = filePath.split(Path.sep);
+          var relativeParts = [];
+          for (var i = parts.length - 1; i >= 0; i--) {
+            var part = parts[i];
+            
+            if (part === 'src') {
+              break;
+            } else {
+              relativeParts.unshift(part);
+            }
+          }
+
+          var destPath = DIR_BUILD + relativeParts.join(Path.sep);
+          grunt.log.writeln('copying');
+          grunt.log.writeln(filePath);
+          grunt.log.writeln(destPath);
+          grunt.file.copy(filePath, destPath);
+          break;
+      }
+    });
+    modifiedFiles = [];
+  });
+
+  grunt.event.on('watch', function(_, filePath) {
+    modifiedFiles.push(filePath);
+  });
+
+  grunt.registerTask('build', function() {
+    
+    var filesToCopy = [];
 
     // init and update git submodules
     grunt.task.run('update_submodules');
 
-    // copy wordpress, woocommerce, mystile
-    if (!grunt.file.exists(DIR_BUILD)) {
-      grunt.log.writeln('copying wordpress');
-      runTask('copy', 
-        { expand: true, cwd: 'wordpress/', src: ['**'], dest: DIR_BUILD }
-      );
-    }
-
-    if (!grunt.file.exists(DIR_BUILD_PLUGINS + 'woocommerce/')) {
-      grunt.log.writeln('copying woocommerce');
-      runTask('copy', 
-        { src: ['woocommerce/**'], dest: DIR_BUILD_PLUGINS }
-      );
-    }
-
-    if (!grunt.file.exists(DIR_BUILD_THEMES + 'mystile')) {
-      grunt.log.writeln('copying mystile');
-      runTask('copy', 
-        { src: ['mystile/**'], dest: DIR_BUILD_THEMES }
-      );
-    }
-
     // copy config files
     if (grunt.file.exists(FILE_WP_CONFIG)) {
-      grunt.file.copy(FILE_WP_CONFIG, DIR_BUILD + 'wp-config.php');
+      filesToCopy.push(
+        { src: FILE_WP_CONFIG, dest: DIR_BUILD + 'wp-config.php' }
+      );
     } else {
       grunt.fail.warn('You need to add ' + FILE_WP_CONFIG); 
     }
 
+    // copy wordpress, woocommerce, mystile
+    if (!grunt.file.exists(DIR_BUILD)) {
+      filesToCopy.push(
+        { expand: true, cwd: 'wordpress/', src: ['**'], dest: DIR_BUILD },
+        { expand: true, cwd: 'src/' + DIR_PLUGINS + 'woocommerce/', src: ['**'], dest: DIR_BUILD + DIR_PLUGINS + 'woocommerce/' },
+        { expand: true, cwd: 'src/' + DIR_THEMES + 'mystile/', src: ['**'], dest: DIR_BUILD + DIR_THEMES + 'mystile/' }
+      );
+    }
+
     // copy PHP 
-    runTask('copy', { 
-      expand: true,
-      cwd: 'daigou-plugin/src/main/php/', 
-      src: ['**/*.php'], 
-      dest: DIR_BUILD_PLUGINS + 'daigou-plugin/'
-    });
+    filesToCopy.push(
+      {
+        expand: true,
+        cwd: 'src/' + DIR_PLUGINS + 'daigou-plugin/', 
+        src: ['**/*.php'], 
+        dest: DIR_BUILD + DIR_PLUGINS + 'daigou-plugin/'
+      }
+    );
 
     // compile Sass
-    runTask('compass', {
-      options: {
-        sassDir: 'daigou-plugin/src/main/sass/',
-        cssDir: DIR_BUILD_PLUGINS + 'daigou-plugin/css/',
-        outputStyle: this.target === 'dev' ? 'expand' : 'compressed'
-      }
-    });
+    grunt.task.run('compass');
 
     // compile JavaScript
-    if (this.target === 'dev') {
-      runTask('copy', { 
-        expand: true,
-        cwd: 'daigou-plugin/src/main/js/', 
-        src: ['**/*.js'], 
-        dest: DIR_BUILD_PLUGINS + 'daigou-plugin/js/'
-      });
+    if (TARGET === 'dev') {
+      filesToCopy.push(
+        { 
+          expand: true,
+          cwd: 'src/' + DIR_PLUGINS + 'daigou-plugin/js/', 
+          src: ['**/*.js'], 
+          dest: DIR_BUILD + DIR_PLUGINS + 'daigou-plugin/js/'
+        }
+      );
     } else {
       runTask('uglify', {
         options: {
@@ -95,24 +137,17 @@ module.exports = function(grunt) {
         },
         files: [{ 
           expand: true,
-          cwd: 'daigou-plugin/src/main/js/', 
+          cwd: 'src/' + DIR_PLUGINS + 'daigou-plugin/js/', 
           src: ['**/*.js'], 
-          dest: DIR_BUILD_PLUGINS + 'daigou-plugin/js/'
+          dest: DIR_BUILD + DIR_PLUGINS + 'daigou-plugin/js/'
         }]
       });
     }
 
-    // var tasks = this.data.tasks;
-    // tasks = tasks || {};
-    // Object.keys(tasks).forEach(function(taskName) {
-    //   var params = tasks[taskName];
-    //   if (params) {
-    //     runTask(taskName, tasks[taskName]);
-    //   } else {
-    //     grunt.task.run(taskName);
-    //   }
-    // });
+    runTask('copy', {
+      files: filesToCopy
+    });
   });
 
-  grunt.registerTask('default', ['build:dev']);
+  grunt.registerTask('default', ['build']);
 };

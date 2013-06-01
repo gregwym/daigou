@@ -14,10 +14,18 @@ Before deploying, remember to update the `wp-taobao-url` plugin to the latest ve
 
 ## Setup
 - `npm install`
-- Add `config/wp-config.dev.php`
-- Add `config/wp-config.stage.php`
+- Add `src/wp-config.dev.php`
+- Add `src/wp-config.stage.php`
 
-## Run
-	grunt build:dev
+## Build
+- `grunt build --target=dev` to trigger development build
+- `grunt build --target=staging` to trigger staging build
+- `grunt build --target=prod` to trigger production build
+
+## Debug
+	grunt build --target=dev
 	cd target/dev
 	php -S localhost:8000
+
+## Auto build (Modified files will be built automatically)
+	grunt auto-build --target=dev

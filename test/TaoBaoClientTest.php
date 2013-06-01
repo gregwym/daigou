@@ -2,7 +2,7 @@
 
 use daigou\TaoBaoClient as TaoBaoClient;
 
-require_once(__DIR__ . '/../TaoBaoClient.php');
+require_once(__DIR__ . '/../src/lib/TaoBaoClient.php');
 
 class TaoBaoClientTest extends PHPUnit_Framework_TestCase {
 
