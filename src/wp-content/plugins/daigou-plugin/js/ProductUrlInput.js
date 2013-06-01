@@ -1,4 +1,4 @@
-(function($, Uri, Configuration, Dom, ProductDetailBox) {
+(function($, Uri, Configuration, Dom) {
   var attr = Dom.getAttributeString;
   var DEFAULT_URL_TEXT = 'Paste in a TaoBao URL';
 
@@ -35,6 +35,7 @@
       var productId = query.id || query.mallstItemId;
 
       if (productId) {
+        // TODO: loading mask
         $.ajax(Configuration.ajaxUrl, {
           'type': 'POST',
           'data': {
@@ -43,23 +44,13 @@
           },
           'dataType': 'json',
           'success': function(data) {
-            var product = data.taobao.item;
-            if (product) {
-              // Found the product
-              var box = new ProductDetailBox({
-                name: product.title,
-                unitPrice: parseFloat(product.price),
-                picUrl: product.pic_url,
-                exchangeRate: data.exchangeRate,
-                domesticShippingCost: data.domesticShippingCost
-              });
-              $(id + ' .product-detail-box-container').html(box.createDom());
-              box.onDomCreated();
+            var url = data.productUrl;
+            if (url) {
+              window.location = url;
             } else {
-              // TODO: implement error handling
-              alert('Could not find the product');
+              // TODO: error handling
+              alert('We could not add the product to shopping cart, please try again');
             }
-            
           }
         });
       } else {
@@ -68,4 +59,4 @@
     });
   };
 
-})(jQuery, URI, window['daigou.Configuration'], window['daigou.Dom'], window['daigou.ProductDetailBox']);
+})(jQuery, URI, window['daigou.Configuration'], window['daigou.Dom']);

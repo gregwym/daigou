@@ -25,6 +25,7 @@ if (!ini_get('display_errors')) {
 class Taobao_URL {
 	public function __construct() {
 		add_action('wp_ajax_GetProductById', array($this, 'ajax_get_product_by_id'));
+		add_action('wp_ajax_nopriv_GetProductById', array($this, 'ajax_get_product_by_id'));
 		add_action('wp_enqueue_scripts', array($this, 'register_script'));
 
 		add_shortcode('taobao_url', array($this, 'add_taobao_url_textfield'));
@@ -45,13 +46,13 @@ class Taobao_URL {
 			'ajaxUrl' => admin_url('admin-ajax.php')
 		));
 
-		wp_register_script('daigou.ProductDetailBox', $jsDir . '/ProductDetailBox.js', array('jquery', 'daigou.Dom'));
-		wp_register_script('daigou.ProductUrlInput', $jsDir . '/ProductUrlInput.js', array('jquery', 'daigou.Dom', 'daigou.Configuration', 'URI', 'daigou.ProductDetailBox'));
+		wp_register_script('daigou.ProductUrlInput', $jsDir . '/ProductUrlInput.js', array('jquery', 'daigou.Dom', 'daigou.Configuration', 'URI'));
 		wp_enqueue_script('daigou.add-product-page', $jsDir . '/add-product-page.js', array('jquery', 'daigou.ProductUrlInput'));
 	}
 
 	public function ajax_get_product_by_id() {
 		require_once(__DIR__ . '/lib/TaoBaoClient.php');
+		require_once(__DIR__ . '/lib/ExchangeRateManager.php');
 
 		$id = intval($_POST['id']);
 		// TODO: fetch the exchange rate
@@ -113,9 +114,11 @@ class Taobao_URL {
 		\wp_update_post($product);
 
 		// Update product meta
-		// TODO: Calculate price with exchange rate.
-		\update_post_meta( $product_id, '_regular_price', $result->{'item'}->{'price'} );
-		\update_post_meta( $product_id, '_price', $result->{'item'}->{'price'} );
+		$price_in_rmb = (float) $result->{'item'}->{'price'};
+		$exchange_rate = max(1, ExchangeRateManager::get_rate_from_cad_to_rmb() - 0.3);
+		$price_in_cad = round($price_in_rmb / $exchange_rate, 2);
+		\update_post_meta( $product_id, '_regular_price', $price_in_cad );
+		\update_post_meta( $product_id, '_price', $price_in_cad );
 		\update_post_meta( $product_id, '_visibility', 'visible' );
 
 		// Add product picture as attachment, and assign as product thumbnail.
@@ -136,11 +139,7 @@ class Taobao_URL {
 		}
 
 		echo json_encode(array(
-			'taobao'               => $result,
-			'exchangeRate'         => 6.0,
-			'domesticShippingCost' => 22,
-			'product_id'           => $product_id,
-			'product_url'          => \get_permalink( $product_id ),
+			'productUrl' => \get_permalink( $product_id ),
 		));
 
 		die();
