@@ -47,7 +47,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build-modified-files', function() {
     modifiedFiles.forEach(function(filePath) {
       var ext = Path.extname(filePath);
-    
+
       switch (ext) {
         case '.scss':
           grunt.task.run('compass');
@@ -58,7 +58,7 @@ module.exports = function(grunt) {
           var relativeParts = [];
           for (var i = parts.length - 1; i >= 0; i--) {
             var part = parts[i];
-            
+
             if (part === 'src') {
               break;
             } else {
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('build', function() {
-    
+
     var filesToCopy = [];
 
     // init and update git submodules
@@ -91,10 +91,12 @@ module.exports = function(grunt) {
     // copy config files
     if (grunt.file.exists(FILE_WP_CONFIG)) {
       filesToCopy.push(
-        { src: FILE_WP_CONFIG, dest: DIR_BUILD + 'wp-config.php' }
+        { src: FILE_WP_CONFIG, dest: DIR_BUILD + 'wp-config.php' },
+        { src: 'src/wp-salt.php', dest: DIR_BUILD + 'wp-salt.php' },
+        { expand: true, cwd: 'src/', src: ['**/.htaccess'], dest: DIR_BUILD }
       );
     } else {
-      grunt.fail.warn('You need to add ' + FILE_WP_CONFIG); 
+      grunt.fail.warn('You need to add ' + FILE_WP_CONFIG);
     }
 
     // copy wordpress, woocommerce, mystile
@@ -106,12 +108,12 @@ module.exports = function(grunt) {
       );
     }
 
-    // copy PHP 
+    // copy PHP
     filesToCopy.push(
       {
         expand: true,
-        cwd: 'src/' + DIR_PLUGINS + 'daigou-plugin/', 
-        src: ['**/*.php'], 
+        cwd: 'src/' + DIR_PLUGINS + 'daigou-plugin/',
+        src: ['**/*.php'],
         dest: DIR_BUILD + DIR_PLUGINS + 'daigou-plugin/'
       }
     );
@@ -122,10 +124,10 @@ module.exports = function(grunt) {
     // compile JavaScript
     if (TARGET === 'dev') {
       filesToCopy.push(
-        { 
+        {
           expand: true,
-          cwd: 'src/' + DIR_PLUGINS + 'daigou-plugin/js/', 
-          src: ['**/*.js'], 
+          cwd: 'src/' + DIR_PLUGINS + 'daigou-plugin/js/',
+          src: ['**/*.js'],
           dest: DIR_BUILD + DIR_PLUGINS + 'daigou-plugin/js/'
         }
       );
@@ -135,10 +137,10 @@ module.exports = function(grunt) {
           compress: true,
           report: 'min'
         },
-        files: [{ 
+        files: [{
           expand: true,
-          cwd: 'src/' + DIR_PLUGINS + 'daigou-plugin/js/', 
-          src: ['**/*.js'], 
+          cwd: 'src/' + DIR_PLUGINS + 'daigou-plugin/js/',
+          src: ['**/*.js'],
           dest: DIR_BUILD + DIR_PLUGINS + 'daigou-plugin/js/'
         }]
       });
