@@ -1,11 +1,6 @@
-# Diggos.ca
+# daigouge.com
 
-This WordPress app has been customized for Diggos.ca. It integrated WooCommerce plugin and Mystile theme. 
-
-Before deploying, remember to update the `wp-taobao-url` plugin to the latest version by
-
-	cd wp-taobao-url
-	git pull
+This WordPress has been customized for daigouge.ca. It integrated WooCommerce plugin and Mystile theme. 
 
 ## Requirements
 - Install [Node.js](http://nodejs.org/)
@@ -29,3 +24,4 @@ Before deploying, remember to update the `wp-taobao-url` plugin to the latest ve
 
 ## Auto build (Modified files will be built automatically)
 	grunt auto-build --target=dev
+
