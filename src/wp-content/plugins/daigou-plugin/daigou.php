@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Taobao_URL
+ * @package Daigou
  * @version 0.1
  */
 /*
@@ -17,12 +17,7 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 	die ( 'You do not have sufficient permissions to access this page!' );
 }
 
-// Enable display_errors for debug
-if (!ini_get('display_errors')) {
-	ini_set('display_errors', '1');
-}
-
-class Taobao_URL {
+class Daigou {
 	public function __construct() {
 		add_action('wp_ajax_GetProductById', array($this, 'ajax_get_product_by_id'));
 		add_action('wp_enqueue_scripts', array($this, 'register_script'));
@@ -166,4 +161,4 @@ class Taobao_URL {
 	}
 }
 
-$wpTaobaURL = new Taobao_URL();
+$wpDaigou = new Daigou();
