@@ -7,4 +7,3 @@ define('AUTH_SALT',        'KB#SyqEsB9}*MM|i/-.G+PR*V-@UBXsBFV4c~!Ag`+QM0HRxltD^
 define('SECURE_AUTH_SALT', '3~OksgDM~-V@K|9jghw&,N*4inN_&)|D|!f-dY.|T{y9$<C94%6-PS?+;Y$=Rk+{');
 define('LOGGED_IN_SALT',   '-W(>Bc5s]+q]5:EW4!u.9d^AW1DEjxTB:~}n,dh[Zg^kU2A-(-Kj5A$Y=0563_l{');
 define('NONCE_SALT',       '2Yg+;y=0*_{_l4hY[:i#K_JUtB#U#{t<3zq&~Ga3g3H#~QK**|2FH|bkKv*?} TV');
-
