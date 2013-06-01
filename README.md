@@ -12,16 +12,12 @@ Before deploying, remember to update the `wp-taobao-url` plugin to the latest ve
 - Install [Grunt](http://gruntjs.com/)
 - Install [Compass](http://compass-style.org/)
 
-## Setup (You only need to run this once)
-	npm install
-	grunt setup
-
-## Build
-- `grunt build:dev` to build for development, JavaScript and CSS files will be unminified
-- `grunt build:prod` to build for production, JavaScript and CSS files will be minified
+## Setup
+- `npm install`
+- Add `config/wp-config.dev.php`
+- Add `config/wp-config.stage.php`
 
 ## Run
 	grunt build:dev
-	cd target
+	cd target/dev
 	php -S localhost:8000
- 

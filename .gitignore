@@ -5,6 +5,10 @@ tmp/
 sitemap.xml.gz
 .DS_Store
 
+# WordPress
+wp-config.dev.php
+wp-config.stage.php
+
 # Sass
 .sass-cache
 
