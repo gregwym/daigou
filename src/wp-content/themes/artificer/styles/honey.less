@@ -1,0 +1,31 @@
+@import url(../style.less);
+@import url(../css/layout.less);
+@import url(../css/mixins.less);
+
+@color_theme: #e7a206; // Main theme color
+@color_links: #e7a206; // Links 
+@color_body: darken(desaturate(@bg_light,5%),50%); // Body Copy
+
+// Borders
+@border_main: darken(@bg_light,10%); // The 1px grey rules used throughout the WF
+
+// Backgrounds
+@bg_light: #f7f4ee;
+
+// Images
+@img_path: "../images";
+
+// Typefaces
+@typeface_path: "../typefaces";
+
+body, html, #navigation, .widget, #sidebar .widget, #footer-widgets, .post, .type-page, .home #sidebar .tweet, .home #sidebar .phone, .home #sidebar .email {
+	background-image: none;
+}
+
+body {
+	background-image: url("@{img_path}/honey/body.png");
+}
+
+#sidebar .widget:after, #sidebar .widget:before, ul.products li.product .img-wrap:before { 
+	display: none;
+}
