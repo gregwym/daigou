@@ -34,6 +34,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('auto-build', function() {
+    grunt.task.run('build');
     runTask('watch', {
       files: ['src/' + DIR_PLUGINS + 'daigou-plugin/**'],
       tasks: ['build-modified-files'],
