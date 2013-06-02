@@ -99,12 +99,12 @@ module.exports = function(grunt) {
       grunt.fail.warn('You need to add ' + FILE_WP_CONFIG);
     }
 
-    // copy wordpress, woocommerce, mystile
+    // copy wordpress, woocommerce, mystile, artificer
     if (!grunt.file.exists(DIR_BUILD)) {
       filesToCopy.push(
         { expand: true, cwd: 'wordpress/', src: ['**'], dest: DIR_BUILD },
-        { expand: true, cwd: 'src/' + DIR_PLUGINS + 'woocommerce/', src: ['**'], dest: DIR_BUILD + DIR_PLUGINS + 'woocommerce/' },
-        { expand: true, cwd: 'src/' + DIR_THEMES + 'mystile/', src: ['**'], dest: DIR_BUILD + DIR_THEMES + 'mystile/' }
+        { expand: true, cwd: 'src/' + DIR_PLUGINS, src: ['woocommerce/**'], dest: DIR_BUILD + DIR_PLUGINS },
+        { expand: true, cwd: 'src/' + DIR_THEMES, src: ['mystile/**', 'artificer/**'], dest: DIR_BUILD + DIR_THEMES }
       );
     }
 
