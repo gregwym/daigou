@@ -115,8 +115,8 @@ class Daigou {
 		$price_in_cad = round($price_in_rmb / $exchange_rate, 2);
 		\update_post_meta( $product_id, '_regular_price', $price_in_cad );
 		\update_post_meta( $product_id, '_price', $price_in_cad );
-		\update_post_meta( $product_id, '_visibility', 'visible' );
 		\update_post_meta( $product_id, '_layout', 'layout-full' );
+		\update_post_meta( $product_id, '_visibility', 'hidden' );
 
 		// Add product picture as attachment, and assign as product thumbnail.
 		$prod_pic = array(
