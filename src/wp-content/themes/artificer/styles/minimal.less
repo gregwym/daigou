@@ -1,0 +1,27 @@
+@import url(../style.less);
+@import url(../css/layout.less);
+@import url(../css/mixins.less);
+
+@color_theme: #777; // Main theme color
+@color_links: lighten(@color_theme,10%); // Links 
+@color_body: darken(desaturate(@bg_light,5%),50%); // Body Copy
+
+// Borders
+@border_main: darken(@bg_light,10%); // The 1px grey rules used throughout the WF
+
+// Backgrounds
+@bg_light: #ececec;
+
+// Images
+@img_path: "../images";
+
+// Typefaces
+@typeface_path: "../typefaces";
+
+body, html, #navigation, #top, .widget, #sidebar .widget, #footer-widgets, .post, .type-page, .home #sidebar .tweet, .home #sidebar .phone, .home #sidebar .email, a.button, #commentform #submit, .submit, input[type="submit"], input.button, button.button, .woo-pagination a {
+	background-image: none;
+}
+
+#sidebar .widget:after, #sidebar .widget:before { 
+	display: none;
+}

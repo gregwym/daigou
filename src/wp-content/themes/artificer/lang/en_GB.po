@@ -1,0 +1,2655 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Artificer v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-06-06 11:35:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:12
+#@ woothemes
+msgid "Error 404 - Page not found!"
+msgstr ""
+
+#: 404.php:15
+#@ woothemes
+msgid "The page you trying to reach does not exist, or has been moved. Please use the menus or the search box to find what you are looking for."
+msgstr ""
+
+#: archive.php:13
+#: archive.php:19
+#: archive.php:24
+#: archive.php:29
+#@ woothemes
+msgid "Archive"
+msgstr ""
+
+#: archive.php:14
+#@ woothemes
+msgid "RSS feed for this section"
+msgstr ""
+
+#: archive.php:34
+#@ woothemes
+msgid "Archive by Author"
+msgstr ""
+
+#: archive.php:39
+#@ woothemes
+msgid "Tag Archives:"
+msgstr ""
+
+#: archive.php:69
+#: index.php:105
+#: page.php:52
+#: search.php:47
+#: single.php:94
+#: template-blog.php:86
+#: template-fullwidth.php:43
+#@ woothemes
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: comments.php:19
+#@ woothemes
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: comments.php:31
+#@ woothemes
+msgid "No Responses"
+msgstr ""
+
+#: comments.php:31
+#@ woothemes
+msgid "One Response"
+msgstr ""
+
+#: comments.php:31
+#@ woothemes
+msgid "% Responses"
+msgstr ""
+
+#: comments.php:31
+#@ woothemes
+msgid "to"
+msgstr ""
+
+#: comments.php:47
+#@ woothemes
+msgid "Trackbacks/Pingbacks"
+msgstr ""
+
+#: comments.php:64
+#@ woothemes
+msgid "No comments yet."
+msgstr ""
+
+#: content.php:41
+#: content.php:47
+#: template-blog.php:74
+#@ woothemes
+msgid "Continue Reading &rarr;"
+msgstr ""
+
+#: content.php:46
+#: template-blog.php:72
+#: template-timeline.php:82
+#@ woothemes
+msgid "Leave a comment"
+msgstr ""
+
+#: content.php:46
+#: template-blog.php:72
+#@ woothemes
+msgid "1 Comment"
+msgstr ""
+
+#: content.php:46
+#: template-blog.php:72
+#@ woothemes
+msgid "% Comments"
+msgstr ""
+
+#: content.php:47
+#@ woothemes
+msgid "Continue Reading"
+msgstr ""
+
+#: footer.php:48
+#@ woothemes
+msgid "All Rights Reserved."
+msgstr ""
+
+#: footer.php:58
+#@ woothemes
+msgid "Powered by"
+msgstr ""
+
+#: footer.php:58
+#@ woothemes
+msgid "Designed by"
+msgstr ""
+
+#: functions/admin-backup.php:73
+#@ woothemes
+msgid "WooThemes Settings Backup"
+msgstr ""
+
+#: functions/admin-backup.php:73
+#: functions/admin-backup.php:103
+#: functions/admin-framework-settings.php:53
+#@ woothemes
+msgid "Backup Settings"
+msgstr ""
+
+#: functions/admin-backup.php:105
+#@ woothemes
+msgid "Import Settings"
+msgstr ""
+
+#: functions/admin-backup.php:107
+#@ woothemes
+msgid "If you have settings in a backup file on your computer, the WooFramework can import those into this site. To get started, upload your backup file to import from below."
+msgstr ""
+
+#: functions/admin-backup.php:112
+#, php-format
+#@ woothemes
+msgid "Upload File: (Maximum Size: %s)"
+msgstr ""
+
+#: functions/admin-backup.php:115
+#@ woothemes
+msgid "Upload File and Import"
+msgstr ""
+
+#: functions/admin-backup.php:119
+#@ woothemes
+msgid "Export Settings"
+msgstr ""
+
+#: functions/admin-backup.php:121
+#@ woothemes
+msgid "When you click the button below, the WooFramework will create a text file for you to save to your computer."
+msgstr ""
+
+#: functions/admin-backup.php:122
+#, php-format
+#@ woothemes
+msgid "This text file can be used to restore your settings here on \"%s\", or to easily setup another website with the same settings\"."
+msgstr ""
+
+#: functions/admin-backup.php:126
+#@ woothemes
+msgid "All Settings"
+msgstr ""
+
+#: functions/admin-backup.php:127
+#@ woothemes
+msgid "This will contain all of the options listed below."
+msgstr ""
+
+#: functions/admin-backup.php:129
+#: functions/admin-functions.php:3264
+#: functions/admin-interface.php:187
+#@ woothemes
+msgid "Theme Options"
+msgstr ""
+
+#: functions/admin-backup.php:131
+#@ woothemes
+msgid "SEO Settings"
+msgstr ""
+
+#: functions/admin-backup.php:133
+#: functions/admin-framework-settings.php:47
+#: functions/admin-functions.php:3268
+#@ woothemes
+msgid "Sidebar Manager"
+msgstr ""
+
+#: functions/admin-backup.php:133
+#@ woothemes
+msgid "This will contain only the custom sidebars themselves and not the widgets within them"
+msgstr ""
+
+#: functions/admin-backup.php:135
+#: functions/admin-functions.php:3274
+#: functions/admin-interface.php:192
+#@ woothemes
+msgid "Framework Settings"
+msgstr ""
+
+#: functions/admin-backup.php:138
+#@ woothemes
+msgid "Download Export File"
+msgstr ""
+
+#: functions/admin-backup.php:161
+#@ woothemes
+msgid "Welcome to the WooThemes Backup Manager."
+msgstr ""
+
+#: functions/admin-backup.php:162
+#@ woothemes
+msgid "Here are a few notes on using this screen."
+msgstr ""
+
+#: functions/admin-backup.php:163
+#@ woothemes
+msgid "The backup manager allows you to backup or restore your \"Theme Options\" and other settings to or from a text file."
+msgstr ""
+
+#: functions/admin-backup.php:164
+#@ woothemes
+msgid "To create a backup, simply select the setting type you'd like to backup (or \"All Settings\") and hit the \"Download Export File\" button."
+msgstr ""
+
+#: functions/admin-backup.php:165
+#@ woothemes
+msgid "To restore your settings from a backup, browse your computer for the file (under the \"Import Settings\" heading) and hit the \"Upload File and Import\" button. This will restore only the settings that have changed since the backup."
+msgstr ""
+
+#: functions/admin-backup.php:167
+#@ woothemes
+msgid "Please note that only valid backup files generated through the WooThemes Backup Manager should be imported."
+msgstr ""
+
+#: functions/admin-backup.php:169
+#@ woothemes
+msgid "Looking for assistance?"
+msgstr ""
+
+#: functions/admin-backup.php:170
+#, php-format
+#@ woothemes
+msgid "Please post your query on the %sWooThemes Support Forums%s where we will do our best to assist you further."
+msgstr ""
+
+#: functions/admin-backup.php:190
+#, php-format
+#@ woothemes
+msgid "Please note that this backup manager backs up only your settings and not your content. To backup your content, please use the %sWordPress Export Tool%s."
+msgstr ""
+
+#: functions/admin-backup.php:193
+#@ woothemes
+msgid "There was a problem importing your settings. Please Try again."
+msgstr ""
+
+#: functions/admin-backup.php:195
+#@ woothemes
+msgid "There was a problem exporting your settings. Please Try again."
+msgstr ""
+
+#: functions/admin-backup.php:197
+#@ woothemes
+msgid "The import file you've provided is invalid. Please try again."
+msgstr ""
+
+#: functions/admin-backup.php:199
+#, php-format
+#@ woothemes
+msgid "Settings successfully imported. | Return to %sTheme Options%s"
+msgstr ""
+
+#: functions/admin-custom-nav.php:2125
+#@ woothemes
+msgid "Woo - Custom Nav Menu"
+msgstr ""
+
+#: functions/admin-custom-nav.php:2314
+#@ woothemes
+msgid "Select Menu:"
+msgstr ""
+
+#: functions/admin-custom-nav.php:2340
+#: includes/widgets/widget-woo-blogauthor.php:65
+#: includes/widgets/widget-woo-embed.php:95
+#: includes/widgets/widget-woo-search.php:48
+#@ woothemes
+msgid "Title:"
+msgstr ""
+
+#: functions/admin-custom-nav.php:2349
+#@ woothemes
+msgid "Advanced Options:"
+msgstr ""
+
+#: functions/admin-custom-nav.php:2369
+#@ woothemes
+msgid "Wrap in container DIV:"
+msgstr ""
+
+#: functions/admin-custom-nav.php:2382
+#@ woothemes
+msgid "Wrap in container UL:"
+msgstr ""
+
+#: functions/admin-custom-nav.php:2397
+#@ woothemes
+msgid "Show Top Level Descriptions:"
+msgstr ""
+
+#: functions/admin-custom-nav.php:2417
+#@ woothemes
+msgid "The Custom Menu has not been configured correctly.  Please check your theme settings before adding this widget."
+msgstr ""
+
+#: functions/admin-custom.php:85
+#: includes/theme-options.php:49
+#: includes/theme-options.php:70
+#@ woothemes
+msgid "General Settings"
+msgstr ""
+
+#: functions/admin-custom.php:88
+#: functions/admin-framework-settings.php:41
+#@ woothemes
+msgid "SEO"
+msgstr ""
+
+#: functions/admin-custom.php:406
+#: functions/admin-interface.php:1446
+#@ woothemes
+msgid "@"
+msgstr ""
+
+#: functions/admin-custom.php:624
+#@ woothemes
+msgid " Custom Settings"
+msgstr ""
+
+#: functions/admin-express-functions-deprecated.php:194
+#: functions/admin-express-functions.php:210
+#@ woothemes
+msgid "You are not allowed to upload files to this site."
+msgstr ""
+
+#: functions/admin-express-functions-deprecated.php:220
+#: functions/admin-express-functions.php:236
+#, php-format
+#@ woothemes
+msgid "Could not write file %1$s (%2$s)"
+msgstr ""
+
+#: functions/admin-framework-settings.php:29
+#@ woothemes
+msgid "Admin Settings"
+msgstr ""
+
+#: functions/admin-framework-settings.php:33
+#@ woothemes
+msgid "Super User (username)"
+msgstr ""
+
+#: functions/admin-framework-settings.php:34
+#, php-format
+#@ woothemes
+msgid "Enter your %s to hide the Framework Settings and Update Framework from other users. Can be reset from the %s under %s."
+msgstr ""
+
+#: functions/admin-framework-settings.php:34
+#@ woothemes
+msgid "username"
+msgstr ""
+
+#: functions/admin-framework-settings.php:34
+#@ woothemes
+msgid "WP options page"
+msgstr ""
+
+#: functions/admin-framework-settings.php:40
+#@ woothemes
+msgid "Disable SEO Menu Item"
+msgstr ""
+
+#: functions/admin-framework-settings.php:41
+#: functions/admin-framework-settings.php:47
+#: functions/admin-framework-settings.php:53
+#: functions/admin-framework-settings.php:59
+#, php-format
+#@ woothemes
+msgid "Disable the %s menu item in the theme menu."
+msgstr ""
+
+#: functions/admin-framework-settings.php:46
+#@ woothemes
+msgid "Disable Sidebar Manager Menu Item"
+msgstr ""
+
+#: functions/admin-framework-settings.php:52
+#@ woothemes
+msgid "Disable Backup Settings Menu Item"
+msgstr ""
+
+#: functions/admin-framework-settings.php:58
+#@ woothemes
+msgid "Disable Buy Themes Menu Item"
+msgstr ""
+
+#: functions/admin-framework-settings.php:59
+#: functions/admin-interface.php:234
+#@ woothemes
+msgid "Buy Themes"
+msgstr ""
+
+#: functions/admin-framework-settings.php:64
+#@ woothemes
+msgid "Enable Custom Navigation"
+msgstr ""
+
+#: functions/admin-framework-settings.php:65
+#, php-format
+#@ woothemes
+msgid "Enable the old %s menu item. Try to use %s instead, as this function is outdated."
+msgstr ""
+
+#: functions/admin-framework-settings.php:65
+#@ woothemes
+msgid "Custom Navigation"
+msgstr ""
+
+#: functions/admin-framework-settings.php:65
+#@ woothemes
+msgid "WP Menus"
+msgstr ""
+
+#: functions/admin-framework-settings.php:70
+#@ woothemes
+msgid "Theme Update Notification"
+msgstr ""
+
+#: functions/admin-framework-settings.php:71
+#@ woothemes
+msgid "This will enable notices on your theme options page that there is an update available for your theme."
+msgstr ""
+
+#: functions/admin-framework-settings.php:76
+#@ woothemes
+msgid "WooFramework Update Notification"
+msgstr ""
+
+#: functions/admin-framework-settings.php:77
+#@ woothemes
+msgid "This will enable notices on your theme options page that there is an update available for the WooFramework."
+msgstr ""
+
+#: functions/admin-framework-settings.php:82
+#@ woothemes
+msgid "Theme Settings"
+msgstr ""
+
+#: functions/admin-framework-settings.php:86
+#@ woothemes
+msgid "Remove Generator Meta Tags"
+msgstr ""
+
+#: functions/admin-framework-settings.php:87
+#@ woothemes
+msgid "This disables the output of generator meta tags in the HEAD section of your site."
+msgstr ""
+
+#: functions/admin-framework-settings.php:92
+#@ woothemes
+msgid "Image Placeholder"
+msgstr ""
+
+#: functions/admin-framework-settings.php:93
+#@ woothemes
+msgid "Set a default image placeholder for your thumbnails. Use this if you want a default image to be shown if you haven't added a custom image to your post."
+msgstr ""
+
+#: functions/admin-framework-settings.php:98
+#@ woothemes
+msgid "Disable Shortcodes Stylesheet"
+msgstr ""
+
+#: functions/admin-framework-settings.php:99
+#@ woothemes
+msgid "This disables the output of shortcodes.css in the HEAD section of your site."
+msgstr ""
+
+#: functions/admin-framework-settings.php:104
+#@ woothemes
+msgid "Output \"Tracking Code\" Option in Header"
+msgstr ""
+
+#: functions/admin-framework-settings.php:105
+#, php-format
+#@ woothemes
+msgid "This will output the %s option in your header instead of the footer of your website."
+msgstr ""
+
+#: functions/admin-framework-settings.php:105
+#: includes/theme-options.php:87
+#@ woothemes
+msgid "Tracking Code"
+msgstr ""
+
+#: functions/admin-framework-settings.php:110
+#@ woothemes
+msgid "Branding"
+msgstr ""
+
+#: functions/admin-framework-settings.php:114
+#@ woothemes
+msgid "Options panel header"
+msgstr ""
+
+#: functions/admin-framework-settings.php:115
+#@ woothemes
+msgid "Change the header image for the WooThemes Backend."
+msgstr ""
+
+#: functions/admin-framework-settings.php:120
+#@ woothemes
+msgid "Options panel icon"
+msgstr ""
+
+#: functions/admin-framework-settings.php:121
+#@ woothemes
+msgid "Change the icon image for the WordPress backend sidebar."
+msgstr ""
+
+#: functions/admin-framework-settings.php:126
+#@ woothemes
+msgid "WordPress login logo"
+msgstr ""
+
+#: functions/admin-framework-settings.php:127
+#@ woothemes
+msgid "Change the logo image for the WordPress login page."
+msgstr ""
+
+#: functions/admin-framework-settings.php:132
+#@ woothemes
+msgid "WordPress login URL"
+msgstr ""
+
+#: functions/admin-framework-settings.php:133
+#@ woothemes
+msgid "Change the URL that the logo image on the WordPress login page links to."
+msgstr ""
+
+#: functions/admin-framework-settings.php:139
+#@ woothemes
+msgid "WordPress login logo Title"
+msgstr ""
+
+#: functions/admin-framework-settings.php:140
+#@ woothemes
+msgid "Change the title of the logo image on the WordPress login page."
+msgstr ""
+
+#: functions/admin-framework-settings.php:165
+#@ woothemes
+msgid "WordPress Toolbar"
+msgstr ""
+
+#: functions/admin-framework-settings.php:169
+#@ woothemes
+msgid "Disable WordPress Toolbar"
+msgstr ""
+
+#: functions/admin-framework-settings.php:170
+#@ woothemes
+msgid "Disable the WordPress Toolbar."
+msgstr ""
+
+#: functions/admin-framework-settings.php:175
+#@ woothemes
+msgid "Enable the WooFramework Toolbar enhancements"
+msgstr ""
+
+#: functions/admin-framework-settings.php:176
+#@ woothemes
+msgid "Enable several WooFramework-specific enhancements to the WordPress Toolbar, such as custom navigation items for \"Theme Options\"."
+msgstr ""
+
+#: functions/admin-framework-settings.php:185
+#@ woothemes
+msgid "PressTrends"
+msgstr ""
+
+#: functions/admin-framework-settings.php:189
+#@ woothemes
+msgid "Enable PressTrends Tracking"
+msgstr ""
+
+#: functions/admin-framework-settings.php:190
+#@ woothemes
+msgid "Enable sending of usage data to PressTrends."
+msgstr ""
+
+#: functions/admin-framework-settings.php:195
+#@ woothemes
+msgid "What is PressTrends?"
+msgstr ""
+
+#: functions/admin-framework-settings.php:198
+#, php-format
+#@ woothemes
+msgid "PressTrends is a simple usage tracker that allows us to see how our customers are using WooThemes themes - so that we can help improve them for you. %sNone%s of your personal data is sent to PressTrends.%sFor more information, please view the PressTrends %s."
+msgstr ""
+
+#: functions/admin-framework-settings.php:198
+#@ woothemes
+msgid "privacy policy"
+msgstr ""
+
+#: functions/admin-framework-settings.php:207
+#: functions/admin-interface.php:345
+#@ woothemes
+msgid "Options Updated"
+msgstr ""
+
+#: functions/admin-framework-settings.php:208
+#: functions/admin-interface.php:346
+#@ woothemes
+msgid "Options Reset"
+msgstr ""
+
+#: functions/admin-framework-settings.php:236
+#, php-format
+#@ woothemes
+msgid "Framework %s"
+msgstr ""
+
+#: functions/admin-framework-settings.php:242
+#: functions/admin-interface.php:384
+#@ woothemes
+msgid "View Changelog"
+msgstr ""
+
+#: functions/admin-framework-settings.php:243
+#: functions/admin-interface.php:385
+#@ woothemes
+msgid "View Themedocs"
+msgstr ""
+
+#: functions/admin-framework-settings.php:244
+#: functions/admin-interface.php:386
+#@ woothemes
+msgid "Visit Forum"
+msgstr ""
+
+#: functions/admin-framework-settings.php:245
+#: functions/admin-framework-settings.php:263
+#@ woothemes
+msgid "Working..."
+msgstr ""
+
+#: functions/admin-framework-settings.php:245
+#: functions/admin-framework-settings.php:264
+#@ woothemes
+msgid "Save All Changes"
+msgstr ""
+
+#: functions/admin-framework-settings.php:285
+#@ woothemes
+msgid "Reset Options"
+msgstr ""
+
+#: functions/admin-framework-settings.php:285
+#@ woothemes
+msgid "Click OK to reset. Any settings will be lost!"
+msgstr ""
+
+#: functions/admin-functions.php:1052
+#@ woothemes
+msgid "less than a minute ago"
+msgstr ""
+
+#: functions/admin-functions.php:1054
+#@ woothemes
+msgid "about a minute ago"
+msgstr ""
+
+#: functions/admin-functions.php:1056
+#@ woothemes
+msgid "minutes ago"
+msgstr ""
+
+#: functions/admin-functions.php:1060
+#@ woothemes
+msgid "hours ago"
+msgstr ""
+
+#: functions/admin-functions.php:1064
+#@ woothemes
+msgid "days ago"
+msgstr ""
+
+#: functions/admin-functions.php:1550
+#, php-format
+#@ woothemes
+msgid "Page %s"
+msgstr ""
+
+#: functions/admin-functions.php:1666
+#@ woothemes
+msgid "Search Results"
+msgstr ""
+
+#: functions/admin-functions.php:1667
+#@ woothemes
+msgid "Author Archives"
+msgstr ""
+
+#: functions/admin-functions.php:1670
+#@ woothemes
+msgid "Category Archive"
+msgstr ""
+
+#: functions/admin-functions.php:1671
+#: functions/admin-functions.php:1676
+#@ woothemes
+msgid " Archive"
+msgstr ""
+
+#: functions/admin-functions.php:1672
+#@ woothemes
+msgid "Daily Archive"
+msgstr ""
+
+#: functions/admin-functions.php:1673
+#@ woothemes
+msgid "Monthly Archive"
+msgstr ""
+
+#: functions/admin-functions.php:1674
+#@ woothemes
+msgid "Yearly Archive"
+msgstr ""
+
+#: functions/admin-functions.php:1675
+#@ woothemes
+msgid "Tag Archive"
+msgstr ""
+
+#: functions/admin-functions.php:2476
+#@ woothemes
+msgid "More WooThemes"
+msgstr ""
+
+#: functions/admin-functions.php:2478
+#@ woothemes
+msgid "Join the WooThemes Club"
+msgstr ""
+
+#: functions/admin-functions.php:2479
+#@ woothemes
+msgid "Themes Gallery"
+msgstr ""
+
+#: functions/admin-functions.php:2480
+#@ woothemes
+msgid "Theme Showcase"
+msgstr ""
+
+#: functions/admin-functions.php:2496
+#, php-format
+#@ woothemes
+msgid "An error has occured with the RSS feed. (%s)"
+msgstr ""
+
+#: functions/admin-functions.php:2665
+#@ woothemes
+msgid "&laquo; Previous"
+msgstr ""
+
+#: functions/admin-functions.php:2666
+#@ woothemes
+msgid "Next &raquo;"
+msgstr ""
+
+#: functions/admin-functions.php:2793
+#@ woothemes
+msgid "You are here:"
+msgstr ""
+
+#: functions/admin-functions.php:2796
+#: header.php:93
+#: includes/theme-functions.php:579
+#: includes/theme-woocommerce.php:224
+#@ woothemes
+#@ default
+msgid "Home"
+msgstr ""
+
+#: functions/admin-functions.php:2961
+#@ woothemes
+msgid "g:i a"
+msgstr ""
+
+#: functions/admin-functions.php:2964
+#, php-format
+#@ woothemes
+msgid "Minute %1$s"
+msgstr ""
+
+#: functions/admin-functions.php:2964
+#@ woothemes
+msgid "i"
+msgstr ""
+
+#: functions/admin-functions.php:2967
+#@ woothemes
+msgid "g a"
+msgstr ""
+
+#: functions/admin-functions.php:2978
+#: functions/admin-functions.php:2984
+#: functions/admin-functions.php:2989
+#: functions/admin-functions.php:2994
+#@ woothemes
+msgid "Y"
+msgstr ""
+
+#: functions/admin-functions.php:2979
+#: functions/admin-functions.php:2990
+#@ woothemes
+msgid "F"
+msgstr ""
+
+#: functions/admin-functions.php:2980
+#@ woothemes
+msgid "j"
+msgstr ""
+
+#: functions/admin-functions.php:2985
+#, php-format
+#@ woothemes
+msgid "Week %1$s"
+msgstr ""
+
+#: functions/admin-functions.php:2985
+#@ woothemes
+msgid "W"
+msgstr ""
+
+#: functions/admin-functions.php:3001
+#, php-format
+#@ woothemes
+msgid "Search results for &quot;%1$s&quot;"
+msgstr ""
+
+#: functions/admin-functions.php:3005
+#@ woothemes
+msgid "404 Not Found"
+msgstr ""
+
+#: functions/admin-functions.php:3253
+#@ woothemes
+msgid "WooThemes"
+msgstr ""
+
+#: functions/admin-functions.php:3277
+#@ woothemes
+msgid "Update Framework"
+msgstr ""
+
+#: functions/admin-functions.php:3792
+#@ woothemes
+msgid "Enhance your theme with WooDojo."
+msgstr ""
+
+#: functions/admin-functions.php:3793
+#@ woothemes
+msgid "WooDojo is powerful WooThemes features suit for enhancing your website. Learn more."
+msgstr ""
+
+#: functions/admin-functions.php:3794
+#@ woothemes
+msgid "Get WooDojo"
+msgstr ""
+
+#: functions/admin-functions.php:3795
+#: functions/admin-functions.php:3816
+#@ woothemes
+msgid "Close"
+msgstr ""
+
+#: functions/admin-functions.php:3813
+#: functions/admin-functions.php:3815
+#@ woothemes
+msgid "Enable PressTrends"
+msgstr ""
+
+#: functions/admin-functions.php:3814
+#, php-format
+#@ woothemes
+msgid "PressTrends is a simple usage tracker that allows us to see how our customers are using WooThemes themes - so that we can help improve them for you. %sNone%s of your personal data is sent to PressTrends."
+msgstr ""
+
+#: functions/admin-functions.php:3829
+#@ woothemes
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: functions/admin-functions.php:3831
+#@ woothemes
+msgid "You have taken too long. Please go back and retry."
+msgstr ""
+
+#: functions/admin-interface.php:234
+#@ woothemes
+msgid "Available WooThemes"
+msgstr ""
+
+#: functions/admin-interface.php:374
+#@ woothemes
+msgid "Framework"
+msgstr ""
+
+#: functions/admin-interface.php:915
+#@ woothemes
+msgid "Options Saved Successfully"
+msgstr ""
+
+#: functions/admin-interface.php:919
+#@ woothemes
+msgid "There was an error while saving your options. Please try again."
+msgstr ""
+
+#: functions/admin-interface.php:923
+#@ woothemes
+msgid "Options Reset Successfully"
+msgstr ""
+
+#: functions/admin-interface.php:1550
+#@ woothemes
+msgid "You are not able to update this option because you lack the <code>unfiltered_html</code> capability."
+msgstr ""
+
+#: functions/admin-interface.php:1693
+#@ woothemes
+msgid "New Version"
+msgstr ""
+
+#: functions/admin-interface.php:1694
+#@ woothemes
+msgid "New Feature"
+msgstr ""
+
+#: functions/admin-interface.php:1695
+#@ woothemes
+msgid "Bugfix"
+msgstr ""
+
+#: functions/admin-interface.php:1719
+#@ woothemes
+msgid "Theme update is available"
+msgstr ""
+
+#: functions/admin-interface.php:1719
+#@ woothemes
+msgid "Get the new version"
+msgstr ""
+
+#: functions/admin-interface.php:1719
+#, php-format
+#@ woothemes
+msgid "Update Type: %s"
+msgstr ""
+
+#: functions/admin-interface.php:1785
+#, php-format
+#@ woothemes
+msgid "Theme update is available (v%s). %sDownload new version%s (%sSee Changelog%s)"
+msgstr ""
+
+#: functions/admin-interface.php:1813
+#, php-format
+#@ woothemes
+msgid "WooFramework update is available (v%s). %sDownload new version%s (%sSee Changelog%s)"
+msgstr ""
+
+#: functions/admin-interface.php:1861
+#, php-format
+#@ woothemes
+msgid "An important WooFramework update is available (v%s). %sDownload new version%s (%sSee Changelog%s)"
+msgstr ""
+
+#: functions/admin-medialibrary-uploader.php:47
+#@ woothemes
+msgid "WooFramework Internal Container"
+msgstr ""
+
+#: functions/admin-medialibrary-uploader.php:151
+#@ woothemes
+msgid "Upload"
+msgstr ""
+
+#: functions/admin-medialibrary-uploader.php:177
+#@ woothemes
+msgid "View File"
+msgstr ""
+
+#: functions/admin-medialibrary-uploader.php:312
+#@ woothemes
+msgid "Gallery"
+msgstr ""
+
+#: functions/admin-medialibrary-uploader.php:312
+#@ woothemes
+msgid "Previously Uploaded"
+msgstr ""
+
+#: functions/admin-medialibrary-uploader.php:329
+#@ woothemes
+msgid "Use this Image"
+msgstr ""
+
+#: functions/admin-medialibrary-uploader.php:330
+#, php-format
+#@ woothemes
+msgid "Use as %s"
+msgstr ""
+
+#: functions/admin-shortcodes.php:405
+#@ woothemes
+msgid "No related posts found"
+msgstr ""
+
+#: functions/admin-shortcodes.php:944
+#@ woothemes
+msgid "Hide the Content"
+msgstr ""
+
+#: functions/admin-shortcodes.php:945
+#@ woothemes
+msgid "Show the Content"
+msgstr ""
+
+#: functions/admin-shortcodes.php:952
+#@ woothemes
+msgid "Read More"
+msgstr ""
+
+#: functions/admin-shortcodes.php:953
+#@ woothemes
+msgid "Read Less"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1064
+#@ woothemes
+msgid "Message via the contact form"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1065
+#: includes/theme-functions.php:216
+#: includes/theme-functions.php:225
+#: template-contact.php:209
+#@ woothemes
+msgid "Submit"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1362
+#@ woothemes
+msgid "Please enter your name"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1363
+#@ woothemes
+msgid "Please enter your email address (and please make sure it's valid)"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1364
+#@ woothemes
+msgid "Please enter your message"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1429
+#: functions/admin-shortcodes.php:1435
+#: template-contact.php:61
+#: template-contact.php:67
+#@ woothemes
+msgid "From: "
+msgstr ""
+
+#: functions/admin-shortcodes.php:1429
+#: functions/admin-shortcodes.php:1435
+#: template-contact.php:61
+#@ woothemes
+msgid "Reply-To: "
+msgstr ""
+
+#: functions/admin-shortcodes.php:1454
+#: template-contact.php:125
+#@ woothemes
+msgid "Your email was successfully sent."
+msgstr ""
+
+#: functions/admin-shortcodes.php:1460
+#@ woothemes
+msgid "There were one or more errors while submitting the form."
+msgstr ""
+
+#: functions/admin-shortcodes.php:1465
+#: template-contact.php:180
+#@ woothemes
+msgid "E-mail has not been setup properly. Please add your contact e-mail!"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1484
+#: includes/theme-functions.php:294
+#: template-contact.php:187
+#@ woothemes
+#@ default
+msgid "Name"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1493
+#: includes/theme-functions.php:298
+#: template-contact.php:194
+#@ woothemes
+#@ default
+msgid "Email"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1502
+#: template-contact.php:201
+#@ woothemes
+msgid "Message"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1620
+#: template-contact.php:207
+#@ woothemes
+msgid "Send a copy of this email to yourself"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1627
+#: template-contact.php:208
+#@ woothemes
+msgid "If you want to submit this form, do not enter anything in this field"
+msgstr ""
+
+#: functions/admin-shortcodes.php:1998
+#: functions/admin-shortcodes.php:2048
+#: functions/admin-shortcodes.php:2064
+#, php-format
+#@ woothemes
+msgid "My %s Profile"
+msgstr ""
+
+#: functions/admin-shortcodes.php:2019
+#@ woothemes
+msgid "Subscribe to our RSS feed"
+msgstr ""
+
+#: functions/admin-shortcodes.php:2365
+#: includes/widgets/widget-woo-twitter.php:26
+#@ woothemes
+msgid "Follow"
+msgstr ""
+
+#: functions/admin-shortcodes.php:2484
+#@ woothemes
+msgid "Pin It"
+msgstr ""
+
+#: functions/js/shortcode-generator/dialog.php:52
+#@ woothemes
+msgid "Customize the Shortcode"
+msgstr ""
+
+#: functions/js/shortcode-generator/dialog.php:67
+#@ woothemes
+msgid "Ninja Trouble"
+msgstr ""
+
+#: functions/js/shortcode-generator/dialog.php:70
+#, php-format
+#@ woothemes
+msgid "Your version of the WooFramework (%s) does not yet support shortcodes. Shortcodes were introduced with version %s of the framework."
+msgstr ""
+
+#: functions/js/shortcode-generator/dialog.php:72
+#: functions/js/shortcode-generator/dialog.php:86
+#@ woothemes
+msgid "What to do now?"
+msgstr ""
+
+#: functions/js/shortcode-generator/dialog.php:74
+#@ woothemes
+msgid "Upgrading your theme, or rather the WooFramework portion of it, will do the trick."
+msgstr ""
+
+#: functions/js/shortcode-generator/dialog.php:76
+#, php-format
+#@ woothemes
+msgid "The framework is a collection of functionality that all WooThemes have in common. In most cases you can update the framework even if you have modified your theme, because the framework resides in a separate location (under %s)."
+msgstr ""
+
+#: functions/js/shortcode-generator/dialog.php:78
+#, php-format
+#@ woothemes
+msgid "There's a tutorial on how to do this on WooThemes.com: %sHow to upgradeyour theme%s."
+msgstr ""
+
+#: functions/js/shortcode-generator/dialog.php:80
+#@ woothemes
+msgid "<strong>Remember:</strong> Every Ninja has a backup plan. Safe or not, always backup your theme before you update it or make changes to it."
+msgstr ""
+
+#: functions/js/shortcode-generator/dialog.php:84
+#@ woothemes
+msgid "Looks like your active theme is not from WooThemes. The shortcode generator only works with themes from WooThemes."
+msgstr ""
+
+#: functions/js/shortcode-generator/dialog.php:88
+#@ woothemes
+msgid "Pick a fight: (1) If you already have a theme from WooThemes, install and activate it or (2) if you don't yet have one of the awesome WooThemes head over to the <a href=\"http://www.woothemes.com/themes/\" target=\"_blank\" title=\"WooThemes Gallery\">WooThemes Gallery</a> and get one."
+msgstr ""
+
+#: header.php:82
+#@ woothemes
+msgid "Main navigation"
+msgstr ""
+
+#: includes/theme-comments.php:20
+#@ woothemes
+msgid "at"
+msgstr ""
+
+#: includes/theme-comments.php:21
+#@ woothemes
+msgid "Direct link to this comment"
+msgstr ""
+
+#: includes/theme-comments.php:21
+#@ woothemes
+msgid "Permalink"
+msgstr ""
+
+#: includes/theme-comments.php:22
+#: includes/theme-functions.php:157
+#@ woothemes
+msgid "Edit"
+msgstr ""
+
+#: includes/theme-comments.php:29
+#@ woothemes
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: includes/theme-functions.php:87
+#@ woothemes
+msgid "Primary Menu"
+msgstr ""
+
+#: includes/theme-functions.php:88
+#@ woothemes
+msgid "Top Menu"
+msgstr ""
+
+#: includes/theme-functions.php:124
+#@ woothemes
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr ""
+
+#: includes/theme-functions.php:125
+#@ woothemes
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: includes/theme-functions.php:175
+#: includes/theme-functions.php:205
+#: includes/widgets/widget-woo-subscribe.php:36
+#@ woothemes
+msgid "Subscribe"
+msgstr ""
+
+#: includes/theme-functions.php:177
+#@ woothemes
+msgid "Subscribe to our e-mail newsletter to receive updates."
+msgstr ""
+
+#: includes/theme-functions.php:212
+#: includes/theme-functions.php:224
+#@ woothemes
+msgid "E-mail"
+msgstr ""
+
+#: includes/theme-functions.php:265
+#@ woothemes
+msgid "Related Posts:"
+msgstr ""
+
+#: includes/theme-functions.php:287
+#@ woothemes
+msgid "Required"
+msgstr ""
+
+#: includes/theme-functions.php:302
+#@ default
+msgid "Website"
+msgstr ""
+
+#: includes/theme-functions.php:322
+#@ woothemes
+msgid "Submit Comment"
+msgstr ""
+
+#: includes/theme-functions.php:323
+#@ woothemes
+msgid "Click here to cancel reply."
+msgstr ""
+
+#: includes/theme-options.php:53
+#@ woothemes
+msgid "Quick Start"
+msgstr ""
+
+#: includes/theme-options.php:56
+#@ woothemes
+msgid "Theme Stylesheet"
+msgstr ""
+
+#: includes/theme-options.php:57
+#@ woothemes
+msgid "Select your themes alternative color scheme."
+msgstr ""
+
+#: includes/theme-options.php:63
+#@ woothemes
+msgid "Custom Logo"
+msgstr ""
+
+#: includes/theme-options.php:64
+#@ woothemes
+msgid "Upload a logo for your theme, or specify an image URL directly."
+msgstr ""
+
+#: includes/theme-options.php:69
+#@ woothemes
+msgid "Text Title"
+msgstr ""
+
+#: includes/theme-options.php:70
+#, php-format
+#@ woothemes
+msgid "Enable text-based Site Title and Tagline. Setup title & tagline in %1$s."
+msgstr ""
+
+#: includes/theme-options.php:75
+#@ woothemes
+msgid "Site Description"
+msgstr ""
+
+#: includes/theme-options.php:76
+#@ woothemes
+msgid "Enable the site description/tagline under site title."
+msgstr ""
+
+#: includes/theme-options.php:81
+#@ woothemes
+msgid "Custom Favicon"
+msgstr ""
+
+#: includes/theme-options.php:82
+#@ woothemes
+msgid "Upload a 16px x 16px <a href=\"http://www.faviconr.com/\">ico image</a> that will represent your website's favicon."
+msgstr ""
+
+#: includes/theme-options.php:88
+#@ woothemes
+msgid "Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme."
+msgstr ""
+
+#: includes/theme-options.php:93
+#@ woothemes
+msgid "Subscription Settings"
+msgstr ""
+
+#: includes/theme-options.php:96
+#@ woothemes
+msgid "RSS URL"
+msgstr ""
+
+#: includes/theme-options.php:97
+#@ woothemes
+msgid "Enter your preferred RSS URL. (Feedburner or other)"
+msgstr ""
+
+#: includes/theme-options.php:102
+#@ woothemes
+msgid "E-Mail Subscription URL"
+msgstr ""
+
+#: includes/theme-options.php:103
+#@ woothemes
+msgid "Enter your preferred E-mail subscription URL. (Feedburner or other)"
+msgstr ""
+
+#: includes/theme-options.php:108
+#@ woothemes
+msgid "Contact Form E-Mail"
+msgstr ""
+
+#: includes/theme-options.php:109
+#@ woothemes
+msgid "Enter your E-mail address to use on the Contact Form Page Template. Add the contact form by adding a new page and selecting \"Contact Form\" as page template."
+msgstr ""
+
+#: includes/theme-options.php:114
+#@ woothemes
+msgid "Display Options"
+msgstr ""
+
+#: includes/theme-options.php:117
+#@ woothemes
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/theme-options.php:118
+#@ woothemes
+msgid "Quickly add some CSS to your theme by adding it to this block."
+msgstr ""
+
+#: includes/theme-options.php:123
+#@ woothemes
+msgid "Post/Page Comments"
+msgstr ""
+
+#: includes/theme-options.php:124
+#@ woothemes
+msgid "Select if you want to enable/disable comments on posts and/or pages."
+msgstr ""
+
+#: includes/theme-options.php:128
+#@ woothemes
+msgid "Posts Only"
+msgstr ""
+
+#: includes/theme-options.php:128
+#@ woothemes
+msgid "Pages Only"
+msgstr ""
+
+#: includes/theme-options.php:128
+#@ woothemes
+msgid "Pages / Posts"
+msgstr ""
+
+#: includes/theme-options.php:128
+#@ woothemes
+msgid "None"
+msgstr ""
+
+#: includes/theme-options.php:130
+#@ woothemes
+msgid "Post Content"
+msgstr ""
+
+#: includes/theme-options.php:131
+#@ woothemes
+msgid "Select if you want to show the full content or the excerpt on posts."
+msgstr ""
+
+#: includes/theme-options.php:134
+#@ woothemes
+msgid "The Excerpt"
+msgstr ""
+
+#: includes/theme-options.php:134
+#@ woothemes
+msgid "Full Content"
+msgstr ""
+
+#: includes/theme-options.php:136
+#@ woothemes
+msgid "Post Author Box"
+msgstr ""
+
+#: includes/theme-options.php:137
+#, php-format
+#@ woothemes
+msgid "This will enable the post author box on the single posts page. Edit description in %1$s."
+msgstr ""
+
+#: includes/theme-options.php:137
+#@ woothemes
+msgid "Profile"
+msgstr ""
+
+#: includes/theme-options.php:142
+#@ woothemes
+msgid "Display Breadcrumbs"
+msgstr ""
+
+#: includes/theme-options.php:143
+#@ woothemes
+msgid "Display dynamic breadcrumbs on each page of your website."
+msgstr ""
+
+#: includes/theme-options.php:148
+#@ woothemes
+msgid "Display Pagination"
+msgstr ""
+
+#: includes/theme-options.php:149
+#@ woothemes
+msgid "Display pagination on the blog."
+msgstr ""
+
+#: includes/theme-options.php:154
+#@ woothemes
+msgid "Pagination Style"
+msgstr ""
+
+#: includes/theme-options.php:155
+#@ woothemes
+msgid "Select the style of pagination you would like to use on the blog."
+msgstr ""
+
+#: includes/theme-options.php:158
+#@ woothemes
+msgid "Numbers"
+msgstr ""
+
+#: includes/theme-options.php:158
+#@ woothemes
+msgid "Next/Previous"
+msgstr ""
+
+#: includes/theme-options.php:161
+#@ woothemes
+msgid "Styling Options"
+msgstr ""
+
+#: includes/theme-options.php:165
+#@ woothemes
+msgid "Background"
+msgstr ""
+
+#: includes/theme-options.php:168
+#@ woothemes
+msgid "Body Background Color"
+msgstr ""
+
+#: includes/theme-options.php:169
+#@ woothemes
+msgid "Pick a custom color for background color of the theme e.g. #697e09"
+msgstr ""
+
+#: includes/theme-options.php:174
+#@ woothemes
+msgid "Body background image"
+msgstr ""
+
+#: includes/theme-options.php:175
+#@ woothemes
+msgid "Upload an image for the theme's background"
+msgstr ""
+
+#: includes/theme-options.php:180
+#@ woothemes
+msgid "Background image repeat"
+msgstr ""
+
+#: includes/theme-options.php:181
+#@ woothemes
+msgid "Select how you would like to repeat the background-image"
+msgstr ""
+
+#: includes/theme-options.php:187
+#@ woothemes
+msgid "Background image position"
+msgstr ""
+
+#: includes/theme-options.php:188
+#@ woothemes
+msgid "Select how you would like to position the background"
+msgstr ""
+
+#: includes/theme-options.php:201
+#@ woothemes
+msgid "Links"
+msgstr ""
+
+#: includes/theme-options.php:204
+#@ woothemes
+msgid "Link Color"
+msgstr ""
+
+#: includes/theme-options.php:205
+#@ woothemes
+msgid "Pick a custom color for links or add a hex color code e.g. #697e09"
+msgstr ""
+
+#: includes/theme-options.php:210
+#@ woothemes
+msgid "Link Hover Color"
+msgstr ""
+
+#: includes/theme-options.php:211
+#@ woothemes
+msgid "Pick a custom color for links hover or add a hex color code e.g. #697e09"
+msgstr ""
+
+#: includes/theme-options.php:216
+#@ woothemes
+msgid "Button Color"
+msgstr ""
+
+#: includes/theme-options.php:217
+#@ woothemes
+msgid "Pick a custom color for buttons or add a hex color code e.g. #697e09"
+msgstr ""
+
+#: includes/theme-options.php:224
+#@ woothemes
+msgid "Typography"
+msgstr ""
+
+#: includes/theme-options.php:228
+#@ woothemes
+msgid "Enable Custom Typography"
+msgstr ""
+
+#: includes/theme-options.php:229
+#@ woothemes
+msgid "Enable the use of custom typography for your site. Custom styling will be output in your sites HEAD."
+msgstr ""
+
+#: includes/theme-options.php:234
+#@ woothemes
+msgid "General Typography"
+msgstr ""
+
+#: includes/theme-options.php:235
+#@ woothemes
+msgid "Change the general font."
+msgstr ""
+
+#: includes/theme-options.php:240
+#@ woothemes
+msgid "Navigation"
+msgstr ""
+
+#: includes/theme-options.php:241
+#@ woothemes
+msgid "Change the navigation font."
+msgstr ""
+
+#: includes/theme-options.php:246
+#@ woothemes
+msgid "Page Title"
+msgstr ""
+
+#: includes/theme-options.php:247
+#@ woothemes
+msgid "Change the page title."
+msgstr ""
+
+#: includes/theme-options.php:252
+#@ woothemes
+msgid "Post Title"
+msgstr ""
+
+#: includes/theme-options.php:253
+#@ woothemes
+msgid "Change the post title."
+msgstr ""
+
+#: includes/theme-options.php:258
+#@ woothemes
+msgid "Post Meta"
+msgstr ""
+
+#: includes/theme-options.php:259
+#@ woothemes
+msgid "Change the post meta."
+msgstr ""
+
+#: includes/theme-options.php:264
+#@ woothemes
+msgid "Post Entry"
+msgstr ""
+
+#: includes/theme-options.php:265
+#@ woothemes
+msgid "Change the post entry."
+msgstr ""
+
+#: includes/theme-options.php:270
+#@ woothemes
+msgid "Widget Titles"
+msgstr ""
+
+#: includes/theme-options.php:271
+#@ woothemes
+msgid "Change the widget titles."
+msgstr ""
+
+#: includes/theme-options.php:351
+#@ woothemes
+msgid "Layout Options"
+msgstr ""
+
+#: includes/theme-options.php:356
+#@ woothemes
+msgid "Main Layout"
+msgstr ""
+
+#: includes/theme-options.php:357
+#@ woothemes
+msgid "Select which layout you want for your site."
+msgstr ""
+
+#: includes/theme-options.php:366
+#@ woothemes
+msgid "Category Exclude - Homepage"
+msgstr ""
+
+#: includes/theme-options.php:367
+#@ woothemes
+msgid "Specify a comma seperated list of category IDs or slugs that you'd like to exclude from your homepage (eg: uncategorized)."
+msgstr ""
+
+#: includes/theme-options.php:372
+#@ woothemes
+msgid "Category Exclude - Blog Page Template"
+msgstr ""
+
+#: includes/theme-options.php:373
+#@ woothemes
+msgid "Specify a comma seperated list of category IDs or slugs that you'd like to exclude from your 'Blog' page template (eg: uncategorized)."
+msgstr ""
+
+#: includes/theme-options.php:379
+#@ woothemes
+msgid "Dynamic Images"
+msgstr ""
+
+#: includes/theme-options.php:383
+#@ woothemes
+msgid "Resizer Settings"
+msgstr ""
+
+#: includes/theme-options.php:386
+#@ woothemes
+msgid "Dynamic Image Resizing"
+msgstr ""
+
+#: includes/theme-options.php:389
+#@ woothemes
+msgid "There are two alternative methods of dynamically resizing the thumbnails in the theme, <strong>WP Post Thumbnail</strong> or <strong>TimThumb - Custom Settings panel</strong>. We recommend using WP Post Thumbnail option."
+msgstr ""
+
+#: includes/theme-options.php:392
+#@ woothemes
+msgid "WP Post Thumbnail"
+msgstr ""
+
+#: includes/theme-options.php:393
+#@ woothemes
+msgid "Use WordPress post thumbnail to assign a post thumbnail. Will enable the <strong>Featured Image panel</strong> in your post sidebar where you can assign a post thumbnail."
+msgstr ""
+
+#: includes/theme-options.php:399
+#@ woothemes
+msgid "WP Post Thumbnail - Dynamic Image Resizing"
+msgstr ""
+
+#: includes/theme-options.php:400
+#@ woothemes
+msgid "The post thumbnail will be dynamically resized using native WP resize functionality. <em>(Requires PHP 5.2+)</em>"
+msgstr ""
+
+#: includes/theme-options.php:406
+#@ woothemes
+msgid "WP Post Thumbnail - Hard Crop"
+msgstr ""
+
+#: includes/theme-options.php:407
+#@ woothemes
+msgid "The post thumbnail will be cropped to match the target aspect ratio (only used if \"Dynamic Image Resizing\" is enabled)."
+msgstr ""
+
+#: includes/theme-options.php:413
+#@ woothemes
+msgid "TimThumb - Custom Settings Panel"
+msgstr ""
+
+#: includes/theme-options.php:414
+#, php-format
+#@ woothemes
+msgid "This will enable the %1$s (thumb.php) script which dynamically resizes images added through the <strong>custom settings panel below the post</strong>. Make sure your themes <em>cache</em> folder is writable. %2$s"
+msgstr ""
+
+#: includes/theme-options.php:419
+#@ woothemes
+msgid "Automatic Image Thumbnail"
+msgstr ""
+
+#: includes/theme-options.php:420
+#@ woothemes
+msgid "If no thumbnail is specifified then the first uploaded image in the post is used."
+msgstr ""
+
+#: includes/theme-options.php:425
+#@ woothemes
+msgid "Thumbnail Settings"
+msgstr ""
+
+#: includes/theme-options.php:428
+#@ woothemes
+msgid "Thumbnail Image Dimensions"
+msgstr ""
+
+#: includes/theme-options.php:429
+#@ woothemes
+msgid "Enter an integer value i.e. 250 for the desired size which will be used when dynamically creating the images."
+msgstr ""
+
+#: includes/theme-options.php:436
+#: includes/theme-options.php:466
+#@ woothemes
+msgid "Width"
+msgstr ""
+
+#: includes/theme-options.php:440
+#: includes/theme-options.php:470
+#@ woothemes
+msgid "Height"
+msgstr ""
+
+#: includes/theme-options.php:443
+#@ woothemes
+msgid "Thumbnail Alignment"
+msgstr ""
+
+#: includes/theme-options.php:444
+#@ woothemes
+msgid "Select how to align your thumbnails with posts."
+msgstr ""
+
+#: includes/theme-options.php:448
+#: includes/theme-options.php:479
+#: includes/widgets/widget-woo-blogauthor.php:83
+#@ woothemes
+msgid "Left"
+msgstr ""
+
+#: includes/theme-options.php:448
+#: includes/theme-options.php:479
+#: includes/widgets/widget-woo-blogauthor.php:84
+#@ woothemes
+msgid "Right"
+msgstr ""
+
+#: includes/theme-options.php:448
+#: includes/theme-options.php:479
+#@ woothemes
+msgid "Center"
+msgstr ""
+
+#: includes/theme-options.php:451
+#@ woothemes
+msgid "Show the thumbnail in the single post page."
+msgstr ""
+
+#: includes/theme-options.php:457
+#@ woothemes
+msgid "Single Post - Thumbnail Dimensions"
+msgstr ""
+
+#: includes/theme-options.php:458
+#@ woothemes
+msgid "Enter an integer value i.e. 250 for the image size. Max width is 576."
+msgstr ""
+
+#: includes/theme-options.php:473
+#@ woothemes
+msgid "Single Post - Thumbnail Alignment"
+msgstr ""
+
+#: includes/theme-options.php:474
+#@ woothemes
+msgid "Select how to align your thumbnail with single posts."
+msgstr ""
+
+#: includes/theme-options.php:481
+#@ woothemes
+msgid "Add thumbnail to RSS feed"
+msgstr ""
+
+#: includes/theme-options.php:482
+#@ woothemes
+msgid "Add the the image uploaded via your Custom Settings panel to your RSS feed"
+msgstr ""
+
+#: includes/theme-options.php:487
+#@ woothemes
+msgid "Enable Lightbox"
+msgstr ""
+
+#: includes/theme-options.php:488
+#@ woothemes
+msgid "Enable the PrettyPhoto lighbox script on images within your website's content."
+msgstr ""
+
+#: includes/theme-options.php:494
+#@ woothemes
+msgid "Footer Customization"
+msgstr ""
+
+#: includes/theme-options.php:499
+#@ woothemes
+msgid "Footer Widget Areas"
+msgstr ""
+
+#: includes/theme-options.php:500
+#@ woothemes
+msgid "Select how many footer widget areas you want to display."
+msgstr ""
+
+#: includes/theme-options.php:512
+#@ woothemes
+msgid "Custom Affiliate Link"
+msgstr ""
+
+#: includes/theme-options.php:513
+#@ woothemes
+msgid "Add an affiliate link to the WooThemes logo in the footer of the theme."
+msgstr ""
+
+#: includes/theme-options.php:518
+#@ woothemes
+msgid "Enable Custom Footer (Left)"
+msgstr ""
+
+#: includes/theme-options.php:519
+#: includes/theme-options.php:531
+#@ woothemes
+msgid "Activate to add the custom text below to the theme footer."
+msgstr ""
+
+#: includes/theme-options.php:524
+#@ woothemes
+msgid "Custom Text (Left)"
+msgstr ""
+
+#: includes/theme-options.php:525
+#: includes/theme-options.php:537
+#@ woothemes
+msgid "Custom HTML and Text that will appear in the footer of your theme."
+msgstr ""
+
+#: includes/theme-options.php:530
+#@ woothemes
+msgid "Enable Custom Footer (Right)"
+msgstr ""
+
+#: includes/theme-options.php:536
+#@ woothemes
+msgid "Custom Text (Right)"
+msgstr ""
+
+#: includes/theme-options.php:543
+#@ woothemes
+msgid "Subscribe & Connect"
+msgstr ""
+
+#: includes/theme-options.php:547
+#@ woothemes
+msgid "Setup"
+msgstr ""
+
+#: includes/theme-options.php:550
+#@ woothemes
+msgid "Enable Subscribe & Connect - Single Post"
+msgstr ""
+
+#: includes/theme-options.php:551
+#, php-format
+#@ woothemes
+msgid "Enable the subscribe & connect area on single posts. You can also add this as a %1$s in your sidebar."
+msgstr ""
+
+#: includes/theme-options.php:556
+#@ woothemes
+msgid "Subscribe Title"
+msgstr ""
+
+#: includes/theme-options.php:557
+#@ woothemes
+msgid "Enter the title to show in your subscribe & connect area."
+msgstr ""
+
+#: includes/theme-options.php:562
+#@ woothemes
+msgid "Text"
+msgstr ""
+
+#: includes/theme-options.php:563
+#@ woothemes
+msgid "Change the default text in this area."
+msgstr ""
+
+#: includes/theme-options.php:568
+#@ woothemes
+msgid "Enable Related Posts"
+msgstr ""
+
+#: includes/theme-options.php:569
+#@ woothemes
+msgid "Enable related posts in the subscribe area. Uses posts with the same <strong>tags</strong> to find related posts. Note: Will not show in the Subscribe widget."
+msgstr ""
+
+#: includes/theme-options.php:574
+#@ woothemes
+msgid "Subscribe Settings"
+msgstr ""
+
+#: includes/theme-options.php:577
+#@ woothemes
+msgid "Subscribe By E-mail ID (Feedburner)"
+msgstr ""
+
+#: includes/theme-options.php:578
+#@ woothemes
+msgid "Enter your <a href=\"http://www.google.com/support/feedburner/bin/answer.py?hl=en&answer=78982\">Feedburner ID</a> for the e-mail subscription form."
+msgstr ""
+
+#: includes/theme-options.php:583
+#@ woothemes
+msgid "Subscribe By E-mail to MailChimp"
+msgstr ""
+
+#: includes/theme-options.php:584
+#@ woothemes
+msgid "If you have a MailChimp account you can enter the <a href=\"http://woochimp.heroku.com\" target=\"_blank\">MailChimp List Subscribe URL</a> to allow your users to subscribe to a MailChimp List."
+msgstr ""
+
+#: includes/theme-options.php:589
+#@ woothemes
+msgid "Connect Settings"
+msgstr ""
+
+#: includes/theme-options.php:592
+#@ woothemes
+msgid "Enable RSS"
+msgstr ""
+
+#: includes/theme-options.php:593
+#@ woothemes
+msgid "Enable the subscribe and RSS icon."
+msgstr ""
+
+#: includes/theme-options.php:598
+#@ woothemes
+msgid "Twitter URL"
+msgstr ""
+
+#: includes/theme-options.php:599
+#@ woothemes
+msgid "Enter your  <a href=\"http://www.twitter.com/\">Twitter</a> URL e.g. http://www.twitter.com/woothemes"
+msgstr ""
+
+#: includes/theme-options.php:604
+#@ woothemes
+msgid "Facebook URL"
+msgstr ""
+
+#: includes/theme-options.php:605
+#@ woothemes
+msgid "Enter your  <a href=\"http://www.facebook.com/\">Facebook</a> URL e.g. http://www.facebook.com/woothemes"
+msgstr ""
+
+#: includes/theme-options.php:610
+#@ woothemes
+msgid "YouTube URL"
+msgstr ""
+
+#: includes/theme-options.php:611
+#@ woothemes
+msgid "Enter your  <a href=\"http://www.youtube.com/\">YouTube</a> URL e.g. http://www.youtube.com/woothemes"
+msgstr ""
+
+#: includes/theme-options.php:616
+#@ woothemes
+msgid "Flickr URL"
+msgstr ""
+
+#: includes/theme-options.php:617
+#@ woothemes
+msgid "Enter your  <a href=\"http://www.flickr.com/\">Flickr</a> URL e.g. http://www.flickr.com/woothemes"
+msgstr ""
+
+#: includes/theme-options.php:622
+#@ woothemes
+msgid "LinkedIn URL"
+msgstr ""
+
+#: includes/theme-options.php:623
+#@ woothemes
+msgid "Enter your  <a href=\"http://www.www.linkedin.com.com/\">LinkedIn</a> URL e.g. http://www.linkedin.com/in/woothemes"
+msgstr ""
+
+#: includes/theme-options.php:628
+#@ woothemes
+msgid "Delicious URL"
+msgstr ""
+
+#: includes/theme-options.php:629
+#@ woothemes
+msgid "Enter your <a href=\"http://www.delicious.com/\">Delicious</a> URL e.g. http://www.delicious.com/woothemes"
+msgstr ""
+
+#: includes/theme-options.php:634
+#@ woothemes
+msgid "Google+ URL"
+msgstr ""
+
+#: includes/theme-options.php:635
+#@ woothemes
+msgid "Enter your <a href=\"http://plus.google.com/\">Google+</a> URL e.g. https://plus.google.com/104560124403688998123/"
+msgstr ""
+
+#: includes/theme-options.php:641
+#@ woothemes
+msgid "Advertising"
+msgstr ""
+
+#: includes/theme-options.php:645
+#@ woothemes
+msgid "Top Ad (468x60px)"
+msgstr ""
+
+#: includes/theme-options.php:648
+#@ woothemes
+msgid "Enable Ad"
+msgstr ""
+
+#: includes/theme-options.php:649
+#@ woothemes
+msgid "Enable the ad space"
+msgstr ""
+
+#: includes/theme-options.php:654
+#@ woothemes
+msgid "Adsense code"
+msgstr ""
+
+#: includes/theme-options.php:655
+#@ woothemes
+msgid "Enter your adsense code (or other ad network code) here."
+msgstr ""
+
+#: includes/theme-options.php:660
+#@ woothemes
+msgid "Image Location"
+msgstr ""
+
+#: includes/theme-options.php:661
+#@ woothemes
+msgid "Enter the URL to the banner ad image location."
+msgstr ""
+
+#: includes/theme-options.php:666
+#@ woothemes
+msgid "Destination URL"
+msgstr ""
+
+#: includes/theme-options.php:667
+#@ woothemes
+msgid "Enter the URL where this banner ad points to."
+msgstr ""
+
+#: includes/theme-woocommerce.php:109
+#@ woothemes
+msgid "Checkout"
+msgstr ""
+
+#: includes/theme-woocommerce.php:311
+#@ woocommerce
+msgid "Related Products"
+msgstr ""
+
+#: includes/theme-woocommerce.php:350
+#: includes/theme-woocommerce.php:353
+#, php-format
+#@ woothemes
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/theme-woocommerce.php:350
+#@ woothemes
+msgid "in your shopping cart"
+msgstr ""
+
+#: includes/theme-woocommerce.php:351
+#@ woothemes
+msgid "My Basket:"
+msgstr ""
+
+#: includes/widgets/widget-woo-adspace.php:11
+#@ woothemes
+msgid "Woo - Adspace Widget"
+msgstr ""
+
+#: includes/widgets/widget-woo-adspace.php:57
+#: includes/widgets/widget-woo-subscribe.php:61
+#: includes/widgets/widget-woo-twitter.php:65
+#@ woothemes
+msgid "Title (optional):"
+msgstr ""
+
+#: includes/widgets/widget-woo-adspace.php:62
+#@ woothemes
+msgid "Ad Code:"
+msgstr ""
+
+#: includes/widgets/widget-woo-adspace.php:68
+#@ woothemes
+msgid "Image Url:"
+msgstr ""
+
+#: includes/widgets/widget-woo-adspace.php:72
+#@ woothemes
+msgid "Link URL:"
+msgstr ""
+
+#: includes/widgets/widget-woo-adspace.php:76
+#@ woothemes
+msgid "Alt text:"
+msgstr ""
+
+#: includes/widgets/widget-woo-blogauthor.php:10
+#@ woothemes
+msgid "Woo - Blog Author Info"
+msgstr ""
+
+#: includes/widgets/widget-woo-blogauthor.php:69
+#@ woothemes
+msgid "Bio:"
+msgstr ""
+
+#: includes/widgets/widget-woo-blogauthor.php:73
+#@ woothemes
+msgid "<a href=\"http://www.gravatar.com/\">Gravatar</a> E-mail:"
+msgstr ""
+
+#: includes/widgets/widget-woo-blogauthor.php:77
+#@ woothemes
+msgid "Gravatar Size:"
+msgstr ""
+
+#: includes/widgets/widget-woo-blogauthor.php:81
+#@ woothemes
+msgid "Gravatar Alignment:"
+msgstr ""
+
+#: includes/widgets/widget-woo-blogauthor.php:88
+#@ woothemes
+msgid "Read More Text (optional):"
+msgstr ""
+
+#: includes/widgets/widget-woo-blogauthor.php:92
+#@ woothemes
+msgid "Read More URL (optional):"
+msgstr ""
+
+#: includes/widgets/widget-woo-blogauthor.php:96
+#@ woothemes
+msgid "Visible Pages:"
+msgstr ""
+
+#: includes/widgets/widget-woo-blogauthor.php:98
+#@ woothemes
+msgid "All"
+msgstr ""
+
+#: includes/widgets/widget-woo-blogauthor.php:99
+#@ woothemes
+msgid "Home only"
+msgstr ""
+
+#: includes/widgets/widget-woo-blogauthor.php:100
+#@ woothemes
+msgid "Single only"
+msgstr ""
+
+#: includes/widgets/widget-woo-embed.php:11
+#@ woothemes
+msgid "Woo - Embed/Video"
+msgstr ""
+
+#: includes/widgets/widget-woo-embed.php:99
+#@ woothemes
+msgid "Category:"
+msgstr ""
+
+#: includes/widgets/widget-woo-embed.php:111
+#@ woothemes
+msgid "Tag:"
+msgstr ""
+
+#: includes/widgets/widget-woo-embed.php:116
+#: includes/widgets/widget-woo-flickr.php:103
+#@ woothemes
+msgid "Size:"
+msgstr ""
+
+#: includes/widgets/widget-woo-embed.php:122
+#@ woothemes
+msgid "Limit (optional):"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:10
+#@ woothemes
+msgid "Woo - Flickr"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:20
+#@ woothemes
+msgid "Photos on <span>flick<span>r</span></span>"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:77
+#@ woothemes
+msgid "Flickr ID (<a href=\"http://www.idgettr.com\">idGettr</a>):"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:81
+#@ woothemes
+msgid "Number:"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:89
+#@ woothemes
+msgid "Type:"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:91
+#@ woothemes
+msgid "User"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:92
+#@ woothemes
+msgid "Group"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:96
+#@ woothemes
+msgid "Sorting:"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:98
+#@ woothemes
+msgid "Latest"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:99
+#@ woothemes
+msgid "Random"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:105
+#@ woothemes
+msgid "Square"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:106
+#@ woothemes
+msgid "Medium"
+msgstr ""
+
+#: includes/widgets/widget-woo-flickr.php:107
+#@ woothemes
+msgid "Thumbnail"
+msgstr ""
+
+#: includes/widgets/widget-woo-search.php:10
+#@ woothemes
+msgid "Woo - Search"
+msgstr ""
+
+#: includes/widgets/widget-woo-subscribe.php:10
+#@ woothemes
+msgid "Woo - Subscribe / Connect"
+msgstr ""
+
+#: includes/widgets/widget-woo-subscribe.php:65
+#@ woothemes
+msgid "Disable Subscription Form"
+msgstr ""
+
+#: includes/widgets/widget-woo-subscribe.php:68
+#@ woothemes
+msgid "Disable Social Icons"
+msgstr ""
+
+#: includes/widgets/widget-woo-subscribe.php:71
+#@ woothemes
+msgid "Disable in Posts"
+msgstr ""
+
+#: includes/widgets/widget-woo-subscribe.php:74
+#@ woothemes
+msgid "Disable in Pages"
+msgstr ""
+
+#: includes/widgets/widget-woo-twitter.php:10
+#@ woothemes
+msgid "Woo - Twitter Stream"
+msgstr ""
+
+#: includes/widgets/widget-woo-twitter.php:26
+#@ woothemes
+msgid "on Twitter"
+msgstr ""
+
+#: includes/widgets/widget-woo-twitter.php:69
+#@ woothemes
+msgid "Username:"
+msgstr ""
+
+#: includes/widgets/widget-woo-twitter.php:73
+#@ woothemes
+msgid "Limit:"
+msgstr ""
+
+#: index.php:137
+#@ woothemes
+msgid "Call us:"
+msgstr ""
+
+#: index.php:144
+#@ woothemes
+msgid "Send us an email:"
+msgstr ""
+
+#: index.php:145
+#@ woothemes
+msgid "Send us an email"
+msgstr ""
+
+#: page.php:35
+#: single.php:56
+#@ woothemes
+msgid "Pages:"
+msgstr ""
+
+#: page.php:38
+#: template-fullwidth.php:34
+#@ woothemes
+msgid "{ Edit }"
+msgstr ""
+
+#: search-form.php:13
+#@ woothemes
+msgid "Search..."
+msgstr ""
+
+#: search.php:25
+#@ woothemes
+msgid "Search results:"
+msgstr ""
+
+#: single.php:59
+#@ woothemes
+msgid "Tags: "
+msgstr ""
+
+#: single.php:67
+#, php-format
+#@ woothemes
+msgid "About %s"
+msgstr ""
+
+#: single.php:71
+#, php-format
+#@ woothemes
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: template-archives.php:36
+#@ woothemes
+msgid "The Last 30 Posts"
+msgstr ""
+
+#: template-archives.php:45
+#@ woothemes
+msgid "comments"
+msgstr ""
+
+#: template-archives.php:56
+#: template-sitemap.php:48
+#@ woothemes
+msgid "Categories"
+msgstr ""
+
+#: template-archives.php:63
+#@ woothemes
+msgid "Monthly Archives"
+msgstr ""
+
+#: template-blog.php:68
+#@ woothemes
+msgid "Read More..."
+msgstr ""
+
+#: template-contact.php:29
+#@ woothemes
+msgid "You forgot to enter your name."
+msgstr ""
+
+#: template-contact.php:37
+#@ woothemes
+msgid "You forgot to enter your email address."
+msgstr ""
+
+#: template-contact.php:40
+#@ woothemes
+msgid "You entered an invalid email address."
+msgstr ""
+
+#: template-contact.php:48
+#@ woothemes
+msgid "You forgot to enter your comments."
+msgstr ""
+
+#: template-contact.php:58
+#@ woothemes
+msgid "Contact Form Submission from "
+msgstr ""
+
+#: template-contact.php:66
+#@ woothemes
+msgid "You emailed "
+msgstr ""
+
+#: template-contact.php:86
+#@ woothemes
+msgid "You forgot to enter your"
+msgstr ""
+
+#: template-contact.php:93
+#@ woothemes
+msgid "You entered an invalid"
+msgstr ""
+
+#: template-contact.php:103
+#@ woothemes
+msgid "<strong>Thanks!</strong> Your email was successfully sent."
+msgstr ""
+
+#: template-contact.php:146
+#@ woothemes
+msgid "Tel:"
+msgstr ""
+
+#: template-contact.php:147
+#@ woothemes
+msgid "Fax:"
+msgstr ""
+
+#: template-contact.php:148
+#@ woothemes
+msgid "Email:"
+msgstr ""
+
+#: template-contact.php:176
+#@ woothemes
+msgid "There was an error submitting the form."
+msgstr ""
+
+#: template-sitemap.php:44
+#@ woothemes
+msgid "Pages"
+msgstr ""
+
+#: template-sitemap.php:52
+#@ woothemes
+msgid "Posts per category"
+msgstr ""
+
+#: template-sitemap.php:67
+#@ woothemes
+msgid "Comments"
+msgstr ""
+
+#: template-sitemap.php:76
+#@ woothemes
+msgid "Product Categories"
+msgstr ""
+
+#: template-sitemap.php:85
+#@ woothemes
+msgid "Products"
+msgstr ""
+
+#: template-timeline.php:82
+#@ woothemes
+msgid "1 comment"
+msgstr ""
+
+#: template-timeline.php:82
+#@ woothemes
+msgid "% comments"
+msgstr ""
+

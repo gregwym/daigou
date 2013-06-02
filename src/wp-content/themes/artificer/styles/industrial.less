@@ -1,0 +1,39 @@
+@import url(../style.less);
+@import url(../css/layout.less);
+@import url(../css/mixins.less);
+
+@color_theme: #777; // Main theme color
+@color_links: #da6030; // Links 
+@color_body: darken(desaturate(@bg_light,5%),50%); // Body Copy
+@serif_google: sans-serif;
+@sans_google: sans-serif;
+
+// Borders
+@border_main: darken(@bg_light,10%); // The 1px grey rules used throughout the WF
+
+// Backgrounds
+@bg_light: #ececec;
+
+// Images
+@img_path: "../images";
+
+// Typefaces
+@typeface_path: "../typefaces";
+
+body, html, #navigation, #top, .widget, #sidebar .widget, #footer-widgets, .post, .type-page, .home #sidebar .tweet, .home #sidebar .phone, .home #sidebar .email, a.button, #commentform #submit, .submit, input[type="submit"], input.button, button.button, .woo-pagination a {
+	background-image: none;
+}
+
+body {
+	background-image: url("@{img_path}/industrial/body.png");
+}
+
+#sidebar .widget:after, #sidebar .widget:before, ul.products li.product .img-wrap:before { 
+	display: none;
+}
+
+#sidebar .widget, #sidebar .widget .inner, #sidebar .widget:nth-child(2n), #sidebar .widget:nth-child(2n) .inner, ul.products li.product .img-wrap, ul.products li.product:nth-child(2n) .img-wrap, ul.products li.product:nth-child(3n) .img-wrap, ul.products li.product:nth-child(4n) .img-wrap, ul.products li.product:nth-child(5n) .img-wrap, ul.products li.product .img-wrap img, .img-wrap, ul.products li.product:nth-child(2n) .img-wrap img, .img-wrap, ul.products li.product:nth-child(3n) .img-wrap img, .img-wrap, ul.products li.product:nth-child(4n) .img-wrap img, .img-wrap, ul.products li.product:nth-child(5n) .img-wrap img, .home #sidebar .tweet, .home #sidebar .phone, .home #sidebar .email, .home #sidebar .phone .inner, .home #sidebar .email .inner, .home #sidebar .tweet ul { .rotate(0); }
+
+ul.products li.product:nth-child(4n) .img-wrap { top:0; }
+
+#sidebar .widget .inner, #top, a.button, #commentform #submit, .submit, input[type="submit"], input.button, button.button, .woo-pagination a, .quantity .plus, .quantity .minus, .woo-pagination .current { border: none; }
