@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     clean: [DIR_TARGET],
 
     compass: {
-      all: {
+      'daigou-plugin': {
         options: {
           sassDir: 'src/' + DIR_PLUGINS + 'daigou-plugin/sass/',
           cssDir: DIR_BUILD + DIR_PLUGINS + 'daigou-plugin/css/',
@@ -108,12 +108,12 @@ module.exports = function(grunt) {
       );
     }
 
-    // copy PHP
+    // copy PHP and static files
     filesToCopy.push(
       {
         expand: true,
         cwd: 'src/' + DIR_PLUGINS + 'daigou-plugin/',
-        src: ['**/*.php'],
+        src: ['**/*.php', '**/*.gif', '**/*.jpg', '**/*.png'],
         dest: DIR_BUILD + DIR_PLUGINS + 'daigou-plugin/'
       }
     );
