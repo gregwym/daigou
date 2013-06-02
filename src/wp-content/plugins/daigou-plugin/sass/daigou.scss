@@ -1,3 +1,5 @@
+@import "compass/css3/opacity";
+
 .group:after {
   content: "";
   display: table;
@@ -168,5 +170,19 @@
 	.form,
 	.picture-box {
 		padding: 10px;
+	}
+}
+
+.daigou-loading-mask {
+	position: absolute;
+	background-color: #fff;
+	@include opacity(0.5);
+
+	.loading-indicator {
+		width: 32px;
+		height: 32px;
+		display: block;
+		position: absolute;
+		background: url('../img/loading.gif') no-repeat;
 	}
 }

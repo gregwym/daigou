@@ -36,12 +36,17 @@ class Daigou {
 		wp_register_script('daigou.Dom', $jsDir . '/Dom.js');
 		wp_register_script('daigou.Configuration', $jsDir . '/Configuration.js');
 		wp_register_script('URI', $jsDir . '/URI.js');
+		wp_register_script('daigou.LoadingMask', $jsDir . '/LoadingMask.js', array('jquery', 'daigou.Dom'));
 
 		wp_localize_script('daigou.Configuration', 'DaigouConfiguration', array(
 			'ajaxUrl' => admin_url('admin-ajax.php')
 		));
 
-		wp_register_script('daigou.ProductUrlInput', $jsDir . '/ProductUrlInput.js', array('jquery', 'daigou.Dom', 'daigou.Configuration', 'URI'));
+		wp_register_script(
+			'daigou.ProductUrlInput',
+			$jsDir . '/ProductUrlInput.js',
+			array('jquery', 'daigou.Dom', 'daigou.Configuration', 'URI', 'daigou.LoadingMask')
+		);
 		wp_enqueue_script('daigou.add-product-page', $jsDir . '/add-product-page.js', array('jquery', 'daigou.ProductUrlInput'));
 	}
 
@@ -50,18 +55,14 @@ class Daigou {
 		require_once(__DIR__ . '/lib/ExchangeRateManager.php');
 
 		$id = intval($_POST['id']);
-		// TODO: fetch the exchange rate
 		$result = TaoBaoClient::getProductById($id);
 
-		// TODO: Define return value from TaoBaoClient, and handle errors.
-		/*
-		if (gettype($result) !== 'array') {
+		if (!$result || !$result->{'item'}) {
 			echo json_encode(array(
 				'error' => 'Fail to fetch product information.',
 			));
 			die();
 		}
-		*/
 
 		/* Default post config for reference
 		$defaults = array(
