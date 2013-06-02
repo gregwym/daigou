@@ -176,7 +176,7 @@
 .daigou-loading-mask {
 	position: absolute;
 	background-color: #fff;
-	@include opacity(0.5);
+	@include opacity(0.3);
 
 	.loading-indicator {
 		width: 32px;

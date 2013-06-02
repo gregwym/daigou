@@ -22,8 +22,9 @@
 
 	prototype.show = function() {
 		var context = this._context;
-		var height = context.height();
-		var width = context.width();
+		var contextElement = context.get(0);
+		var height = context.outerHeight();
+		var width = context.outerWidth();
 		var id = '#' + this._id;
 
 		$(id + ' .loading-indicator')
@@ -33,7 +34,8 @@
 		$(id)
 			.width(width)
 			.height(height)
-			.css(context.position())
+			.css('left', contextElement.offsetLeft + 'px')
+			.css('top', contextElement.offsetTop + 'px')
 			.show();
 	};
 
