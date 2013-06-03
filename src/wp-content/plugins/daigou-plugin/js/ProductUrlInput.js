@@ -27,8 +27,18 @@
     var loadingMask = new LoadingMask(id);
     loadingMask.createDom();
 
+    // ajdust the size of the input box so it fills the remaining space
+    var inputWidth =
+      Math.max(20, $(id + ' .url-input-container').width() - button.outerWidth() - 10);
+    urlInput.css('width', inputWidth + 'px');
+
     urlInput.mouseover(function() {
       urlInput.select();
+    });
+
+    urlInput.mouseup(function(e) {
+      urlInput.select();
+      e.preventDefault();
     });
 
     button.click(function() {
