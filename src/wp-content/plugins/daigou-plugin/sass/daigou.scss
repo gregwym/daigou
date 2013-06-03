@@ -1,5 +1,16 @@
 @import "compass/css3/opacity";
 
+body, html {
+  height: 100%;
+  background: #dddad6;
+}
+
+body {
+  background-image: url('../img/bg.jpg');
+  background-position: top left;
+  background-repeat: repeat-x;
+}
+
 .group:after {
   content: "";
   display: table;
@@ -61,6 +72,7 @@
       @extend .daigou-inputbox;
 
       font-size: 18px;
+      width: 70%;
     }
   }
 }
