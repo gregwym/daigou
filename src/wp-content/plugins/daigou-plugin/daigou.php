@@ -25,6 +25,11 @@ class Daigou {
 
 		add_shortcode('taobao_url', array($this, 'add_taobao_url_textfield'));
 		add_filter('woocommerce_single_product_image_html', array($this, 'display_external_product_image'), 10, 2);
+
+		// Store customer notes when adding a product to cart
+		add_action('woocommerce_after_main_content', array($this, 'move_woocommerce_tabs'));
+		add_action('woocommerce_before_add_to_cart_button', array($this, 'add_customer_notes_textfield'));
+		add_filter('add_to_cart_redirect', array($this, 'add_customer_notes'));
 	}
 
 	public function register_script() {
@@ -115,8 +120,8 @@ class Daigou {
 		$price_in_cad = round($price_in_rmb / $exchange_rate, 2);
 		\update_post_meta( $product_id, '_regular_price', $price_in_cad );
 		\update_post_meta( $product_id, '_price', $price_in_cad );
-		\update_post_meta( $product_id, '_visibility', 'visible' );
 		\update_post_meta( $product_id, '_layout', 'layout-full' );
+		\update_post_meta( $product_id, '_visibility', 'hidden' );
 
 		// Add product picture as attachment, and assign as product thumbnail.
 		$prod_pic = array(
@@ -159,6 +164,53 @@ class Daigou {
 		}
 
 		return $result;
+	}
+
+	public function move_woocommerce_tabs() {
+		if (\get_post_type() == 'product') {
+			echo '<script>';
+			// echo '	jQuery(".summary").append(jQuery(".woocommerce-tabs"));';
+			echo '	jQuery(".reviews_tab").hide();';
+			echo '</script>';
+		}
+	}
+
+	public function add_customer_notes_textfield() {
+		echo '<input name="notes" type="text" placeholder="Please specify the size, color or any other special needs for this product. ">';
+	}
+
+	public function add_customer_notes($url) {
+		// Retrieve customer notes, skip if has nothing.
+		$notes = $_REQUEST['notes'];
+		if (strlen($notes) == 0) {
+			return $url;
+		}
+
+		// Retrieve corresponding product id.
+		$product_id = $_REQUEST['add-to-cart'];
+		if (strlen($product_id) == 0) {
+			$product_id = $_REQUEST['product_id'];
+		}
+
+		// Cannot retrieve corresponding product id, just quit.
+		if (strlen($product_id) == 0) {
+			return $url;
+		}
+
+		// Construct and insert as comment to the product.
+		$content = "Customer Notes: " . $notes . "<br>";
+		$comment = array(
+			'comment_post_ID' => $product_id,
+			'comment_author' => 'admin',
+			'comment_content' => $content,
+			'comment_type' => '',
+			'comment_parent' => 0,
+			// 'user_id' => 1,
+		);
+
+		\wp_insert_comment($comment);
+
+		return $url;
 	}
 }
 
