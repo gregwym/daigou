@@ -176,7 +176,7 @@ class Daigou {
 	}
 
 	public function add_customer_notes_textfield() {
-		echo '<input name="notes" type="text" placeholder="Please specify the size, color or any other special needs for this product. ">';
+		echo '<textarea name="notes" row="5" style="display:inline-block;width:100%;margin:0 0 10px 0;" placeholder="Please specify the size, color or any other special needs for this product. "></textarea>';
 	}
 
 	public function add_customer_notes($url) {
