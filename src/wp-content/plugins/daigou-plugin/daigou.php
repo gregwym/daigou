@@ -171,7 +171,12 @@ class Daigou {
 		if (\get_post_type() == 'product') {
 			echo '<script>';
 			// echo '	jQuery(".summary").append(jQuery(".woocommerce-tabs"));';
-			echo '	jQuery(".reviews_tab").hide();';
+			// echo '	jQuery(".reviews_tab").hide();';
+
+			echo '	jQuery(".reviews_tab a").html("Customer Notes");';
+			echo '	jQuery("#comments h2").html("Customer Notes");';
+			echo '	jQuery(".add_review").remove();';
+			echo '	jQuery(".noreviews").html("There are no customer notes yet. ");';
 			echo '</script>';
 		}
 	}
