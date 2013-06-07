@@ -29,6 +29,7 @@ class Daigou {
 		// Store customer notes when adding a product to cart
 		add_action('woocommerce_after_main_content', array($this, 'move_woocommerce_tabs'));
 		add_action('woocommerce_before_add_to_cart_button', array($this, 'add_customer_notes_textfield'));
+		add_action('woocommerce_after_add_to_cart_button', array($this, 'add_product_page_footer_note'));
 		add_filter('add_to_cart_redirect', array($this, 'add_customer_notes'));
 	}
 
@@ -170,13 +171,30 @@ class Daigou {
 		if (\get_post_type() == 'product') {
 			echo '<script>';
 			// echo '	jQuery(".summary").append(jQuery(".woocommerce-tabs"));';
-			echo '	jQuery(".reviews_tab").hide();';
+			// echo '	jQuery(".reviews_tab").hide();';
+
+			echo '	jQuery(".reviews_tab a").html("Customer Notes");';
+			echo '	jQuery("#comments h2").html("Customer Notes");';
+			echo '	jQuery(".add_review").remove();';
+			echo '	jQuery(".noreviews").html("There are no customer notes yet. ");';
 			echo '</script>';
 		}
 	}
 
 	public function add_customer_notes_textfield() {
-		echo '<input name="notes" type="text" placeholder="Please specify the size, color or any other special needs for this product. ">';
+		echo '<textarea name="notes" style="display:inline-block;width:100%;min-height:100px;margin:0 0 10px 0;"
+				placeholder="Please specify the size, color or any other special needs for this product. ">Size:
+Color:
+Product Price(RMB):
+Special Requirements:</textarea>';
+	}
+
+	public function add_product_page_footer_note() {
+		echo '<div style="display: inline-block;font-style: italic;margin: 10px 0 0 0;">
+				<p>If the product has discount, the price above may not be correct.
+				Please specify the actually price in RMB in the comments and submit the order.
+				We will get back to you shortly. </p>
+				</div>';
 	}
 
 	public function add_customer_notes($url) {
@@ -198,15 +216,20 @@ class Daigou {
 		}
 
 		// Construct and insert as comment to the product.
-		$content = "Customer Notes: " . $notes . "<br>";
+		$content = $notes . PHP_EOL;
 		$comment = array(
 			'comment_post_ID' => $product_id,
-			'comment_author' => 'admin',
 			'comment_content' => $content,
-			'comment_type' => '',
-			'comment_parent' => 0,
-			// 'user_id' => 1,
+			'comment_agent' => 'Daigou',
+			'comment_author_IP' => $_SERVER['HTTP_X_FORWARDED_FOR'],
 		);
+
+		if (\is_user_logged_in()) {
+			$current_user = \wp_get_current_user();
+			$comment['comment_author'] = $current_user->user_login;
+			$comment['comment_author_email'] = $current_user->user_email;
+			$comment['user_id'] = $current_user->ID;
+		}
 
 		\wp_insert_comment($comment);
 
