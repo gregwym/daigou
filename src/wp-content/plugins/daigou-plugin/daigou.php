@@ -29,6 +29,7 @@ class Daigou {
 		// Store customer notes when adding a product to cart
 		add_action('woocommerce_after_main_content', array($this, 'move_woocommerce_tabs'));
 		add_action('woocommerce_before_add_to_cart_button', array($this, 'add_customer_notes_textfield'));
+		add_action('woocommerce_after_add_to_cart_button', array($this, 'add_product_page_footer_note'));
 		add_filter('add_to_cart_redirect', array($this, 'add_customer_notes'));
 	}
 
@@ -181,6 +182,14 @@ class Daigou {
 Color:
 Product Price(RMB):
 Special Requirements:</textarea>';
+	}
+
+	public function add_product_page_footer_note() {
+		echo '<div style="display: inline-block;font-style: italic;margin: 10px 0 0 0;">
+				<p>If the product has discount, the price above may not be correct.
+				Please specify the actually price in RMB in the comments and submit the order.
+				We will get back to you shortly. </p>
+				</div>';
 	}
 
 	public function add_customer_notes($url) {
