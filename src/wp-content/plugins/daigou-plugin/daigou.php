@@ -220,8 +220,6 @@ Special Requirements:</textarea>';
 		$comment = array(
 			'comment_post_ID' => $product_id,
 			'comment_content' => $content,
-			'comment_type' => 'customer_notes',
-			'comment_parent' => 0,
 			'comment_agent' => 'Daigou',
 			'comment_author_IP' => $_SERVER['HTTP_X_FORWARDED_FOR'],
 		);
