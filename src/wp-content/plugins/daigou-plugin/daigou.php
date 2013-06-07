@@ -216,15 +216,22 @@ Special Requirements:</textarea>';
 		}
 
 		// Construct and insert as comment to the product.
-		$content = "Customer Notes: " . $notes . "<br>";
+		$content = $notes . PHP_EOL;
 		$comment = array(
 			'comment_post_ID' => $product_id,
-			'comment_author' => 'admin',
 			'comment_content' => $content,
-			'comment_type' => '',
+			'comment_type' => 'customer_notes',
 			'comment_parent' => 0,
-			// 'user_id' => 1,
+			'comment_agent' => 'Daigou',
+			'comment_author_IP' => $_SERVER['HTTP_X_FORWARDED_FOR'],
 		);
+
+		if (\is_user_logged_in()) {
+			$current_user = \wp_get_current_user();
+			$comment['comment_author'] = $current_user->user_login;
+			$comment['comment_author_email'] = $current_user->user_email;
+			$comment['user_id'] = $current_user->ID;
+		}
 
 		\wp_insert_comment($comment);
 
