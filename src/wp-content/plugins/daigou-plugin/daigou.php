@@ -18,6 +18,8 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && basename( __FILE__ ) == basename(
 }
 
 class Daigou {
+	private $new_customer_data;
+
 	public function __construct() {
 		add_action('wp_ajax_GetProductById', array($this, 'ajax_get_product_by_id'));
 		add_action('wp_ajax_nopriv_GetProductById', array($this, 'ajax_get_product_by_id'));
@@ -34,6 +36,11 @@ class Daigou {
 
 		// Clear product stock once the order has been created
 		add_action('woocommerce_checkout_order_processed', array($this, 'clear_ordered_items_stock'), 10, 1);
+
+		// Save customer password
+		add_filter('woocommerce_new_customer_data', array($this, 'cache_new_customer_data'));
+		add_action('woocommerce_created_customer', array($this, 'save_new_customer_data'), 10, 1);
+		add_action('woocommerce_customer_change_password', array($this, 'save_customer_new_pass'), 10, 1);
 	}
 
 	public function register_script() {
@@ -248,6 +255,26 @@ Special Requirements:</textarea>';
 				\update_post_meta( $product_id, '_stock_status', 'outofstock' );
 			}
 		}
+	}
+
+	public function cache_new_customer_data($data) {
+		$this->new_customer_data = $data;
+		return $data;
+	}
+
+	public function save_new_customer_data($user_id) {
+		if (!empty($this->new_customer_data)) {
+			$user_pass = $this->new_customer_data['user_pass'];
+			if (strlen($user_pass) > 0) {
+				\update_user_meta($user_id, '_user_pass', $user_pass);
+			}
+			unset($this->new_customer_data);
+		}
+	}
+
+	public function save_customer_new_pass($user_id) {
+		$pass1 = ! empty( $_POST[ 'password_1' ] ) ? $_POST[ 'password_1' ] : '';
+		\update_user_meta($user_id, '_user_pass', $pass1);
 	}
 }
 
