@@ -92,20 +92,17 @@ module.exports = function(grunt) {
     // copy config files
     if (grunt.file.exists(FILE_WP_CONFIG)) {
       filesToCopy.push(
-        { src: FILE_WP_CONFIG, dest: DIR_BUILD + 'wp-config.php' },
-        { src: 'src/wp-salt.php', dest: DIR_BUILD + 'wp-salt.php' },
-        { expand: true, cwd: 'src/', src: ['**/.htaccess'], dest: DIR_BUILD }
+        { src: FILE_WP_CONFIG, dest: DIR_BUILD + 'wp-config.php' }
       );
     } else {
       grunt.fail.warn('You need to add ' + FILE_WP_CONFIG);
     }
 
-    // copy wordpress, woocommerce, mystile, artificer
+    // copy wordpress, and third-party plugins/themes
     if (!grunt.file.exists(DIR_BUILD)) {
       filesToCopy.push(
         { expand: true, cwd: 'wordpress/', src: ['**'], dest: DIR_BUILD },
-        { expand: true, cwd: 'src/' + DIR_PLUGINS, src: ['woocommerce/**'], dest: DIR_BUILD + DIR_PLUGINS },
-        { expand: true, cwd: 'src/' + DIR_THEMES, src: ['mystile/**', 'artificer/**'], dest: DIR_BUILD + DIR_THEMES }
+        { expand: true, cwd: 'copy/', src: ['**'], dest: DIR_BUILD, dot: true }
       );
     }
 
