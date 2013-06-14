@@ -102,12 +102,24 @@ class Daigou {
 		// Define variables that are used w/o pre-checking.
 		$_POST['post_type'] = 'product';
 
+		$item = $result->{'item'};
+		$price_in_rmb = (float) $item->{'price'};
+		$exchange_rate = max(1, ExchangeRateManager::get_rate_from_cad_to_rmb() - 0.3);
+		$price_in_cad = $price_in_rmb / $exchange_rate;
+		$product_url = $item->{'detail_url'};
+		$post_content = sprintf('
+			 Product URL: %s <br />
+			 Unit Price (RMB): %.2f <br />
+			 Unit Price (CAD): %.2f <br />
+			 Exchange Rate: %.2f <br />
+			 Product Detail: %s
+		', $product_url, $price_in_rmb, $price_in_cad, $exchange_rate, $item->{'desc'});
+
 		// Add new product
 		$product = array(
 			'post_type'    => 'product',
-			'post_title'   => $result->{'item'}->{'title'},
-			// TODO: add product description
-			'post_content' => $result->{'item'}->{'detail_url'},
+			'post_title'   => $item->{'title'},
+			'post_content' => $post_content,
 			'post_status'  => 'publish',
 			// 'post_author'  => $user_ID,
 		);
@@ -126,9 +138,6 @@ class Daigou {
 		\wp_update_post($product);
 
 		// Update product meta
-		$price_in_rmb = (float) $result->{'item'}->{'price'};
-		$exchange_rate = max(1, ExchangeRateManager::get_rate_from_cad_to_rmb() - 0.3);
-		$price_in_cad = round($price_in_rmb / $exchange_rate, 2);
 		\update_post_meta( $product_id, '_regular_price', $price_in_cad );
 		\update_post_meta( $product_id, '_price', $price_in_cad );
 		\update_post_meta( $product_id, '_layout', 'layout-full' );
@@ -142,7 +151,7 @@ class Daigou {
 			'post_status'    => 'inherit',
 			// 'post_author'    => $user_ID,
 			'post_parent'    => $product_id,
-			'guid'           => $result->{'item'}->{'pic_url'},
+			'guid'           => $item->{'pic_url'},
 		);
 		$prod_pic_id = \wp_insert_post($prod_pic);
 

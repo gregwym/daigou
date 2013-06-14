@@ -37,6 +37,7 @@
     });
 
     button.click(function() {
+      // TODO: change the way to parse URL
       var url = new Uri(urlInput.val());
       var query = url.search(true);
       var productId = query.id || query.mallstItemId;
@@ -66,6 +67,7 @@
         });
       } else {
         // TODO: log unrecognized url
+        alert('We could not find the product you are looking for.')
       }
     });
   };
