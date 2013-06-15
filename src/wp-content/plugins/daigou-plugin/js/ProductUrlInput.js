@@ -1,6 +1,8 @@
 (function($, Uri, Configuration, Dom, LoadingMask) {
   var attr = Dom.getAttributeString;
-  var DEFAULT_URL_TEXT = 'Paste in a TaoBao URL';
+  var DEFAULT_URL_TEXT = '粘贴淘宝商品链接';
+  var DEFAULT_ERROR_MSG = '不好意思，亲，我们找不到您所要的商品';
+  var TXT_BUTTON = '代购吧';
 
   var ProductUrlInput = this['daigou.ProductUrlInput'] = function() {};
 
@@ -8,15 +10,16 @@
   prototype.createDom = function() {
     var id = this._id = Dom.getId();
 
-    return ['\
-      <div ', attr('id', id) , attr('class', 'daigou-product-url-input'), '> \
-        <div class="url-input-container"> \
-          <input name="url" type="text"', attr('value', DEFAULT_URL_TEXT), '/> \
-          <button>Get the product</button> \
-        </div> \
-        <div class="product-detail-box-container"></div> \
-      </div> \
-    '].join('');
+    return [
+      '<form ', attr('id', id) , attr('class', 'daigou-product-url-input'), '>',
+        '<div class="url-input-container">',
+          '<input name="url" type="text"', attr('value', DEFAULT_URL_TEXT), '/> ',
+        '</div>',
+        '<div class="button-container">',
+          '<button type="submit">', TXT_BUTTON, '</button>',
+        '</div>',
+      '</form>'
+    ].join('');
   };
 
   prototype.onDomCreated = function() {
@@ -36,7 +39,7 @@
       e.preventDefault();
     });
 
-    button.click(function() {
+    $(id).submit(function(evt) {
       // TODO: change the way to parse URL
       var url = new Uri(urlInput.val());
       var query = url.search(true);
@@ -61,14 +64,16 @@
             } else {
               // TODO: error handling
               loadingMask.hide();
-              alert('We could not add the product to shopping cart, please try again');
+              var error = data.error || DEFAULT_ERROR_MSG;
+              alert(error);
             }
           }
         });
       } else {
         // TODO: log unrecognized url
-        alert('We could not find the product you are looking for.')
+        alert(DEFAULT_ERROR_MSG);
       }
+      evt.preventDefault();
     });
   };
 

@@ -108,12 +108,12 @@ class Daigou {
 		$price_in_cad = $price_in_rmb / $exchange_rate;
 		$product_url = $item->{'detail_url'};
 		$post_content = sprintf('
-			 Product URL: %s <br />
-			 Unit Price (RMB): %.2f <br />
-			 Unit Price (CAD): %.2f <br />
-			 Exchange Rate: %.2f <br />
-			 Product Detail: %s
-		', $product_url, $price_in_rmb, $price_in_cad, $exchange_rate, $item->{'desc'});
+			 商品链接: %s %6$s
+			 单件价格(人民币): ¥%.2f %6$s
+			 单件价格(加元): C$%.2f %6$s
+			 汇率: %.2f %6$s
+			 商品详情: %s %6$s
+		', $product_url, $price_in_rmb, $price_in_cad, $exchange_rate, $item->{'desc'}, PHP_EOL);
 
 		// Add new product
 		$product = array(
