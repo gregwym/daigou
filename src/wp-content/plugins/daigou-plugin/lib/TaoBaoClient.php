@@ -14,7 +14,8 @@ class TaoBaoClient {
 			detail_url,
 			item_weight,
 			pic_url,
-			price
+			price,
+			desc
 		');
 		$request->setNumIid($id);
 		$response = $client->execute($request);
