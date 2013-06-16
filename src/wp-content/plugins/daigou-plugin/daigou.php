@@ -192,27 +192,27 @@ class Daigou {
 			// echo '	jQuery(".summary").append(jQuery(".woocommerce-tabs"));';
 			// echo '	jQuery(".reviews_tab").hide();';
 
-			echo '	jQuery(".reviews_tab a").html("Customer Notes");';
-			echo '	jQuery("#comments h2").html("Customer Notes");';
+			echo '	jQuery(".reviews_tab a").html("买家备注");';
+			echo '	jQuery("#comments h2").html("买家备注");';
 			echo '	jQuery(".add_review").remove();';
-			echo '	jQuery(".noreviews").html("There are no customer notes yet. ");';
+			echo '	jQuery(".noreviews").html("暂时没有买家备注. ");';
 			echo '</script>';
 		}
 	}
 
 	public function add_customer_notes_textfield() {
-		echo '<textarea name="notes" style="display:inline-block;width:100%;min-height:100px;margin:0 0 10px 0;"
-				placeholder="Please specify the size, color or any other special needs for this product. ">Size:
-Color:
-Product Price(RMB):
-Special Requirements:</textarea>';
+		echo '<textarea name="notes" style="display:inline-block;width:100%;min-height:120px;margin:0 0 10px 0;"
+				placeholder="请在这里注明需要的尺寸, 颜色, 或者其他对该商品的特殊需求. ">尺码:
+颜色:
+单件价格(人民币):
+其他特殊要求:</textarea>';
 	}
 
 	public function add_product_page_footer_note() {
 		echo '<div style="display: inline-block;font-style: italic;margin: 10px 0 0 0;">
-				<p>If the product has discount, the price above may not be correct.
-				Please specify the actually price in RMB in the comments and submit the order.
-				We will get back to you shortly. </p>
+				<p>打折商品的抓取价格可能与真实价格不符. 如出现此情况,
+				请您在上方填写该商品的单件价格, 并以<strong>"价格需要调整"</strong>的方式提交订单.
+				我们会尽快调整订单的价格并与您邮件联系. </p>
 				</div>';
 	}
 
