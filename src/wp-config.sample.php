@@ -17,7 +17,7 @@ define('DB_PORT', $mysql_config["port"]);
 
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
-define('WPLANG', '');
+define('WPLANG', 'zh_CN');
 define('WP_DEBUG', true);
 
 require('wp-salt.php');
