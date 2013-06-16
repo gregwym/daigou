@@ -1,0 +1,92 @@
+*** WooCommerce CSV Export Changelog ***
+
+2013.06.09 - version 2.0.2
+* Changed comment query to use $wpdb->comments
+* Fixed csv import order item output
+
+2013.05.05 - version 2.0.1
+* Added order notes to all outputs.
+* Fixed line per item output.
+
+2013.05.01 - version 2.0.0
+* Added output format that is compatible with CSV Import suite
+  for both order and customer exports.
+
+2013.03.27 - version 1.6.4
+* Added BOM character as an selectable option in to the UI.
+  This fixes compatibility issues with Google Spreadsheet.
+
+2013.03.15 - version 1.6.3
+* Fixed empty file issue with order exports.
+
+2013.02.16 - version 1.6.2
+* Added empty folder for translations.
+
+2013.01.23 - version 1.6.1
+* Fix notices
+
+2013.01.21 - version 1.6.0
+* Added filter for custom meta fields.
+* WC 2.0/1.6.6 compatibility check.
+* Fix for order status pulled as translated value
+
+2013.01.18 - version 1.5.10
+* Removed unused jquery scripts
+
+2012.12.15 - version 1.5.9
+* Changed order number to support get_order_number().
+* Added order number preceding character trimming.
+* Fixed problem with quotes not being escaped.
+* woocommerce_export_csv_wrap_data to prevent errors with some php versions
+
+2012.12.04 - version 1.5.8
+ * New updater
+
+2012.11.10 - version 1.5.7
+* Added trimming for new lines in product variable
+
+2012.10.16 - version 1.5.6
+ * Fix for character encoding in Microsoft Excel
+
+2012.08.30 - version 1.5.5
+ * Export translated statuses
+
+2012.08.30 - version 1.5.4
+ * Fixed order item meta
+
+2012.08.06 - version 1.5.3
+ * Fixed order status extracting for client export
+
+2012.06.28 - version 1.5.2
+ * Remove stripping of time in order date fields to provide time too
+
+2012.06.25 - version 1.5.1
+ * EU VAT number compat
+
+2012.05.26 - version 1.5
+ * Fixed double quotes escape problem
+ * Added support for custom order statuses (thanks to Patrick Garman)
+
+2012.05.04 - version 1.4
+ * Added VAT Field
+ * Added customer notes field
+
+2012.04.22 - version 1.3
+ * Added possibility to choose how to display order items
+
+2012.02.29 - version 1.2.1
+ * Fixed case where wrong order status was passed to export
+
+2012.02.26 - version 1.2
+ * Performance improvements: reduced the amounts of DB calls
+ * Added missing order status field
+ * Added order items in to export
+ * Export full country name
+
+2012.02.19 - version 1.1
+ * Added possibility to choose order statuses on export
+ * Added missing billing state and date fields
+ * Split name field to first and last name fields
+
+2012.02.15 - version 1.0
+ * First release
