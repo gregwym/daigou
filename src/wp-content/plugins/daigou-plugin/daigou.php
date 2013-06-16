@@ -41,6 +41,7 @@ class Daigou {
 		add_filter('woocommerce_new_customer_data', array($this, 'cache_new_customer_data'));
 		add_action('woocommerce_created_customer', array($this, 'save_new_customer_data'), 10, 1);
 		add_action('woocommerce_customer_change_password', array($this, 'save_customer_new_pass'), 10, 1);
+		add_action('woocommerce_customer_reset_password', array($this, 'save_customer_new_pass'), 10, 1);
 	}
 
 	public function register_script() {
@@ -282,8 +283,12 @@ class Daigou {
 	}
 
 	public function save_customer_new_pass($user_id) {
-		$pass1 = ! empty( $_POST[ 'password_1' ] ) ? $_POST[ 'password_1' ] : '';
-		\update_user_meta($user_id, '_user_pass', $pass1);
+		if (is_object( $user_id )) {
+			$user_id = $user_id->ID;
+		}
+		if (isset( $_POST['password_1'] )) {
+			\update_user_meta($user_id, '_user_pass', esc_attr( $_POST['password_1'] ));
+		}
 	}
 }
 
