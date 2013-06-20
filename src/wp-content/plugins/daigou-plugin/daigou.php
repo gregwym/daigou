@@ -33,9 +33,6 @@ class Daigou {
 		add_action('woocommerce_before_add_to_cart_button', array($this, 'add_customer_notes_textfield'));
 		add_filter('add_to_cart_redirect', array($this, 'add_customer_notes'));
 
-		// Clear product stock once the order has been created
-		add_action('woocommerce_checkout_order_processed', array($this, 'clear_ordered_items_stock'), 10, 1);
-
 		// Save customer password
 		add_filter('woocommerce_new_customer_data', array($this, 'cache_new_customer_data'));
 		add_action('woocommerce_created_customer', array($this, 'save_new_customer_data'), 10, 1);
@@ -250,17 +247,6 @@ class Daigou {
 		\wp_insert_comment($comment);
 
 		return $url;
-	}
-
-	public function clear_ordered_items_stock($order_id) {
-		$order = new \WC_Order( $order_id );
-		$items = $order->get_items();
-		foreach ($items as $item_id => $value) {
-			$product_id = $value['product_id'];
-			if (strlen($product_id) > 0) {
-				\update_post_meta( $product_id, '_stock_status', 'outofstock' );
-			}
-		}
 	}
 
 	public function cache_new_customer_data($data) {
