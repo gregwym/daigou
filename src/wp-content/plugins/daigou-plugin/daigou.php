@@ -31,11 +31,7 @@ class Daigou {
 		// Store customer notes when adding a product to cart
 		add_action('woocommerce_after_main_content', array($this, 'move_woocommerce_tabs'));
 		add_action('woocommerce_before_add_to_cart_button', array($this, 'add_customer_notes_textfield'));
-		add_action('woocommerce_after_add_to_cart_button', array($this, 'add_product_page_footer_note'));
 		add_filter('add_to_cart_redirect', array($this, 'add_customer_notes'));
-
-		// Clear product stock once the order has been created
-		add_action('woocommerce_checkout_order_processed', array($this, 'clear_ordered_items_stock'), 10, 1);
 
 		// Save customer password
 		add_filter('woocommerce_new_customer_data', array($this, 'cache_new_customer_data'));
@@ -202,19 +198,16 @@ class Daigou {
 	}
 
 	public function add_customer_notes_textfield() {
+		echo '<div style="display: inline-block;">
+				<p>打折商品的抓取价格可能与真实价格不符. 如出现此情况,
+				请您在上方填写该商品的单件价格, 并以<strong>"价格需要调整"</strong>的方式提交订单.
+				我们会尽快调整订单的价格并与您邮件联系. <br><strong>汇率/价格明细请见下方的商品介绍</strong></p>
+				</div>';
 		echo '<textarea name="notes" style="display:inline-block;width:100%;min-height:120px;margin:0 0 10px 0;"
 				placeholder="请在这里注明需要的尺寸, 颜色, 或者其他对该商品的特殊需求. ">尺码:
 颜色:
 单件价格(人民币):
 其他特殊要求:</textarea>';
-	}
-
-	public function add_product_page_footer_note() {
-		echo '<div style="display: inline-block;font-style: italic;margin: 10px 0 0 0;">
-				<p>打折商品的抓取价格可能与真实价格不符. 如出现此情况,
-				请您在上方填写该商品的单件价格, 并以<strong>"价格需要调整"</strong>的方式提交订单.
-				我们会尽快调整订单的价格并与您邮件联系. </p>
-				</div>';
 	}
 
 	public function add_customer_notes($url) {
@@ -254,17 +247,6 @@ class Daigou {
 		\wp_insert_comment($comment);
 
 		return $url;
-	}
-
-	public function clear_ordered_items_stock($order_id) {
-		$order = new \WC_Order( $order_id );
-		$items = $order->get_items();
-		foreach ($items as $item_id => $value) {
-			$product_id = $value['product_id'];
-			if (strlen($product_id) > 0) {
-				\update_post_meta( $product_id, '_stock_status', 'outofstock' );
-			}
-		}
 	}
 
 	public function cache_new_customer_data($data) {
