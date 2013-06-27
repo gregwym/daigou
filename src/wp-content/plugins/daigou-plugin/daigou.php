@@ -38,6 +38,9 @@ class Daigou {
 		add_action('woocommerce_created_customer', array($this, 'save_new_customer_data'), 10, 1);
 		add_action('woocommerce_customer_change_password', array($this, 'save_customer_new_pass'), 10, 1);
 		add_action('woocommerce_customer_reset_password', array($this, 'save_customer_new_pass'), 10, 1);
+
+		// Add Continue shopping
+		add_action('woo_foot', array($this, 'add_continue_shopping'));
 	}
 
 	public function register_script() {
@@ -271,6 +274,16 @@ class Daigou {
 		if (isset( $_POST['password_1'] )) {
 			\update_user_meta($user_id, '_user_pass', esc_attr( $_POST['password_1'] ));
 		}
+	}
+
+	public function add_continue_shopping() {
+		echo '<script type="text/javascript">
+				(function($){
+					$(\'.woocommerce-message\').append(
+						\'<a href="http://www.daigouge.com/" class="button" style="margin-right:12px;">继续购物 →</a>\'
+					);
+				}).call(document, jQuery);
+			</script>';
 	}
 }
 
