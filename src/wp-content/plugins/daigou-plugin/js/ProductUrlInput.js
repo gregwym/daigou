@@ -1,7 +1,7 @@
 (function($, Uri, Configuration, Dom, LoadingMask) {
   var attr = Dom.getAttributeString;
   var DEFAULT_URL_TEXT = '粘贴淘宝商品链接';
-  var DEFAULT_ERROR_MSG = '不好意思，亲，我们找不到您所要的商品';
+  var DEFAULT_ERROR_MSG = '找不到您所要的商品哟，亲!请人肉发送至request@daigouge.com';
   var TXT_BUTTON = '代购吧';
 
   var ProductUrlInput = this['daigou.ProductUrlInput'] = function() {};

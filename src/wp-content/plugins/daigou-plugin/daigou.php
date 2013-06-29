@@ -73,9 +73,9 @@ class Daigou {
 		$id = intval($_POST['id']);
 		$result = TaoBaoClient::getProductById($id);
 
-		if (!$result || !$result->{'item'}) {
+		if (!$result || !property_exists($result, 'item')) {
 			echo json_encode(array(
-				'error' => 'Fail to fetch product information.',
+				'error' => '找不到您所要的商品哟，亲!请人肉发送至request@daigouge.com',
 			));
 			die();
 		}
@@ -127,7 +127,7 @@ class Daigou {
 
 		if (gettype($product_id) !== 'integer' || $product_id === 0) {
 			echo json_encode(array(
-				'error' => 'Fail to create new product.',
+				'error' => '有错误发生，亲!请重试一次',
 			));
 			die();
 		}
