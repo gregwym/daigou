@@ -275,7 +275,7 @@ Other Requirements:</textarea>';
 		echo '<script type="text/javascript">
 				(function($){
 					$(\'.woocommerce-message\').append(
-						\'<a href="http://www.daigouge.com/" class="button" style="margin-right:12px;">Continue Shopping →</a>\'
+						\'<a href="/" class="button" style="margin-right:12px;">Continue Shopping →</a>\'
 					);
 				}).call(document, jQuery);
 			</script>';
