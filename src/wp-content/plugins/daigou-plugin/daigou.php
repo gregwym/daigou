@@ -75,7 +75,7 @@ class Daigou {
 
 		if (!$result || !property_exists($result, 'item')) {
 			echo json_encode(array(
-				'error' => '找不到您所要的商品哟，亲!请人肉发送至request@daigouge.com',
+				'error' => 'We cannot find the product, please email request@daigouge.com',
 			));
 			die();
 		}
@@ -108,11 +108,11 @@ class Daigou {
 		$price_in_cad = $price_in_rmb / $exchange_rate;
 		$product_url = $item->{'detail_url'};
 		$post_content = sprintf('
-			 商品链接: %s %6$s
-			 单件价格(人民币): ¥%.2f %6$s
-			 单件价格(加元): C$%.2f %6$s
-			 汇率: %.2f %6$s
-			 商品详情: %s %6$s
+			 Produt URL: %s %6$s
+			 Unit Price (RMB): ¥%.2f %6$s
+			 Unit Price (CAD): C$%.2f %6$s
+			 Exchange Rate: %.2f %6$s
+			 Product Detail: %s %6$s
 		', $product_url, $price_in_rmb, $price_in_cad, $exchange_rate, $item->{'desc'}, PHP_EOL);
 
 		// Add new product
@@ -127,7 +127,7 @@ class Daigou {
 
 		if (gettype($product_id) !== 'integer' || $product_id === 0) {
 			echo json_encode(array(
-				'error' => '有错误发生，亲!请重试一次',
+				'error' => 'Please try again',
 			));
 			die();
 		}
@@ -192,25 +192,20 @@ class Daigou {
 			// echo '	jQuery(".summary").append(jQuery(".woocommerce-tabs"));';
 			// echo '	jQuery(".reviews_tab").hide();';
 
-			echo '	jQuery(".reviews_tab a").html("买家备注");';
-			echo '	jQuery("#comments h2").html("买家备注");';
+			echo '	jQuery(".reviews_tab a").html("Your requirements");';
+			echo '	jQuery("#comments h2").html("Your requirements");';
 			echo '	jQuery(".add_review").remove();';
-			echo '	jQuery(".noreviews").html("暂时没有买家备注. ");';
+			echo '	jQuery(".noreviews").html("No requirements");';
 			echo '</script>';
 		}
 	}
 
 	public function add_customer_notes_textfield() {
-		echo '<div style="display: inline-block;">
-				<p>打折商品的抓取价格可能与真实价格不符. 如出现此情况,
-				请您在上方填写该商品的单件价格, 并以<strong>"价格需要调整"</strong>的方式提交订单.
-				我们会尽快调整订单的价格并与您邮件联系. <br><strong>汇率/价格明细请见下方的商品介绍</strong></p>
-				</div>';
 		echo '<textarea name="notes" style="display:inline-block;width:100%;min-height:120px;margin:0 0 10px 0;"
-				placeholder="请在这里注明需要的尺寸, 颜色, 或者其他对该商品的特殊需求. ">尺码:
-颜色:
-单件价格(人民币):
-其他特殊要求:</textarea>';
+				placeholder="Please specify color, size and any other requirements here">Size:
+Color:
+Unit Price (RMB):
+Other Requirements:</textarea>';
 	}
 
 	public function add_customer_notes($url) {
@@ -280,7 +275,7 @@ class Daigou {
 		echo '<script type="text/javascript">
 				(function($){
 					$(\'.woocommerce-message\').append(
-						\'<a href="http://www.daigouge.com/" class="button" style="margin-right:12px;">继续购物 →</a>\'
+						\'<a href="http://www.daigouge.com/" class="button" style="margin-right:12px;">Continue Shopping →</a>\'
 					);
 				}).call(document, jQuery);
 			</script>';

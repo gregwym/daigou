@@ -1,8 +1,8 @@
 (function($, Uri, Configuration, Dom, LoadingMask) {
   var attr = Dom.getAttributeString;
-  var DEFAULT_URL_TEXT = '粘贴淘宝商品链接';
-  var DEFAULT_ERROR_MSG = '找不到您所要的商品哟，亲!请人肉发送至request@daigouge.com';
-  var TXT_BUTTON = '代购吧';
+  var DEFAULT_URL_TEXT = 'Paste a taobao.com product URL here';
+  var DEFAULT_ERROR_MSG = 'We cannot find the product, please email request@daigouge.com';
+  var TXT_BUTTON = 'DaiGou it';
 
   var ProductUrlInput = this['daigou.ProductUrlInput'] = function() {};
 
