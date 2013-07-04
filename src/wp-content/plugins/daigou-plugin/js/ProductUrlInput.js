@@ -3,7 +3,7 @@
   var DEFAULT_URL_TEXT = '粘贴淘宝商品链接';
   var DEFAULT_ERROR_MSG = '找不到您所要的商品哟，亲!请人肉发送至request@daigouge.com';
   var TXT_BUTTON = '代购吧';
-  var PATTERN_URL = /[&|?](?:id|mallstItemId)=(\d+)/;
+  var PATTERN_URL = /[&?](?:id|mallstItemId)=(\d+)/;
 
   var ProductUrlInput = this['daigou.ProductUrlInput'] = function() {};
 
