@@ -1,8 +1,9 @@
-(function($, Uri, Configuration, Dom, LoadingMask) {
+(function($, Configuration, Dom, LoadingMask) {
   var attr = Dom.getAttributeString;
   var DEFAULT_URL_TEXT = '粘贴淘宝商品链接';
   var DEFAULT_ERROR_MSG = '找不到您所要的商品哟，亲!请人肉发送至request@daigouge.com';
   var TXT_BUTTON = '代购吧';
+  var PATTERN_URL = /[&\?](?:id|mallstItemId)=(\d+)/;
 
   var ProductUrlInput = this['daigou.ProductUrlInput'] = function() {};
 
@@ -40,12 +41,10 @@
     });
 
     $(id).submit(function(evt) {
-      // TODO: change the way to parse URL
-      var url = new Uri(urlInput.val());
-      var query = url.search(true);
-      var productId = query.id || query.mallstItemId;
+      var matches = PATTERN_URL.exec(urlInput.val());
 
-      if (productId) {
+      if (matches) {
+        var productId = matches[1];
         loadingMask.show();
         $.ajax(Configuration.ajaxUrl, {
           'type': 'POST',
@@ -77,4 +76,4 @@
     });
   };
 
-})(jQuery, URI, window['daigou.Configuration'], window['daigou.Dom'], window['daigou.LoadingMask']);
+})(jQuery, window['daigou.Configuration'], window['daigou.Dom'], window['daigou.LoadingMask']);
