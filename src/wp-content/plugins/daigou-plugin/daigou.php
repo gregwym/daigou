@@ -51,7 +51,6 @@ class Daigou {
 
 		wp_register_script('daigou.Dom', $jsDir . '/Dom.js');
 		wp_register_script('daigou.Configuration', $jsDir . '/Configuration.js');
-		wp_register_script('URI', $jsDir . '/URI.js');
 		wp_register_script('daigou.LoadingMask', $jsDir . '/LoadingMask.js', array('jquery', 'daigou.Dom'));
 
 		wp_localize_script('daigou.Configuration', 'DaigouConfiguration', array(
@@ -61,7 +60,7 @@ class Daigou {
 		wp_register_script(
 			'daigou.ProductUrlInput',
 			$jsDir . '/ProductUrlInput.js',
-			array('jquery', 'daigou.Dom', 'daigou.Configuration', 'URI', 'daigou.LoadingMask')
+			array('jquery', 'daigou.Dom', 'daigou.Configuration', 'daigou.LoadingMask')
 		);
 		wp_enqueue_script('daigou.add-product-page', $jsDir . '/add-product-page.js', array('jquery', 'daigou.ProductUrlInput'));
 	}
