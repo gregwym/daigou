@@ -1,4 +1,5 @@
 @import "compass/css3/opacity";
+@import "compass/css3/transition";
 
 body, html {
   height: 100%;
@@ -47,7 +48,6 @@ body, html {
 
   .slide-container {
     position: relative;
-    height: 500px;
   }
 
   .arrow {
@@ -69,6 +69,22 @@ body, html {
     right: 20px;
   }
 
+  .slide {
+    height: 500px;
+    width: 100%;
+    display: block;
+  }
+
+  .slide-text {
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+    font-weight: bold;
+    color: #4c66a4;
+    position: absolute;
+    bottom: 0;
+  }
+
   .icon-container {
     background-color: #f2f5f5;
     text-align: center;
@@ -81,7 +97,10 @@ body, html {
     width: 32px;
     height: 32px;
     margin: 8px;
-    @include opacity(0.5);
+    @include opacity(0.3);
+    @include transition-property(opacity);
+    @include transition-duration(1s);
+    @include transition-timing-function(ease);
   }
 
   .icon.selected {
