@@ -1,39 +1,92 @@
 (function($, Dom) {
   'use strict';
   var attr = Dom.getAttributeString;
-  var cls = Dom.getClasses;
+  var style = Dom.getStyle;
 
-  var Guide = window['daigou.Guide'] = function(items) {
-    this._items = items;
-    this._slideIndex = 0;
-    this._iconIndex = 0;
+  var Guide = window['daigou.Guide'] = function(items, settings) {
+    // Flattens the slides
+    var slides = this._slides = [];
+    // Fast forward using the icon
+    var icons = this._icons = [];
+
+    for (var i = 0, iconCount = items.length; i < iconCount; i++) {
+      var item = items[i];
+      var iconSlides = item.slides;
+      icons[i] = { url: item.icon, slideIndex: slides.length };
+
+      for (var j = 0, slideCount = iconSlides.length; j < slideCount; j++) {
+        var slide = iconSlides[j];
+        slides.push({ url: slide.url, text: slide.text, iconIndex: i });
+      }
+    }
+
+    this._slideIndex = this._iconIndex = -1;
   };
 
   var prototype = Guide.prototype;
 
-  prototype.createDom = function() {
-    var id = this._id = Dom.getId();
-    var items = this._items;
+  prototype.updateDom = function(newSlideIndex, newIconIndex) {
+    // var slideIndex = this._slideIndex;
+    // if (newSlideIndex === slideIndex) {
+    //   return;
+    // }
 
-    var iconsDom = [];
-    for (var i = 0, len = items.length; i < len; i++) {
-      var item = items[i];
-      var classes = (i === 0) ? ['icon', 'selected'] : ['icon'];
-      iconsDom.push(
-        '<img ', cls(classes), attr('src', item.icon), ' />'
+    // var id = '#' + this._id;
+    // // Shifts in the correct slide
+    // $(id + ' .slides-container').css('margin-left', -100 * newSlideIndex + '%');
+    // this._slideIndex = newSlideIndex;
+
+    // var iconIndex = this._iconIndex;
+    // if (iconIndex === newIconIndex) {
+    //   return;
+    // }
+
+
+    // this._iconIndex = newIconIndex;
+  };
+
+  function createSlidesDom(slides) {
+    var buffer = [];
+    var len = slides.length;
+    var width = 100 / slides.length;
+    for (var i = 0; i < len; i++) {
+      var slide = slides[i];
+      buffer.push(
+        '<div class="slide-container"', style({ width: width + '%'}), '>',
+          '<img class="slide" ', attr('src', slide.url), '/>',
+          '<div class="slide-text">', slide.text, '</div>',
+        '</div>'
       );
     }
 
+    return buffer.join('');
+  }
+
+  function createIconsDom(icons) {
+    var buffer = [];
+    for (var i = 0, len = icons.length; i < len; i++) {
+      var icon = icons[i];
+      buffer.push(
+        '<img class="icon"', attr('src', icon.url), ' />'
+      );
+    }
+    return buffer.join('');
+  }
+
+  prototype.createDom = function() {
+    var id = this._id = Dom.getId();
+
     return [
-      '<div ', attr('id', id), attr('class', 'daigou-guide'), '>',
-        '<div class="slide-container">',
-          '<img class="slide" ', attr('src', items[0].slides[0].url), ' />',
+      '<div', attr('id', id), attr('class', 'daigou-guide'), '>',
+        '<div class="slide-viewer">',
+          '<div class="slides-container group"', style({ width: 100 * this._slides.length + '%' }),'>',
+            createSlidesDom(this._slides),
+          '</div>',
           '<a class="arrow-left" href="#"></a>',
           '<a class="arrow-right" href="#"></a>',
-          '<div class="slide-text">', items[0].slides[0].text, '</div>',
         '</div>',
         '<div class="icon-container">',
-          iconsDom.join(''),
+          createIconsDom(this._icons),
         '</div>',
       '</div>'
     ].join('');
@@ -100,14 +153,14 @@
       {
         icon: '../img/arrow-left.png',
         slides: [
-          { url: '../img/arrow-left.png', text: '1 0' },
+          { url: '../img/arrow-right.png', text: '1 0' },
           { url: '../img/arrow-left.png', text: '1 1' }
         ]
       }
     ]);
 
     $('.daigou-guide').replaceWith(guide.createDom());
-    guide.onDomCreated();
+    //guide.onDomCreated();
 
   });
 

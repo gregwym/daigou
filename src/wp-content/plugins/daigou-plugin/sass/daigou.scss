@@ -46,10 +46,6 @@ body, html {
   border: 1px solid #d3d6db;
   border-radius: 3px;
 
-  .slide-container {
-    position: relative;
-  }
-
   .arrow {
     width: 27px;
     height: 45px;
@@ -67,6 +63,22 @@ body, html {
     @extend .arrow;
     background: url('../img/arrow-right.png') no-repeat;
     right: 20px;
+  }
+
+  .slide-viewer {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .slide-container {
+    position: relative;
+    float: left;
+  }
+
+  .slides-container {
+    @include transition-property(margin);
+    @include transition-duration(1s);
+    @include transition-timing-function(ease-in-out);
   }
 
   .slide {

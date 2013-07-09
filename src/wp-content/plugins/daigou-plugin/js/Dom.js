@@ -11,11 +11,19 @@
     },
 
     getAttributeString: function(name, value) {
-      return name + '="' + value + '" ';
+      return ' ' + name + '="' + value + '" ';
     },
 
     getClasses: function(classes) {
       return Dom.getAttributeString('class', classes.join(' '));
+    },
+
+    getStyle: function(styles) {
+      var buffer = [];
+      for (var style in styles) {
+        buffer.push(style, ':', styles[style], ';');
+      }
+      return Dom.getAttributeString('style', buffer.join(''));
     }
   };
 })();
