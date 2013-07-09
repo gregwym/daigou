@@ -41,6 +41,58 @@ body, html {
   color: #fff;
 }
 
+.daigou-guide {
+  border: 1px solid #d3d6db;
+  border-radius: 3px;
+
+  .slide-container {
+    position: relative;
+    height: 500px;
+  }
+
+  .arrow {
+    width: 27px;
+    height: 45px;
+    position: absolute;
+    top: 50%;
+  }
+
+  .arrow-left {
+    @extend .arrow;
+    background: url('../img/arrow-left.png') no-repeat;
+    left: 20px;
+  }
+
+  .arrow-right {
+    @extend .arrow;
+    background: url('../img/arrow-right.png') no-repeat;
+    right: 20px;
+  }
+
+  .icon-container {
+    background-color: #f2f5f5;
+    text-align: center;
+    border-top: 1px solid #d3d6db;
+  }
+
+  .icon {
+    border-radius: 10px;
+    border: 1px solid #fff;
+    width: 32px;
+    height: 32px;
+    margin: 8px;
+    @include opacity(0.5);
+  }
+
+  .icon.selected {
+    @include opacity(1.0);
+  }
+
+  .icon:hover {
+    cursor: pointer;
+  }
+}
+
 .daigou-product-url-input {
   max-width: 800px;
   margin: 0 auto;

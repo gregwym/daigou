@@ -12,6 +12,10 @@
 
     getAttributeString: function(name, value) {
       return name + '="' + value + '" ';
+    },
+
+    getClasses: function(classes) {
+      return Dom.getAttributeString('class', classes.join(' '));
     }
   };
 })();
