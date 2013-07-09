@@ -97,7 +97,7 @@ body, html {
     bottom: 0;
   }
 
-  .icon-container {
+  .icons-container {
     background-color: #f2f5f5;
     text-align: center;
     border-top: 1px solid #d3d6db;
@@ -111,7 +111,7 @@ body, html {
     margin: 8px;
     @include opacity(0.3);
     @include transition-property(opacity);
-    @include transition-duration(1s);
+    @include transition-duration(0.5s);
     @include transition-timing-function(ease);
   }
 

@@ -25,24 +25,25 @@
 
   var prototype = Guide.prototype;
 
-  prototype.updateDom = function(newSlideIndex, newIconIndex) {
-    // var slideIndex = this._slideIndex;
-    // if (newSlideIndex === slideIndex) {
-    //   return;
-    // }
+  prototype._updateDom = function(newSlideIndex, newIconIndex) {
+    var slideIndex = this._slideIndex;
+    if (newSlideIndex === slideIndex) {
+      return;
+    }
 
-    // var id = '#' + this._id;
-    // // Shifts in the correct slide
-    // $(id + ' .slides-container').css('margin-left', -100 * newSlideIndex + '%');
-    // this._slideIndex = newSlideIndex;
+    var id = '#' + this._id;
+    // Shifts in the correct slide
+    $(id + ' .slides-container').css('margin-left', -100 * newSlideIndex + '%');
+    this._slideIndex = newSlideIndex;
 
-    // var iconIndex = this._iconIndex;
-    // if (iconIndex === newIconIndex) {
-    //   return;
-    // }
+    var iconIndex = this._iconIndex;
+    if (iconIndex === newIconIndex) {
+      return;
+    }
 
-
-    // this._iconIndex = newIconIndex;
+    $(id + ' .icon').eq(iconIndex).removeClass('selected');
+    $(id + ' .icon').eq(newIconIndex).addClass('selected');
+    this._iconIndex = newIconIndex;
   };
 
   function createSlidesDom(slides) {
@@ -85,7 +86,7 @@
           '<a class="arrow-left" href="#"></a>',
           '<a class="arrow-right" href="#"></a>',
         '</div>',
-        '<div class="icon-container">',
+        '<div class="icons-container">',
           createIconsDom(this._icons),
         '</div>',
       '</div>'
@@ -95,49 +96,25 @@
   prototype.onDomCreated = function() {
     var me = this;
     var id = '#' + this._id;
-    var items = this._items;
-
-    var slide = $(id + ' .slide');
-    var slideText = $(id + ' .slide-text');
 
     $(id + ' .arrow-left').click(function(evt) {
-      var slideIndex = me._slideIndex - 1;
-      var slides = items[me._iconIndex].slides;
-
-      if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
-      }
-
-      me._slideIndex = slideIndex;
-      slide.attr('src', slides[slideIndex].url);
-      slideText.text(slides[slideIndex].text);
+      var slideIndex = Math.max(0, me._slideIndex - 1);
+      me._updateDom(slideIndex, me._slides[slideIndex].iconIndex);
       evt.preventDefault();
     });
 
     $(id + ' .arrow-right').click(function(evt) {
-      var slideIndex = me._slideIndex + 1;
-      var slides = items[me._iconIndex].slides;
-
-      if (slideIndex >= slides.length) {
-        slideIndex = 0;
-      }
-
-      me._slideIndex = slideIndex;
-      slide.attr('src', slides[slideIndex].url);
-      slideText.text(slides[slideIndex].text);
+      var slideIndex = Math.min(me._slideIndex + 1, me._slides.length - 1);
+      me._updateDom(slideIndex, me._slides[slideIndex].iconIndex);
       evt.preventDefault();
     });
 
-    var icons = $(id + ' .icon');
-    icons.click(function(evt) {
-      icons.eq(me._iconIndex).removeClass('selected');
-      $(this).addClass('selected');
-      var iconIndex = me._iconIndex = $(this).index();
-      var slideIndex = me._slideIndex = 0;
-      var slides = items[iconIndex].slides;
-      slide.attr('src', slides[slideIndex].url);
-      slideText.text(slides[slideIndex].text);
+    $(id + ' .icon').click(function(evt) {
+      var iconIndex = $(this).index();
+      me._updateDom(me._icons[iconIndex].slideIndex, iconIndex);
     });
+
+    this._updateDom(0, 0);
   };
 
   $(document).ready(function() {
@@ -160,7 +137,7 @@
     ]);
 
     $('.daigou-guide').replaceWith(guide.createDom());
-    //guide.onDomCreated();
+    guide.onDomCreated();
 
   });
 
