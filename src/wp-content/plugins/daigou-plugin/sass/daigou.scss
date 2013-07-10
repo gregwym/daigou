@@ -44,7 +44,7 @@ body, html {
 
 .daigou-guide {
   border: 1px solid #d3d6db;
-  border-radius: 3px;
+  border-radius: 5px;
 
   .arrow {
     width: 27px;
@@ -82,8 +82,11 @@ body, html {
   }
 
   .slide {
+    background: transparent;
+    border: none;
     height: 500px;
     width: 100%;
+    padding: 0;
     display: block;
   }
 
@@ -104,6 +107,8 @@ body, html {
   }
 
   .icon {
+    border: none;
+    background: transparent;
     width: 80px;
     height: 80px;
     margin: 8px;

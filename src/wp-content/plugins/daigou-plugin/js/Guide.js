@@ -120,23 +120,23 @@
   };
 
   $(document).ready(function() {
-    // TODO: replace it with real data
-    var guide = new Guide([
-      {
-        icon: '../img/guide-icon-0.png',
-        slides: [
-          { url: '../img/guide-slide-0.jpg', text: '' },
-          { url: '../img/guide-slide-1.jpg', text: '' },
-          { url: '../img/guide-slide-2.jpg', text: '' },
-          { url: '../img/guide-slide-3.jpg', text: '' },
-          { url: '../img/guide-slide-4.jpg', text: '' }
-        ]
-      }
-    ]);
+    $('#guide-container').each(function() {
+      var guide = new Guide([
+        {
+          icon: '/wp-content/images/guide-icon-0.png',
+          slides: [
+            { url: '/wp-content/images/guide-slide-0.jpg', text: '' },
+            { url: '/wp-content/images/guide-slide-1.jpg', text: '' },
+            { url: '/wp-content/images/guide-slide-2.jpg', text: '' },
+            { url: '/wp-content/images/guide-slide-3.jpg', text: '' },
+            { url: '/wp-content/images/guide-slide-4.jpg', text: '' }
+          ]
+        }
+      ]);
 
-    $('#guide-container').append(guide.createDom());
-    guide.onDomCreated();
-
+      $(this).append(guide.createDom());
+      guide.onDomCreated();
+    });
   });
 
 })(jQuery, window['daigou.Dom']);
