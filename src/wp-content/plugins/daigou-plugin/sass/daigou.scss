@@ -51,16 +51,18 @@ body, html {
     height: 45px;
     position: absolute;
     top: 50%;
+    @include opacity(0.0);
+    @include transition-property(opacity);
+    @include transition-duration(0.5s);
+    @include transition-timing-function(ease-in-out);
   }
 
   .arrow-left {
-    @extend .arrow;
     background: url('../img/arrow-left.png') no-repeat;
     left: 20px;
   }
 
   .arrow-right {
-    @extend .arrow;
     background: url('../img/arrow-right.png') no-repeat;
     right: 20px;
   }
@@ -79,6 +81,10 @@ body, html {
     @include transition-property(margin);
     @include transition-duration(1s);
     @include transition-timing-function(ease-in-out);
+  }
+
+  .slide-viewer:hover .arrow {
+    @include opacity(1.0);
   }
 
   .slide {
