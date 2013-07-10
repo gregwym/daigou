@@ -104,15 +104,13 @@ body, html {
   }
 
   .icon {
-    border-radius: 10px;
-    border: 1px solid #fff;
-    width: 32px;
-    height: 32px;
+    width: 80px;
+    height: 80px;
     margin: 8px;
     @include opacity(0.3);
     @include transition-property(opacity);
     @include transition-duration(0.5s);
-    @include transition-timing-function(ease);
+    @include transition-timing-function(ease-in-out);
   }
 
   .icon.selected {

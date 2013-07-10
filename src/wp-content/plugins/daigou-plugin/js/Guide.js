@@ -34,6 +34,8 @@
     var id = '#' + this._id;
     // Shifts in the correct slide
     $(id + ' .slides-container').css('margin-left', -100 * newSlideIndex + '%');
+    $(id + ' .arrow-left').toggle(newSlideIndex > 0);
+    $(id + ' .arrow-right').toggle(newSlideIndex < this._slides.length - 1);
     this._slideIndex = newSlideIndex;
 
     var iconIndex = this._iconIndex;
@@ -121,22 +123,18 @@
     // TODO: replace it with real data
     var guide = new Guide([
       {
-        icon: '../img/arrow-left.png',
+        icon: '../img/guide-icon-0.png',
         slides: [
-          { url: '../img/loading.gif', text: ' 0 0' },
-          { url: '../img/arrow-left.png', text: '0 1' }
-        ]
-      },
-      {
-        icon: '../img/arrow-left.png',
-        slides: [
-          { url: '../img/arrow-right.png', text: '1 0' },
-          { url: '../img/arrow-left.png', text: '1 1' }
+          { url: '../img/guide-slide-0.jpg', text: '' },
+          { url: '../img/guide-slide-1.jpg', text: '' },
+          { url: '../img/guide-slide-2.jpg', text: '' },
+          { url: '../img/guide-slide-3.jpg', text: '' },
+          { url: '../img/guide-slide-4.jpg', text: '' }
         ]
       }
     ]);
 
-    $('.daigou-guide').replaceWith(guide.createDom());
+    $('#guide-container').append(guide.createDom());
     guide.onDomCreated();
 
   });
