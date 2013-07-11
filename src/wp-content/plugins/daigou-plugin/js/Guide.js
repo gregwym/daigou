@@ -85,8 +85,12 @@
           '<div class="slides-container group"', style({ width: 100 * this._slides.length + '%' }),'>',
             createSlidesDom(this._slides),
           '</div>',
-          '<a class="arrow arrow-left" href="#"></a>',
-          '<a class="arrow arrow-right" href="#"></a>',
+          '<div class="arrow-container-left">',
+            '<a class="arrow arrow-left" href="#"></a>',
+          '</div>',
+          '<div class="arrow-container-right">',
+            '<a class="arrow arrow-right" href="#"></a>',
+          '</div>',
         '</div>',
         '<div class="icons-container">',
           createIconsDom(this._icons),
@@ -99,13 +103,13 @@
     var me = this;
     var id = '#' + this._id;
 
-    $(id + ' .arrow-left').click(function(evt) {
+    $(id + ' .arrow-container-left').click(function(evt) {
       var slideIndex = Math.max(0, me._slideIndex - 1);
       me._updateDom(slideIndex, me._slides[slideIndex].iconIndex);
       evt.preventDefault();
     });
 
-    $(id + ' .arrow-right').click(function(evt) {
+    $(id + ' .arrow-container-right').click(function(evt) {
       var slideIndex = Math.min(me._slideIndex + 1, me._slides.length - 1);
       me._updateDom(slideIndex, me._slides[slideIndex].iconIndex);
       evt.preventDefault();

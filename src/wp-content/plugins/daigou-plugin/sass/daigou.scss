@@ -46,6 +46,24 @@ body, html {
   border: 1px solid #d3d6db;
   border-radius: 5px;
 
+  .arrow-container {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+  }
+
+  .arrow-container-left {
+    @extend .arrow-container;
+    left: 0;
+  }
+
+  .arrow-container-right {
+    @extend .arrow-container;
+    right: 0;
+  }
+
   .arrow {
     width: 27px;
     height: 45px;
