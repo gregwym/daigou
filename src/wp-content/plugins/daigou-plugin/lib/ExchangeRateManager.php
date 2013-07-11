@@ -5,9 +5,16 @@ class ExchangeRateManager {
 	// In case of error
 	const DEFAULT_CAD_TO_RMB = 6.0;
 	const PATTERN = '/rhs:.*(?P<rate>\d+\.\d+)/';
+	const DAY_IN_SECONDS = 86400;
 
 	public static function get_rate_from_cad_to_rmb() {
-		// TODO: cache the result
+		// Gets the exchange rate from the database first
+		$rate_options = get_option('daigou-exchange-rate');
+		$timestamp = time();
+		if ($rate_options && $rate_options['expiry_time'] >= $timestamp) {
+			return $rate_options['rate'];
+		}
+
 		$rate = self::DEFAULT_CAD_TO_RMB;
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
@@ -27,6 +34,11 @@ class ExchangeRateManager {
 		}
 
 		curl_close($curl);
+		// Updates the exchange rate only if it's one day old or more
+		$rate_options['rate'] = $rate;
+		$rate_options['expiry_time'] = $timestamp + self::DAY_IN_SECONDS;
+		update_option('daigou-exchange-rate', $rate_options);
+
 		return $rate;
 	}
 }
