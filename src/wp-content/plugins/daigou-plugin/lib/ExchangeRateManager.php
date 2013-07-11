@@ -12,15 +12,17 @@ class ExchangeRateManager {
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
 			CURLOPT_RETURNTRANSFER => 1,
-			CURLOPT_URL => 'http://www.google.com/ig/calculator?hl=en&q=1CAD=?RMB',
+			CURLOPT_URL => 'http://openexchangerates.org/api/latest.json?app_id=fe7ede089a214e5cbf87f652e02129b7',
 			CURLOPT_CONNECTTIMEOUT => 5,
 		));
 
-		$response = curl_exec($curl);
+		$json = curl_exec($curl);
 		if (!curl_errno($curl)) {
-			preg_match(self::PATTERN, $response, $matches);
-			if ($matches['rate']) {
-				$rate = (float) $matches['rate'];
+			$rates = json_decode($json);
+			if ($rates && $rates->rates) {
+				$usd_to_rmb = $rates->rates->CNY;
+				$usd_to_cad = $rates->rates->CAD;
+				$rate = $usd_to_rmb / $usd_to_cad;
 			}
 		}
 
