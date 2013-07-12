@@ -26,6 +26,7 @@ class Daigou {
 		add_action('wp_enqueue_scripts', array($this, 'register_script'));
 
 		add_shortcode('taobao_url', array($this, 'add_taobao_url_textfield'));
+		add_shortcode('guide', array($this, 'add_guide'));
 		add_filter('woocommerce_single_product_image_html', array($this, 'display_external_product_image'), 10, 2);
 
 		// Store customer notes when adding a product to cart
@@ -62,7 +63,8 @@ class Daigou {
 			$jsDir . '/ProductUrlInput.js',
 			array('jquery', 'daigou.Dom', 'daigou.Configuration', 'daigou.LoadingMask')
 		);
-		wp_enqueue_script('daigou.add-product-page', $jsDir . '/add-product-page.js', array('jquery', 'daigou.ProductUrlInput'));
+		wp_register_script('daigou.add-product-page', $jsDir . '/add-product-page.js', array('jquery', 'daigou.ProductUrlInput'));
+		wp_register_script('daigou.Guide', $jsDir . '/Guide.js', array('jquery', 'daigou.Dom'));
 	}
 
 	public function ajax_get_product_by_id() {
@@ -166,7 +168,13 @@ class Daigou {
 		die();
 	}
 
+	public function add_guide() {
+		wp_enqueue_script('daigou.Guide');
+		echo '<div id="guide-container" style="width: 800px; margin: 0 auto;"></div>';
+	}
+
 	public function add_taobao_url_textfield($attributes) {
+		wp_enqueue_script('daigou.add-product-page');
 		require(__DIR__ . '/page/add-product-page.php');
 	} // End add_taobao_url_textfield
 

@@ -1,0 +1,270 @@
+/* line 4, ../sass/daigou.scss */
+body, html {
+  height: 100%;
+}
+
+/* line 8, ../sass/daigou.scss */
+.group:after, .daigou-product-detail-box .form .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 14, ../sass/daigou.scss */
+.column, .daigou-product-detail-box .picture-box, .daigou-product-detail-box .form {
+  float: left;
+}
+
+/* line 18, ../sass/daigou.scss */
+.daigou-inputbox, .daigou-product-url-input .url-input-container input, .daigou-product-detail-box .form .row input,
+.daigou-product-detail-box .form .row textarea {
+  border: 1px solid #bdc7d8;
+  padding: 4px;
+}
+
+/* line 23, ../sass/daigou.scss */
+.daigou-inputbox:disabled, .daigou-product-url-input .url-input-container input:disabled, .daigou-product-detail-box .form .row input:disabled,
+.daigou-product-detail-box .form .row textarea:disabled {
+  background-color: #f6f7f8;
+}
+
+/* line 27, ../sass/daigou.scss */
+.daigou-button, .daigou-product-url-input .button-container button, .daigou-product-detail-box button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #a5a5a5;
+  border-color: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  font-weight: bold;
+  padding: 8px 16px;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* line 40, ../sass/daigou.scss */
+.daigou-button:active, .daigou-product-url-input .button-container button:active, .daigou-product-detail-box button:active {
+  background-color: #5b74a8;
+  color: #fff;
+}
+
+/* line 45, ../sass/daigou.scss */
+.daigou-guide {
+  border: 1px solid #d3d6db;
+  border-radius: 3px;
+}
+/* line 49, ../sass/daigou.scss */
+.daigou-guide .arrow, .daigou-guide .arrow-left, .daigou-guide .arrow-right {
+  width: 27px;
+  height: 45px;
+  position: absolute;
+  top: 50%;
+}
+/* line 56, ../sass/daigou.scss */
+.daigou-guide .arrow-left {
+  background: url("../img/arrow-left.png") no-repeat;
+  left: 20px;
+}
+/* line 62, ../sass/daigou.scss */
+.daigou-guide .arrow-right {
+  background: url("../img/arrow-right.png") no-repeat;
+  right: 20px;
+}
+/* line 68, ../sass/daigou.scss */
+.daigou-guide .slide-viewer {
+  overflow: hidden;
+  position: relative;
+}
+/* line 73, ../sass/daigou.scss */
+.daigou-guide .slide-container {
+  position: relative;
+  float: left;
+}
+/* line 78, ../sass/daigou.scss */
+.daigou-guide .slides-container {
+  -webkit-transition-property: margin;
+  -moz-transition-property: margin;
+  -o-transition-property: margin;
+  transition-property: margin;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+/* line 84, ../sass/daigou.scss */
+.daigou-guide .slide {
+  height: 500px;
+  width: 100%;
+  display: block;
+}
+/* line 90, ../sass/daigou.scss */
+.daigou-guide .slide-text {
+  padding: 10px;
+  font-size: 20px;
+  font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+  font-weight: bold;
+  color: #4c66a4;
+  position: absolute;
+  bottom: 0;
+}
+/* line 100, ../sass/daigou.scss */
+.daigou-guide .icons-container {
+  background-color: #f2f5f5;
+  text-align: center;
+  border-top: 1px solid #d3d6db;
+}
+/* line 106, ../sass/daigou.scss */
+.daigou-guide .icon {
+  width: 80px;
+  height: 80px;
+  margin: 8px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+/* line 116, ../sass/daigou.scss */
+.daigou-guide .icon.selected {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+/* line 120, ../sass/daigou.scss */
+.daigou-guide .icon:hover {
+  cursor: pointer;
+}
+
+/* line 125, ../sass/daigou.scss */
+.daigou-product-url-input {
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* line 129, ../sass/daigou.scss */
+.daigou-product-url-input .button-container {
+  text-align: center;
+}
+/* line 132, ../sass/daigou.scss */
+.daigou-product-url-input .button-container button {
+  font-size: 20px;
+}
+/* line 142, ../sass/daigou.scss */
+.daigou-product-url-input .url-input-container {
+  text-align: center;
+  padding: 10px;
+}
+/* line 146, ../sass/daigou.scss */
+.daigou-product-url-input .url-input-container input {
+  font-size: 18px;
+  width: 100%;
+}
+
+/* line 155, ../sass/daigou.scss */
+.daigou-product-detail-box {
+  font-size: 12px;
+  font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+  border: 1px solid #d3d6db;
+  white-space: nowrap;
+  border-radius: 3px;
+  width: 750px;
+  margin: 0 auto;
+}
+/* line 172, ../sass/daigou.scss */
+.daigou-product-detail-box table, .daigou-product-detail-box td, .daigou-product-detail-box th {
+  padding: 0;
+  margin: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* line 179, ../sass/daigou.scss */
+.daigou-product-detail-box .header {
+  border-bottom: 1px solid #e9eaed;
+  color: #37404e;
+  font-size: 16px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* line 188, ../sass/daigou.scss */
+.daigou-product-detail-box .footer {
+  text-align: right;
+  border-top: 1px solid #e9eaed;
+}
+/* line 194, ../sass/daigou.scss */
+.daigou-product-detail-box .header,
+.daigou-product-detail-box .footer {
+  background-color: #f6f7f8;
+  padding: 8px;
+}
+/* line 202, ../sass/daigou.scss */
+.daigou-product-detail-box .picture-box img {
+  border: 1px solid #e9eaed;
+  border-radius: 2px;
+  display: block;
+  width: 200px;
+}
+/* line 216, ../sass/daigou.scss */
+.daigou-product-detail-box .form .row {
+  padding: 5px;
+}
+/* line 219, ../sass/daigou.scss */
+.daigou-product-detail-box .form .row .name {
+  width: 180px;
+  text-align: right;
+  font-weight: bold;
+  color: #666;
+  float: left;
+  padding-right: 5px;
+}
+/* line 228, ../sass/daigou.scss */
+.daigou-product-detail-box .form .row .value {
+  vertical-align: middle;
+}
+/* line 233, ../sass/daigou.scss */
+.daigou-product-detail-box .form .row input,
+.daigou-product-detail-box .form .row textarea {
+  width: 300px;
+}
+/* line 242, ../sass/daigou.scss */
+.daigou-product-detail-box .form .row textarea {
+  height: 100px;
+}
+/* line 247, ../sass/daigou.scss */
+.daigou-product-detail-box .form .row .name,
+.daigou-product-detail-box .form .row .value {
+  height: 30px;
+  line-height: 30px;
+}
+/* line 257, ../sass/daigou.scss */
+.daigou-product-detail-box .form,
+.daigou-product-detail-box .picture-box {
+  padding: 10px;
+}
+
+/* line 262, ../sass/daigou.scss */
+.daigou-loading-mask {
+  position: absolute;
+  background-color: #fff;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+/* line 267, ../sass/daigou.scss */
+.daigou-loading-mask .loading-indicator {
+  width: 32px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  background: url("../img/loading.gif") no-repeat;
+}
