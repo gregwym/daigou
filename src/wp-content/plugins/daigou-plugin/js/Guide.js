@@ -163,7 +163,7 @@
           icon: '/wp-content/images/guide-icon-4.png',
           slides: [
             { url: '/wp-content/images/guide-slide-13.jpg', text: '如果在未能如实抓去价格，请点击“价格调整”' },
-            { url: '/wp-content/images/guide-slide-14.jpg', text: '支持用信用卡或paypal直接付款，方便，安全，快捷 :)' }
+            { url: '/wp-content/images/guide-slide-14.jpg', text: '支持用信用卡或PayPal直接付款，方便，安全，快捷 :)' }
           ]
         }
       ]);

@@ -43,7 +43,7 @@ body, html {
 }
 
 .daigou-guide {
-  border: 1px solid #d3d6db;
+  border: 2px solid #d3d6db;
   border-radius: 5px;
 
   .arrow-container {
@@ -125,7 +125,7 @@ body, html {
   }
 
   .icons-container {
-    background-color: #f2f5f5;
+    background-color: darken(#f2f5f5, 5%);
     text-align: center;
     border-top: 1px solid #d3d6db;
   }
@@ -136,7 +136,7 @@ body, html {
     width: 80px;
     height: 80px;
     margin: 8px;
-    @include opacity(0.5);
+    @include opacity(0.3);
     @include transition-property(opacity);
     @include transition-duration(0.5s);
   }
