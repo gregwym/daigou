@@ -97,8 +97,7 @@ body, html {
 
   .slides-container {
     @include transition-property(margin);
-    @include transition-duration(1s);
-    @include transition-timing-function(ease-in-out);
+    @include transition-duration(0.5s);
   }
 
   .slide-viewer:hover .arrow {
@@ -116,12 +115,13 @@ body, html {
 
   .slide-text {
     padding: 10px;
-    font-size: 20px;
+    font-size: 14px;
+    text-overflow: ellipsis;
     font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
     font-weight: bold;
     color: #4c66a4;
-    position: absolute;
-    bottom: 0;
+    background-color: #f2f5f5;
+    border-top: 1px solid #d3d6db;
   }
 
   .icons-container {
@@ -136,10 +136,9 @@ body, html {
     width: 80px;
     height: 80px;
     margin: 8px;
-    @include opacity(0.3);
+    @include opacity(0.5);
     @include transition-property(opacity);
     @include transition-duration(0.5s);
-    @include transition-timing-function(ease-in-out);
   }
 
   .icon.selected {
