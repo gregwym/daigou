@@ -43,8 +43,11 @@ body, html {
 }
 
 .daigou-guide {
-  border: 1px solid #d3d6db;
+  border: 2px solid #d3d6db;
   border-radius: 5px;
+  font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+  color: #4c66a4;
+  font-size: 14px;
 
   .arrow-container {
     width: 50%;
@@ -97,8 +100,7 @@ body, html {
 
   .slides-container {
     @include transition-property(margin);
-    @include transition-duration(1s);
-    @include transition-timing-function(ease-in-out);
+    @include transition-duration(0.5s);
   }
 
   .slide-viewer:hover .arrow {
@@ -116,16 +118,19 @@ body, html {
 
   .slide-text {
     padding: 10px;
-    font-size: 20px;
-    font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+    text-overflow: ellipsis;
     font-weight: bold;
-    color: #4c66a4;
-    position: absolute;
-    bottom: 0;
+    background-color: #f2f5f5;
+    border-top: 1px solid #d3d6db;
+  }
+
+  .icon-container {
+    display: inline-block;
+    margin: 10px;
   }
 
   .icons-container {
-    background-color: #f2f5f5;
+    background-color: darken(#f2f5f5, 5%);
     text-align: center;
     border-top: 1px solid #d3d6db;
   }
@@ -135,18 +140,16 @@ body, html {
     background: transparent;
     width: 80px;
     height: 80px;
-    margin: 8px;
     @include opacity(0.3);
     @include transition-property(opacity);
     @include transition-duration(0.5s);
-    @include transition-timing-function(ease-in-out);
   }
 
   .icon.selected {
     @include opacity(1.0);
   }
 
-  .icon:hover {
+  .icon-container:hover {
     cursor: pointer;
   }
 }
