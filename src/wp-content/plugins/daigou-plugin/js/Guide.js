@@ -12,7 +12,8 @@
     for (var i = 0, iconCount = items.length; i < iconCount; i++) {
       var item = items[i];
       var iconSlides = item.slides;
-      icons[i] = { url: item.icon, slideIndex: slides.length };
+      var icon = item.icon;
+      icons[i] = { url: icon.url, text: icon.text, slideIndex: slides.length };
 
       for (var j = 0, slideCount = iconSlides.length; j < slideCount; j++) {
         var slide = iconSlides[j];
@@ -70,7 +71,10 @@
     for (var i = 0, len = icons.length; i < len; i++) {
       var icon = icons[i];
       buffer.push(
-        '<img class="icon"', attr('src', icon.url), ' />'
+        '<div class="icon-container">',
+          '<img class="icon"', attr('src', icon.url), attr('alt', icon.text), '/>',
+          '<div>', icon.text ,'</div>',
+        '</div>'
       );
     }
     return buffer.join('');
@@ -115,7 +119,7 @@
       evt.preventDefault();
     });
 
-    $(id + ' .icon').click(function(evt) {
+    $(id + ' .icon-container').click(function(evt) {
       var iconIndex = $(this).index();
       me._updateDom(me._icons[iconIndex].slideIndex, iconIndex);
     });
@@ -127,13 +131,43 @@
     $('#guide-container').each(function() {
       var guide = new Guide([
         {
-          icon: '/wp-content/images/guide-icon-0.png',
+          icon: { url: '/wp-content/images/guide-icon-0.png', text: '挑选商品'},
           slides: [
-            { url: '/wp-content/images/guide-slide-0.jpg', text: '' },
-            { url: '/wp-content/images/guide-slide-1.jpg', text: '' },
-            { url: '/wp-content/images/guide-slide-2.jpg', text: '' },
-            { url: '/wp-content/images/guide-slide-3.jpg', text: '' },
-            { url: '/wp-content/images/guide-slide-4.jpg', text: '' }
+            { url: '/wp-content/images/guide-slide-00.jpg', text: '前往淘宝网，选中称心的商品连接，复制后回到“袋狗哥”' }
+          ]
+        },
+        {
+          icon: { url: '/wp-content/images/guide-icon-1.png', text: '提交信息'},
+          slides: [
+            { url: '/wp-content/images/guide-slide-01.jpg', text: '粘贴所选商品链接至方框内，按“代购吧”开始代购哟～～～～' },
+            { url: '/wp-content/images/guide-slide-02.jpg', text: '在方框内填写您所需要的颜色，尺寸，数量' },
+            { url: '/wp-content/images/guide-slide-03.jpg', text: '由于淘宝API无法自动抓取特价的价格，所以如果有特价，还请填上特价的价格，我们会稍后给您手动调整 :)' },
+            { url: '/wp-content/images/guide-slide-04.jpg', text: '您可以在商品介绍中看到其人民币价格，以及自动抓去的汇率情况；如确定要此商品，请点击“加入购物车”' },
+            { url: '/wp-content/images/guide-slide-05.jpg', text: '若您需要继续代购其他商品，请选择“继续购物”' },
+            { url: '/wp-content/images/guide-slide-06.jpg', text: '如需结算，请选择“前往购物车”  很简单吧^_^' },
+          ]
+        },
+        {
+          icon: { url: '/wp-content/images/guide-icon-2.png', text: '提交代购订单'},
+          slides: [
+            { url: '/wp-content/images/guide-slide-07.jpg', text: '前往购物车，确认商品信息，进行结算；该结算只包含国内商品价格，国内运费将和国际运费在货到时一起结算' },
+            { url: '/wp-content/images/guide-slide-08.jpg', text: '可以选取送货的方式，自取或者送货上门' }
+          ]
+        },
+        {
+          icon: { url: '/wp-content/images/guide-icon-3.png', text: '相关信息'},
+          slides: [
+            { url: '/wp-content/images/guide-slide-09.jpg', text: '若您时第一次使用，需要填写相关信息，方便我们配送和联系您' },
+            { url: '/wp-content/images/guide-slide-10.jpg', text: '运送地址和帐单地址不同，账单地址为您信用卡的地址；运送地址为您希望我们送到的地址' },
+            { url: '/wp-content/images/guide-slide-11.jpg', text: '现在注册，即刻享受免代购费的服务哟～～～您的用户名是您所填的邮件' },
+            { url: '/wp-content/images/guide-slide-12.jpg', text: '订单总揽～～' }
+          ]
+        },
+        {
+          icon: { url: '/wp-content/images/guide-icon-4.png', text: '结帐买单'},
+          slides: [
+            { url: '/wp-content/images/guide-slide-13.jpg', text: '如果在未能如实抓去价格，请点击“价格调整”' },
+            { url: '/wp-content/images/guide-slide-14.jpg', text: '支持用信用卡或PayPal直接付款，方便，安全，快捷 :)' }
           ]
         }
       ]);
