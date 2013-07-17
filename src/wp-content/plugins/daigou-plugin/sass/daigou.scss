@@ -45,6 +45,9 @@ body, html {
 .daigou-guide {
   border: 2px solid #d3d6db;
   border-radius: 5px;
+  font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+  color: #4c66a4;
+  font-size: 14px;
 
   .arrow-container {
     width: 50%;
@@ -115,13 +118,15 @@ body, html {
 
   .slide-text {
     padding: 10px;
-    font-size: 14px;
     text-overflow: ellipsis;
-    font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
     font-weight: bold;
-    color: #4c66a4;
     background-color: #f2f5f5;
     border-top: 1px solid #d3d6db;
+  }
+
+  .icon-container {
+    display: inline-block;
+    margin: 10px;
   }
 
   .icons-container {
@@ -135,7 +140,6 @@ body, html {
     background: transparent;
     width: 80px;
     height: 80px;
-    margin: 8px;
     @include opacity(0.3);
     @include transition-property(opacity);
     @include transition-duration(0.5s);
@@ -145,7 +149,7 @@ body, html {
     @include opacity(1.0);
   }
 
-  .icon:hover {
+  .icon-container:hover {
     cursor: pointer;
   }
 }
